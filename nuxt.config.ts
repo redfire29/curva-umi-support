@@ -22,6 +22,8 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   app: {
+    baseURL: '/curva-umi-support/',
+    buildAssetsDir: '/static/',
     head: {
       htmlAttrs: {
         lang: 'zh-Hant',

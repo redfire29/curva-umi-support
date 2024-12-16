@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "pnpm generate && pnpm nrd && node ./deploy/ghpages.js",
+    "deploy": "pnpm generate --force && pnpm nrd && node ./deploy/ghpages.js",
     "nrd": "nuxt-rd"
   },
   "dependencies": {
