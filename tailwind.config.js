@@ -8,7 +8,16 @@ module.exports = {
     extend: {
       screens: {},
       fontFamily: {},
-      keyframes: {},
+      keyframes: {
+        'move-forever': {
+          '0%': {
+            'transform': 'translate3d(-90px, 0, 0)'
+          },
+          '100%': {
+            'transform': 'translate3d(85px, 0, 0)'
+          }
+        },
+      },
     },
   },
   plugins: [

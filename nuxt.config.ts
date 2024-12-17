@@ -7,7 +7,22 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@vueuse/nuxt',
     'nuxt-swiper',
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    strategy: 'prefix',
+    // locales: ['ja', 'zh'],
+    langDir: 'locales',
+    locales: [
+      { code: 'zh', file: 'zh.yml', iso: 'zh-Hant', name: '繁中', shortName: '繁中' },
+      { code: 'ja', file: 'ja.yml', iso: 'jp', name: 'JAPANESE', shortName: 'JP' },
+    ],
+    detectBrowserLanguage: false,
+    defaultLocale: 'ja',
+  },
+  routeRules: {
+    '/': { static: true, prerender: true },
+  },
   tailwindcss: {
     cssPath: [
       '~/assets/css/main.css',
