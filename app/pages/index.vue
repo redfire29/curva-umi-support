@@ -4,7 +4,7 @@ div
     class="pt-[210px] -mb-[1px] relative"
   )
     div(
-      class="fixed top-[56px] left-0 right-0 h-[210px] -z-10 flex items-center justify-center"
+      class="fixed top-0 left-0 right-0 h-[210px] -z-10 flex items-center justify-center"
     )
       p 來羽うみ
   wave

@@ -4,7 +4,7 @@ div(
 )
   app-header
   div(
-    class="flex-1 pt-[50px]"
+    class="flex-1"
   )
     div(
       class="w-full mx-auto"
