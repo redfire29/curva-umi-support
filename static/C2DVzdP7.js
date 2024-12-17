@@ -1,0 +1,1 @@
+import{o as e,c as t,a as o,_ as r,b as a}from"./DaeZF_Up.js";function _(c,n){return e(),t("div",null,n[0]||(n[0]=[o("p",null,"WAVE",-1)]))}const l={},d=Object.assign(r(l,[["render",_]]),{__name:"Wave"});function u(c,n){const s=d;return e(),t("div",null,[n[0]||(n[0]=o("p",null,"Index",-1)),a(s)])}const i={},p=r(i,[["render",u]]);export{p as default};
