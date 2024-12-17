@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-swiper',
     '@nuxtjs/i18n',
+    'dayjs-nuxt',
   ],
   i18n: {
     strategy: 'prefix',
