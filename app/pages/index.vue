@@ -35,7 +35,7 @@ div(
           data-aos="fade-up",
           class="text-[32px] mb-[20px] text-[#1B4965] font-bold tracking-[2px]"
         )
-          span ABOUT
+          span {{ $t('about-h2') }}
           //- span(
           //-   class="text-[20px] ml-[5px]"
           //- ) Who is Curva Umi?
@@ -91,10 +91,12 @@ div(
                   p {{ `${info.title}:` }}
                   p
                     span(v-for="tag in info.content") {{ tag }}
-              div
+              div(
+                class="flex items-center mt-[10px]"
+              )
                 p(data-aos="fade-up") Link
                 ul(
-                  class="flex items-center"
+                  class="flex items-center ml-[5px]"
                 )
                   li(
                     data-aos="fade-up",
@@ -102,22 +104,24 @@ div(
                   )
                     a(
                       href="https://x.com/curva_umi", target="_blank",
-                      class="flex items-center"
+                      class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
                     )
-                      img(src="~/assets/img/twitter-x.svg", class="mr-[5px]")
-                      p X (Twitter)
+                      img(src="~/assets/img/twitter-x.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
                   li(
                     data-aos="fade-up",
                     class="mx-[5px]"
                   )
                     a(
                       href="https://www.youtube.com/@curvaumi", target="_blank",
-                      class="flex items-center"
+                      class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
                     )
-                      img(src="~/assets/img/youtube.svg", class="mr-[5px]")
-                      p Youtube
+                      img(src="~/assets/img/youtube.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
+      h2(
+        data-aos="fade-up",
+        class="text-[32px] mt-[10px] text-[#1B4965] font-bold tracking-[2px]"
+      ) {{ $t('design-h2')}}
       section(
-        class="mt-[10px] group",
+        class="mt-[10px]",
         v-for="design in designList"
       )
         h2(
@@ -158,18 +162,28 @@ div(
                 )
                   p {{ member?.name }}
                   ul(
-                    class="items-center"
+                    class="flex items-center"
                   )
                     li(
-                      v-for="sns in member?.sns"
                       data-aos="fade-up",
-                      class="mx-[5px]"
+                      class="mx-[5px]",
+                      v-if="member?.twitter"
                     )
                       a(
-                        :href="sns.link", target="_blank",
-                        class="flex items-center"
+                        :href="member?.twitter", target="_blank",
+                        class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
                       )
-                        p {{ sns?.title }}
+                        img(src="~/assets/img/twitter-x.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
+                    li(
+                      data-aos="fade-up",
+                      class="mx-[5px]",
+                      v-if="member?.youtube"
+                    )
+                      a(
+                        :href="member?.youtube", target="_blank",
+                        class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
+                      )
+                        img(src="~/assets/img/youtube.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
         div(
           data-aos="fade-up",
           class="h-[1px] w-full bg-[#1B4965] mt-[10px] group-last:hidden"
@@ -247,31 +261,15 @@ const designList = [
         title: `${t('design-art')}`,
         name: 'Art Name',
         img: 'img link',
-        sns: [
-          {
-            title: 'X (Twitter)',
-            link: 'https://x.com/curva_umi',
-          },
-          {
-            title: 'Youtube',
-            link: 'https://www.youtube.com/@curvaumi',
-          }
-        ],
+        twitter: 'https://x.com/curva_umi',
+        youtube: 'https://www.youtube.com/@curvaumi',
       },
       {
         title: `${t('design-live')}`,
         name: 'Live2D Name',
         img: 'img link',
-        sns: [
-          {
-            title: 'X (Twitter)',
-            link: 'https://x.com/curva_umi',
-          },
-          {
-            title: 'Youtube',
-            link: 'https://www.youtube.com/@curvaumi',
-          }
-        ],
+        twitter: 'https://x.com/curva_umi',
+        youtube: 'https://www.youtube.com/@curvaumi',
       },
     ]
   },
@@ -283,31 +281,15 @@ const designList = [
         title: `${t('design-art')}`,
         name: 'Art Name2',
         img: 'img link2',
-        sns: [
-          {
-            title: 'X (Twitter)',
-            link: 'https://x.com/curva_umi',
-          },
-          {
-            title: 'Youtube',
-            link: 'https://www.youtube.com/@curvaumi',
-          }
-        ],
+        twitter: 'https://x.com/curva_umi',
+        youtube: 'https://www.youtube.com/@curvaumi',
       },
       {
         title: `${t('design-live')}`,
         name: 'Live2D Name2',
         img: 'img link2',
-        sns: [
-          {
-            title: 'X (Twitter)',
-            link: 'https://x.com/curva_umi',
-          },
-          {
-            title: 'Youtube',
-            link: 'https://www.youtube.com/@curvaumi',
-          }
-        ],
+        twitter: 'https://x.com/curva_umi',
+        youtube: 'https://www.youtube.com/@curvaumi',
       },
     ]
   }
