@@ -11,15 +11,24 @@ header(
       class="flex items-center"
     )
       li(
-        v-for="menu in menuItems",
         class="px-[10px]"
       )
         nuxt-link(
-          :to="localePath(menu.url)",
+          :to="localePath('/songlist')",
           class="text-[#1B4965] block relative"
           class="after:h-[1px] after:absolute after:top-full after:bg-[#1B4965] after:left-0 after:right-full after:transition-all after:duration-300"
           class="md:hover:after:right-0"
-        ) {{ menu.title }}
+        ) {{ $t('song-list') }}
+      //- li(
+      //-   v-for="menu in menuItems",
+      //-   class="px-[10px]"
+      //- )
+      //-   nuxt-link(
+      //-     :to="localePath(menu.url)",
+      //-     class="text-[#1B4965] block relative"
+      //-     class="after:h-[1px] after:absolute after:top-full after:bg-[#1B4965] after:left-0 after:right-full after:transition-all after:duration-300"
+      //-     class="md:hover:after:right-0"
+      //-   ) {{ menu.title }}
     ul(
       class="flex items-center"
     )

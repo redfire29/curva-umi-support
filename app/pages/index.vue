@@ -12,7 +12,7 @@ div(
       p 來羽うみ
   wave
   div(
-    class="bg-[#62B6CB] relative py-[20px] px-[10px]"
+    class="bg-[#62B6CB] relative py-[20px] px-[10px] pb-[40px]"
   )
     ul(
       class="absolute left-0 right-0 top-0 bottom-0"
@@ -28,7 +28,9 @@ div(
     div(
       class="max-w-[1200px] mx-auto relative z-20"
     )
-      section
+      section(
+        class="mb-[20px]"
+      )
         h2(
           data-aos="fade-up",
           class="text-[32px] mb-[20px] text-[#1B4965] font-bold tracking-[2px]"
@@ -115,51 +117,59 @@ div(
                       img(src="~/assets/img/youtube.svg", class="mr-[5px]")
                       p Youtube
       section(
-        class="mt-[20px] "
+        class="mt-[10px]",
+        v-for="design in designList"
       )
         h2(
           data-aos="fade-up"
-        ) 視覺圖
+        ) {{ design.title }}
         div(
           data-aos="fade-up",
-          class="py-[10px]"
+          class="py-[10px]",
+          v-for="item in design.design"
         )
           div(
             class="w-full h-[200px] bg-slate-300"
           )
+            p {{ item }}
         div(
-          class="grid md:grid-cols-2 gap-[10px]"
+          v-if="design?.member?.length > 0"
         )
-          div(
-            data-aos="fade-up"
+          p {{ $t('design-member') }}
+          ul(
+            class="grid md:grid-cols-2 gap-[10px]"
           )
-            h2(class="mt-[20px]") 繪師介紹： art
-            div(
-              class="flex items-center py-[10px]"
+            li(
+              v-for="member in design.member"
+              data-aos="fade-up"
             )
+              h2(
+                class="mt-[20px]"
+              ) {{ `${member?.title}` }}
               div(
-                class="w-[80px] aspect-square bg-slate-300"
+                class="flex items-center py-[10px]"
               )
-              div(
-                class="flex-1 px-[20px]"
-              )
-                p Name: art Name
-                p X (Twitter)
-          div(
-            data-aos="fade-up"
-          )
-            h2(class="mt-[20px]") Live2D介紹： Live2D
-            div(
-              class="flex items-center py-[10px]"
-            )
-              div(
-                class="w-[80px] aspect-square bg-slate-300"
-              )
-              div(
-                class="flex-1 px-[20px]"
-              )
-                p Name: Live2D Name
-                p X (Twitter)
+                div(
+                  class="w-[80px] aspect-square bg-slate-300"
+                )
+                  p {{ member?.img }}
+                div(
+                  class="flex-1 px-[20px]"
+                )
+                  p {{ member?.name }}
+                  ul(
+                    class="items-center"
+                  )
+                    li(
+                      v-for="sns in member?.sns"
+                      data-aos="fade-up",
+                      class="mx-[5px]"
+                    )
+                      a(
+                        :href="sns.link", target="_blank",
+                        class="flex items-center"
+                      )
+                        p {{ sns?.title }}
 </template>
 
 <script setup>
@@ -222,6 +232,81 @@ const tags = [
     title: t('fan-art'),
     content: ['#うみコレオ'],
   },
+]
+
+const designList = [
+  {
+    title: t('design01'),
+    design: ['圖片網址'],
+    member: [
+      {
+        title: `${t('design-art')}`,
+        name: 'Art Name',
+        img: 'img link',
+        sns: [
+          {
+            title: 'X (Twitter)',
+            link: 'https://x.com/curva_umi',
+          },
+          {
+            title: 'Youtube',
+            link: 'https://www.youtube.com/@curvaumi',
+          }
+        ],
+      },
+      {
+        title: `${t('design-live')}`,
+        name: 'Live2D Name',
+        img: 'img link',
+        sns: [
+          {
+            title: 'X (Twitter)',
+            link: 'https://x.com/curva_umi',
+          },
+          {
+            title: 'Youtube',
+            link: 'https://www.youtube.com/@curvaumi',
+          }
+        ],
+      },
+    ]
+  },
+  {
+    title: t('design02'),
+    design: ['圖片網址'],
+    member: [
+      {
+        title: `${t('design-art')}`,
+        name: 'Art Name2',
+        img: 'img link2',
+        sns: [
+          {
+            title: 'X (Twitter)',
+            link: 'https://x.com/curva_umi',
+          },
+          {
+            title: 'Youtube',
+            link: 'https://www.youtube.com/@curvaumi',
+          }
+        ],
+      },
+      {
+        title: `${t('design-live')}`,
+        name: 'Live2D Name2',
+        img: 'img link2',
+        sns: [
+          {
+            title: 'X (Twitter)',
+            link: 'https://x.com/curva_umi',
+          },
+          {
+            title: 'Youtube',
+            link: 'https://www.youtube.com/@curvaumi',
+          }
+        ],
+      },
+    ]
+  }
 ]
 
 useHead({
