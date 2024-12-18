@@ -117,7 +117,7 @@ div(
                       img(src="~/assets/img/youtube.svg", class="mr-[5px]")
                       p Youtube
       section(
-        class="mt-[10px]",
+        class="mt-[10px] group",
         v-for="design in designList"
       )
         h2(
@@ -170,6 +170,10 @@ div(
                         class="flex items-center"
                       )
                         p {{ sns?.title }}
+        div(
+          data-aos="fade-up",
+          class="h-[1px] w-full bg-[#1B4965] mt-[10px] group-last:hidden"
+        )
 </template>
 
 <script setup>
