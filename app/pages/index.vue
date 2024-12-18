@@ -206,4 +206,10 @@ const tags = [
     content: ['#うみコレオ'],
   },
 ]
+
+useHead({
+  titleTemplate: () => {
+    return '來羽うみSupport';
+  },
+})
 </script>

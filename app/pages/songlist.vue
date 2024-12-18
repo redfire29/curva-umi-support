@@ -3,7 +3,7 @@ div
   div(
     class="border-b-[1px] border-blue-400 p-[10px] sticky top-0 pt-[54px] bg-white z-10"
   )
-    h2 歌曲搜尋
+    h2 {{ $t('searchSong') }}
     div(
       class="md:flex items-center flex-wrap"
     )
@@ -19,20 +19,20 @@ div
           class="p-[5px_10px] border-y-[1px] border-[#5FA8D3] bg-[#CAE9FF] text-[#1B4965] md:hover:text-[#CAE9FF] md:hover:bg-[#5FA8D3]"
           class="md:text-[14px] md:p-[10px_20px]"
         )
-          p 搜尋歌名
+          p {{ $t('searchSongName') }}
         button(
           @click="SearchSong('singer')",
           class="p-[5px_10px] border-[1px] border-[#5FA8D3] bg-[#CAE9FF] text-[#1B4965] md:hover:text-[#CAE9FF] md:hover:bg-[#5FA8D3]"
           class="md:text-[14px] md:p-[10px_20px]"
         )
-          p 搜尋歌手
+          p {{ $t('searchSinger') }}
       div(class="flex flex-none items-center max-md:w-full md:ml-[10px]")
-        p(class="mr-[5px]") 日期選擇
+        p(class="mr-[5px]") {{ $t('dateSelect') }}
         select(
           v-model="selectDate", @change="dateSelect()",
           class="border-[1px] border-[#5FA8D3] max-md:flex-1"
         )
-          option(value="") all
+          option(value="") {{ $t('selectAll') }}
           option(v-for="date in dateList", :value='date') {{useGet(date, 'date')}}
     //- h2 type
     //- ul(
@@ -232,4 +232,10 @@ onMounted(() => {
   })
   showSongArray.value = songListAll.value;
 })
+
+const { t } = useI18n()
+useHead({
+  title: t('searchSong'),
+})
+
 </script>

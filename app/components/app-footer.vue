@@ -11,10 +11,10 @@ footer(
     div(
       class="pb-[5px] text-[14px]"
     )
-      p 以上圖片皆有經過持有者的同意才使用
-    p(
-      class="text-[12px]"
-    ) Copyright © 2024 DIANAxAKKO
+      p {{ $t('directions') }}
+    //- p(
+    //-   class="text-[12px]"
+    //- ) Copyright © 2024 DIANAxAKKO
 </template>
 
 <script setup>
