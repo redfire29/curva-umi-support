@@ -122,7 +122,7 @@ div(
       ) {{ $t('design-h2')}}
       section(
         class="mt-[10px]",
-        v-for="design in designList"
+        v-for="(design, index) in designList"
       )
         h2(
           data-aos="fade-up"
@@ -186,7 +186,8 @@ div(
                         img(src="~/assets/img/youtube.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
         div(
           data-aos="fade-up",
-          class="h-[1px] w-full bg-[#1B4965] mt-[10px] group-last:hidden"
+          class="h-[1px] w-full bg-[#1B4965] mt-[10px]",
+          :class="{'hidden': index == designList.length - 1}"
         )
 </template>
 
