@@ -14,6 +14,11 @@ div(
 </template>
 
 <script setup>
+import 'aos/dist/aos.css'
+import AOS from 'aos'
+onMounted(() => {
+  AOS.init();
+})
 </script>
 
 <style>

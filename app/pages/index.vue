@@ -6,6 +6,7 @@ div(
     class="pt-[210px] -mb-[1px] relative"
   )
     div(
+      data-aos="fade-up",
       class="fixed top-0 left-0 right-0 h-[210px] -z-10 flex items-center justify-center"
     )
       p 來羽うみ
@@ -29,6 +30,7 @@ div(
     )
       section
         h2(
+          data-aos="fade-up",
           class="text-[32px] mb-[20px] text-[#1B4965] font-bold tracking-[2px]"
         )
           span ABOUT
@@ -40,6 +42,7 @@ div(
             class="md:flex items-start mt-[10px]"
           )
             div(
+              data-aos="fade-up",
               class="max-w-[430px] h-[720px] bg-[#BEE9E8] mx-auto w-full"
             )
               p(class="px-[10px]") 圖片
@@ -47,17 +50,19 @@ div(
               class="flex-1 md:ml-[10px] lg:ml-[30px]"
             )
               h3(
+                data-aos="fade-up",
                 class="text-[22px] text-[#1B4965] mb-[10px]"
               )
-                //- {{ $t('name') }}
                 span 來羽うみ
                 span(
                   class="text-[18px] ml-[5px]"
                 ) Curva Umi
               p(
+                data-aos="fade-up",
                 class="text-[18px] text-[#1B4965] mb-[10px]"
               ) {{ $t('about') }}
               p(
+                data-aos="fade-up",
                 class="text-[16px] mb-[5px]"
               ) {{ $t('info') }}
               ul(
@@ -65,10 +70,12 @@ div(
               )
                 li(
                   v-for="info in information",
+                  data-aos="fade-up",
                   class="p-[5px_10px] border-[1px] rounded-[5px] border-[#5FA8D3] bg-[#CAE9FF] text-[14px]"
                 )
                   p {{ `${info.title}: ${info.content}` }}
               p(
+                data-aos="fade-up",
                 class="text-[16px] mb-[5px]"
               ) {{ $t('tag') }}
               ul(
@@ -76,17 +83,19 @@ div(
               )
                 li(
                   v-for="info in tags",
+                  data-aos="fade-up",
                   class="p-[5px_10px] border-[1px] rounded-[5px] border-[#5FA8D3] bg-[#CAE9FF] text-[14px]"
                 )
                   p {{ `${info.title}:` }}
                   p
                     span(v-for="tag in info.content") {{ tag }}
               div
-                p Link
+                p(data-aos="fade-up") Link
                 ul(
                   class="flex items-center"
                 )
                   li(
+                    data-aos="fade-up",
                     class="mx-[5px]"
                   )
                     a(
@@ -96,6 +105,7 @@ div(
                       img(src="~/assets/img/twitter-x.svg", class="mr-[5px]")
                       p X (Twitter)
                   li(
+                    data-aos="fade-up",
                     class="mx-[5px]"
                   )
                     a(
@@ -107,8 +117,11 @@ div(
       section(
         class="mt-[20px] "
       )
-        h2 視覺圖
+        h2(
+          data-aos="fade-up"
+        ) 視覺圖
         div(
+          data-aos="fade-up",
           class="py-[10px]"
         )
           div(
@@ -117,7 +130,9 @@ div(
         div(
           class="grid md:grid-cols-2 gap-[10px]"
         )
-          div
+          div(
+            data-aos="fade-up"
+          )
             h2(class="mt-[20px]") 繪師介紹： art
             div(
               class="flex items-center py-[10px]"
@@ -130,7 +145,9 @@ div(
               )
                 p Name: art Name
                 p X (Twitter)
-          div
+          div(
+            data-aos="fade-up"
+          )
             h2(class="mt-[20px]") Live2D介紹： Live2D
             div(
               class="flex items-center py-[10px]"
