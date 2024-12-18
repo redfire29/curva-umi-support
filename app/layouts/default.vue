@@ -1,6 +1,6 @@
 <template lang="pug">
 div(
-  class="flex flex-col h-full",
+  class="flex flex-col h-full text-[#1B4965]",
 )
   app-header
   div(
