@@ -5,3 +5,7 @@
 html, body, #__nuxt {
   @apply h-full
 }
+
+html, body {
+  font-family:Microsoft JhengHei , Heiti TC , LiHei Pro , Apple LiGothic Medium;
+}
