@@ -209,11 +209,11 @@ div(
           li(
             v-for="history in historyList",
             data-aos="fade-up",
-            class="flex items-center",
+            class="flex items-start",
             class="text-[18px] text-[#1B4965] mb-[20px] last:mb-0"
           )
             p(
-              class="mr-[10px]"
+              class="mr-[10px] flex-none"
             ) {{history?.time}}
             a(
               :href="history?.link"
