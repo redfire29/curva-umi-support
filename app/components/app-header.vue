@@ -10,6 +10,15 @@ header(
     ul(
       class="flex items-center"
     )
+      //- li(
+      //-   class="px-[10px]"
+      //- )
+      //-   nuxt-link(
+      //-     :to="localePath('/about')",
+      //-     class="text-[#1B4965] block relative"
+      //-     class="after:h-[1px] after:absolute after:top-full after:bg-[#1B4965] after:left-0 after:right-full after:transition-all after:duration-300"
+      //-     class="md:hover:after:right-0"
+      //-   ) {{ $t('menu-about') }}
       li(
         class="px-[10px]"
       )
@@ -48,16 +57,7 @@ header(
 const { setLocale, t } = useI18n();
 const localePath = useLocalePath();
 
-const menuItems = [
-  // {
-  //   url: '/about',
-  //   title: 'About',
-  // },
-  {
-    url: '/songlist',
-    title: t('song-list'),
-  },
-]
+
 </script>
 
 <style>

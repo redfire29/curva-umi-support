@@ -90,7 +90,14 @@ div(
                 )
                   p {{ `${info.title}:` }}
                   p
-                    span(v-for="tag in info.content") {{ tag }}
+                    span(v-for="(tag, index) in info.content")
+                      a(
+                        :href="info?.tagLink?.[index]",
+                        target="_blank",
+                        class="border-b-[1px] border-[#1B4965]"
+                        v-if="info?.tagLink?.[index]"
+                      ) {{ tag }}
+                      span(v-else) {{ tag }}
               div(
                 class="flex items-center mt-[10px]"
               )
@@ -189,9 +196,59 @@ div(
           class="h-[1px] w-full bg-[#1B4965] mt-[10px]",
           :class="{'hidden': index == designList.length - 1}"
         )
+      section(
+        class="mt-[10px]",
+      )
+        h2(
+          data-aos="fade-up",
+          class="text-[32px] mb-[20px] text-[#1B4965] font-bold tracking-[2px]"
+        ) {{ $t('about-history') }}
+        ul(
+          class="md:w-1/2"
+        )
+          li(
+            v-for="history in historyList",
+            data-aos="fade-up",
+            class="flex items-center",
+            class="text-[18px] text-[#1B4965] mb-[20px] last:mb-0"
+          )
+            p(
+              class="mr-[10px]"
+            ) {{history?.time}}
+            a(
+              :href="history?.link"
+              target="_blank"
+              class="border-b-[1px] border-[#1B4965] "
+              class="md:hover:text-[#CAE9FF]"
+              v-if="history?.link"
+            )
+              p {{history?.content}}
+            p(
+              v-else
+            ) {{history?.content}}
 </template>
 
 <script setup>
+const { setLocale, t } = useI18n()
+
+const historyList = [
+  {
+    time: '2022-01-01',
+    content: t('history-demo'),
+    link: 'https://x.com/curva_umi',
+  },
+  {
+    time: '2022-01-01',
+    content: t('history-demo'),
+    link: 'https://www.youtube.com/@curvaumi',
+  },
+  {
+    time: '2024-12-07',
+    content: t('history-241207-1'),
+    link: 'https://x.com/curva_umi/status/1865368844900118723',
+  },
+]
+
 import { gsap } from "gsap";
 
 onMounted(() => {
@@ -222,7 +279,7 @@ onMounted(() => {
   })
 })
 
-const { setLocale, t } = useI18n()
+
 const information = [
   {
     title: t('infor-birthday'),
@@ -242,14 +299,17 @@ const tags = [
   {
     title: t('fan-name'),
     content: ['#うみサポ'],
+    tagLink: ['https://x.com/hashtag/%E3%81%86%E3%81%BF%E3%82%B5%E3%83%9D?src=hashtag_click'],
   },
   {
     title: t('fan-tag'),
     content: ['#うみチャント'],
+    tagLink: ['https://x.com/hashtag/%E3%81%86%E3%81%BF%E3%83%81%E3%83%A3%E3%83%B3%E3%83%88?src=hashtag_click'],
   },
   {
     title: t('fan-art'),
     content: ['#うみコレオ'],
+    tagLink: ['https://x.com/hashtag/%E3%81%86%E3%81%BF%E3%82%B3%E3%83%AC%E3%82%AA?src=hashtag_click'],
   },
 ]
 

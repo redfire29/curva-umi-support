@@ -156,7 +156,6 @@ const SearchSong = (searchKey) => {
         }
       })
     })
-    console.log(songList.value, 'songList');
   } else {
     showSongArray.value = songListAll.value;
     allSongSH(true);
