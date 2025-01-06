@@ -11,15 +11,15 @@ footer(
     div(
       class="flex items-center justify-between max-md:flex-col-reverse"
     )
-      //- a(
-      //-   href="https://discord.com/channels/1023496935950262352/1023496935950262355", target="_blank",
-      //-   class="group flex items-center max-md:mt-[10px]"
-      //- )
-      //-   div(
-      //-     class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full md:group-hover:bg-[#1B4965]"
-      //-   )
-      //-     img(src="~/assets/img/discord.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
-      //-   p うみサポ Discord
+      a(
+        href="https://t.co/oKazNascfC", target="_blank",
+        class="group flex items-center max-md:mt-[10px]"
+      )
+        div(
+          class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full md:group-hover:bg-[#1B4965]"
+        )
+          img(src="~/assets/img/discord.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
+        p うみサポ Discord
       div(
         class="pb-[5px] text-[14px]"
       )
