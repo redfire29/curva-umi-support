@@ -2,4 +2,6 @@
 
 
 [來羽うみ Youtube](https://www.youtube.com/@curvaumi)  
-[來羽うみ X(Twitter)](https://x.com/curva_umi)
+[來羽うみ X(Twitter)](https://x.com/curva_umi)  
+
+[うみサポ Discord](https://t.co/oKazNascfC)  
