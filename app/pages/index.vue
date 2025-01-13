@@ -45,7 +45,7 @@ div(
           )
             div(
               data-aos="fade-up",
-              class="max-w-[430px] h-[720px] bg-[#BEE9E8] mx-auto w-full"
+              class="max-w-[430px] h-[720px] bg-[#CAE9FF] mx-auto w-full"
             )
               p(class="px-[10px]") 圖片
             div(

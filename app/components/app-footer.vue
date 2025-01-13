@@ -5,7 +5,7 @@ footer(
   div(class="max-w-[1450px] mx-auto")
     div(
       @click="goTop",
-      class="absolute bottom-full right-[20px] cursor-pointer group z-40 bg-blue-400 rounded-full aspect-square p-[10px] flex items-center justify-center hover:bg-blue-500"
+      class="absolute bottom-[calc(100%+10px)] right-[20px] cursor-pointer group z-40 bg-blue-400 rounded-full aspect-square p-[10px] flex items-center justify-center hover:bg-blue-500"
     )
       p(class="text-[10px] text-white tracking-widest") TOP
     div(
