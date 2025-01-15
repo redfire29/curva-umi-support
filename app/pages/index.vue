@@ -233,14 +233,9 @@ const { setLocale, t } = useI18n()
 
 const historyList = [
   {
-    time: '2022-01-01',
-    content: t('history-demo'),
-    link: 'https://x.com/curva_umi',
-  },
-  {
-    time: '2022-01-01',
-    content: t('history-demo'),
-    link: 'https://www.youtube.com/@curvaumi',
+    time: '2025-1-23',
+    content: t('history-20250123-1'),
+    link: 'https://www.youtube.com/live/HRq1MVhPS5A?si=fg21_CmPBtaWUSAW',
   },
   {
     time: '2024-12-07',
