@@ -43,18 +43,20 @@ header(
     )
       li(
         @click="setLocale('ja')",
-        class="lang-btn"
+        class="lang-btn",
+        v-if="locale != 'ja'"
       )
         p 日本語
       li(
         @click="setLocale('zh')",
-        class="lang-btn"
+        class="lang-btn",
+        v-if="locale != 'zh'"
       )
         p 繁中
 </template>
 
 <script setup>
-const { setLocale, t } = useI18n();
+const { setLocale, t, locale } = useI18n();
 const localePath = useLocalePath();
 
 

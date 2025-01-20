@@ -146,7 +146,9 @@ div(
         div(
           v-if="design?.member?.length > 0"
         )
-          p {{ $t('design-member') }}
+          p(
+            class="mb-[10px] border-b-[1px] border-[#1B4965] pb-[10px]"
+          ) {{ $t('design-member') }}
           ul(
             class="grid md:grid-cols-2 gap-[10px]"
           )
@@ -155,49 +157,44 @@ div(
               data-aos="fade-up"
             )
               h2(
-                class="mt-[20px]"
+                class="mt-[0px]"
               ) {{ `${member?.title}` }}
               div(
-                class="flex items-center py-[10px]"
+                class="flex items-center py-[10px] gap-x-[10px]"
               )
-                div(
-                  class="w-[80px] aspect-square bg-slate-300"
-                )
-                  p {{ member?.img }}
-                div(
-                  class="flex-1 px-[20px]"
-                )
+                
+                div
                   p {{ member?.name }}
-                  ul(
-                    class="flex items-center"
+                ul(
+                  class="flex items-center"
+                )
+                  li(
+                    data-aos="fade-up",
+                    class="mx-[5px]",
+                    v-if="member?.twitter"
                   )
-                    li(
-                      data-aos="fade-up",
-                      class="mx-[5px]",
-                      v-if="member?.twitter"
+                    a(
+                      :href="member?.twitter", target="_blank",
+                      class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
                     )
-                      a(
-                        :href="member?.twitter", target="_blank",
-                        class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
-                      )
-                        img(src="~/assets/img/twitter-x.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
-                    li(
-                      data-aos="fade-up",
-                      class="mx-[5px]",
-                      v-if="member?.youtube"
+                      img(src="~/assets/img/twitter-x.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
+                  li(
+                    data-aos="fade-up",
+                    class="mx-[5px]",
+                    v-if="member?.youtube"
+                  )
+                    a(
+                      :href="member?.youtube", target="_blank",
+                      class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
                     )
-                      a(
-                        :href="member?.youtube", target="_blank",
-                        class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full group md:hover:bg-[#1B4965]"
-                      )
-                        img(src="~/assets/img/youtube.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
+                      img(src="~/assets/img/youtube.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
         div(
           data-aos="fade-up",
           class="h-[1px] w-full bg-[#1B4965] mt-[10px]",
           :class="{'hidden': index == designList.length - 1}"
         )
       section(
-        class="mt-[10px]",
+        class="pt-[10px] mt-[10px] border-t-[1px] border-[#1B4965] pb-[50px]",
       )
         h2(
           data-aos="fade-up",
@@ -314,41 +311,41 @@ const designList = [
     design: ['圖片網址'],
     member: [
       {
-        title: `${t('design-art')}`,
-        name: 'Art Name',
+        title: `${t('design-1-1')}`,
+        name: 'ユウシイ様',
         img: 'img link',
-        twitter: 'https://x.com/curva_umi',
-        youtube: 'https://www.youtube.com/@curvaumi',
+        twitter: 'https://x.com/Zoey_Yusi',
+        youtube: '',
       },
       {
-        title: `${t('design-live')}`,
-        name: 'Live2D Name',
+        title: `${t('design-1-2')}`,
+        name: 'agasa.様',
         img: 'img link',
-        twitter: 'https://x.com/curva_umi',
-        youtube: 'https://www.youtube.com/@curvaumi',
+        twitter: 'https://x.com/977red',
+        youtube: '',
       },
     ]
   },
-  {
-    title: t('design02'),
-    design: ['圖片網址'],
-    member: [
-      {
-        title: `${t('design-art')}`,
-        name: 'Art Name2',
-        img: 'img link2',
-        twitter: 'https://x.com/curva_umi',
-        youtube: 'https://www.youtube.com/@curvaumi',
-      },
-      {
-        title: `${t('design-live')}`,
-        name: 'Live2D Name2',
-        img: 'img link2',
-        twitter: 'https://x.com/curva_umi',
-        youtube: 'https://www.youtube.com/@curvaumi',
-      },
-    ]
-  }
+  // {
+  //   title: t('design02'),
+  //   design: ['圖片網址'],
+  //   member: [
+  //     {
+  //       title: `${t('design-art')}`,
+  //       name: 'Art Name2',
+  //       img: 'img link2',
+  //       twitter: 'https://x.com/curva_umi',
+  //       youtube: 'https://www.youtube.com/@curvaumi',
+  //     },
+  //     {
+  //       title: `${t('design-live')}`,
+  //       name: 'Live2D Name2',
+  //       img: 'img link2',
+  //       twitter: 'https://x.com/curva_umi',
+  //       youtube: 'https://www.youtube.com/@curvaumi',
+  //     },
+  //   ]
+  // }
 ]
 
 useHead({

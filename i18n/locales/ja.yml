@@ -24,8 +24,8 @@ directions: |
 design01: 初期衣装
 design02: 新衣装
 design-member: 関係者紹介
-design-art: イラストレーター紹介
-design-live: Live2D
+design-art: キャラクターデザイン
+design-live: キービジュアル
 design-h2: ビジュアルデザイン
 about-h2: ABOUT
 menu-about: うみについて
@@ -33,3 +33,5 @@ history-demo: テストテストテストテストテストテストテスト
 about-history: 履歴
 history-241207-1: 最初のツイート
 history-20250123-1: 初配信
+design-1-1: キャラクターデザイン
+design-1-2: キービジュアル
