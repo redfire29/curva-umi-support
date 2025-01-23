@@ -48,8 +48,14 @@ div(
               class="max-w-[430px] h-[720px] bg-[#CAE9FF] mx-auto w-full"
             )
               p(class="px-[10px]") 圖片
+            //- div(
+            //-   data-aos="fade-up",
+            //-   class="max-w-[430px] mx-auto w-full"
+            //- )
+            //-   //- p(class="px-[10px]") 圖片
+            //-   img(src="~/assets/img/picture.jpeg")
             div(
-              class="flex-1 md:ml-[10px] lg:ml-[30px]"
+              class="flex-1 mt-[10px] md:mt-0 md:ml-[10px] lg:ml-[30px]"
             )
               h3(
                 data-aos="fade-up",
@@ -61,7 +67,7 @@ div(
                 ) Curva Umi
               p(
                 data-aos="fade-up",
-                class="text-[18px] text-[#1B4965] mb-[10px]"
+                class="text-[18px] text-[#1B4965] mb-[10px] whitespace-pre-wrap"
               ) {{ $t('about') }}
               p(
                 data-aos="fade-up",
