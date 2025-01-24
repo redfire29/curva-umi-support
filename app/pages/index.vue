@@ -29,30 +29,36 @@ div(
       class="max-w-[1200px] mx-auto relative z-20"
     )
       section(
-        class="mb-[20px] flex items-center justify-center gap-[10px] flex-wrap"
+        class="mb-[20px]"
       )
-        p(
-          data-aos="fade-up",
-          class="text-[18px] text-[#1B4965] whitespace-pre-wrap"
-        ) {{ $t('about-web') }}
-        a(
-          data-aos="fade-up",
-          href="https://t.co/oKazNascfC",
-          target="_blank",
-          class="group"
+        div(
+          class="flex items-center justify-center gap-[10px] flex-wrap"
         )
-          div(
-            class="flex items-center"
+          p(
+            data-aos="fade-up",
+            class="text-[18px] text-[#1B4965] whitespace-pre-wrap"
+          ) {{ $t('about-web') }}
+          a(
+            data-aos="fade-up",
+            href="https://t.co/oKazNascfC",
+            target="_blank",
+            class="group"
           )
             div(
-              class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full md:group-hover:bg-[#1B4965]"
+              class="flex items-center"
             )
-              img(src="~/assets/img/discord.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
-            p うみサポ Discord
-        p(
-          data-aos="fade-up",
-          class="text-[12px] text-[#1B4965] whitespace-pre-wrap"
-        ) {{ $t('ps') }}
+              div(
+                class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full md:group-hover:bg-[#1B4965]"
+              )
+                img(src="~/assets/img/discord.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
+              p うみサポ Discord
+        div(
+          class="flex items-center justify-center mt-[10px]"
+        )
+          p(
+            data-aos="fade-up",
+            class="text-[12px] text-[#1B4965] whitespace-pre-wrap"
+          ) {{ $t('ps') }}
       section(
         class="mb-[20px]"
       )
@@ -356,15 +362,15 @@ const designList = [
       {
         imgList: [
           {
-            src: './design/01/picture.jpeg',
+            src: '/curva-umi-support/design/01/picture.jpeg',
             alt: '初期衣裝1',
           },
           {
-            src: './design/01/picture2.jpeg',
+            src: '/curva-umi-support/design/01/picture2.jpeg',
             alt: '初期衣裝2',
           },
           {
-            src: './design/01/picture3.jpeg',
+            src: '/curva-umi-support/design/01/picture3.jpeg',
             alt: '初期衣裝3',
           }
         ],
