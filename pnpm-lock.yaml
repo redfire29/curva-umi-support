@@ -26,9 +26,6 @@ dependencies:
   nuxt:
     specifier: ^3.14.1592
     version: 3.14.1592(eslint@9.17.0)(rollup@4.28.1)(typescript@5.7.2)(vite@5.4.11)
-  nuxt-swiper:
-    specifier: ^2.0.0
-    version: 2.0.0(rollup@4.28.1)
   vite-plugin-pug:
     specifier: ^0.4.1
     version: 0.4.1
@@ -911,8 +908,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 11.0.0-beta.2
-      '@intlify/shared': 11.0.0-beta.2
+      '@intlify/message-compiler': 11.0.0-rc.1
+      '@intlify/shared': 11.0.0-rc.1
       acorn: 8.14.0
       escodegen: 2.1.0
       estree-walker: 2.0.2
@@ -955,11 +952,11 @@ packages:
       source-map-js: 1.2.1
     dev: false
 
-  /@intlify/message-compiler@11.0.0-beta.2:
-    resolution: {integrity: sha512-/cJHP1n45Zlf9tbm/hudLrUwXzJZngR9OMTQk32H1S4lBjM2996wzKTHuLbaJJlJZNTTjnfWZUHPb+F6sE6p1Q==}
+  /@intlify/message-compiler@11.0.0-rc.1:
+    resolution: {integrity: sha512-TGw2uBfuTFTegZf/BHtUQBEKxl7Q/dVGLoqRIdw8lFsp9g/53sYn5iD+0HxIzdYjbWL6BTJMXCPUHp9PxDTRPw==}
     engines: {node: '>= 16'}
     dependencies:
-      '@intlify/shared': 11.0.0-beta.2
+      '@intlify/shared': 11.0.0-rc.1
       source-map-js: 1.2.1
     dev: false
 
@@ -968,8 +965,13 @@ packages:
     engines: {node: '>= 16'}
     dev: false
 
-  /@intlify/shared@11.0.0-beta.2:
-    resolution: {integrity: sha512-N6ngJfFaVA0l2iLtx/SymgHOBW4wiS5Pyue7YmY/G+mrGjesi+S+U+u/Xlv6pZa/YIBfeM4QB07lI7rz1YqKLg==}
+  /@intlify/shared@11.0.0-rc.1:
+    resolution: {integrity: sha512-8tR1xe7ZEbkabTuE/tNhzpolygUn9OaYp9yuYAF4MgDNZg06C3Qny80bes2/e9/Wm3aVkPUlCw6WgU7mQd0yEg==}
+    engines: {node: '>= 16'}
+    dev: false
+
+  /@intlify/shared@11.0.1:
+    resolution: {integrity: sha512-lH164+aDDptHZ3dBDbIhRa1dOPQUp+83iugpc+1upTOWCnwyC1PVis6rSWNMMJ8VQxvtHQB9JMib48K55y0PvQ==}
     engines: {node: '>= 16'}
     dev: false
 
@@ -988,8 +990,8 @@ packages:
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.17.0)
       '@intlify/bundle-utils': 10.0.0(vue-i18n@10.0.5)
-      '@intlify/shared': 10.0.5
-      '@intlify/vue-i18n-extensions': 7.0.0(@intlify/shared@10.0.5)(vue-i18n@10.0.5)(vue@3.5.13)
+      '@intlify/shared': 11.0.1
+      '@intlify/vue-i18n-extensions': 7.0.0(@intlify/shared@11.0.1)(vue-i18n@10.0.5)(vue@3.5.13)
       '@rollup/pluginutils': 5.1.4(rollup@4.28.1)
       '@typescript-eslint/scope-manager': 8.18.1
       '@typescript-eslint/typescript-estree': 8.18.1(typescript@5.7.2)
@@ -1016,7 +1018,7 @@ packages:
     engines: {node: '>= 18'}
     dev: false
 
-  /@intlify/vue-i18n-extensions@7.0.0(@intlify/shared@10.0.5)(vue-i18n@10.0.5)(vue@3.5.13):
+  /@intlify/vue-i18n-extensions@7.0.0(@intlify/shared@11.0.1)(vue-i18n@10.0.5)(vue@3.5.13):
     resolution: {integrity: sha512-MtvfJnb4aklpCU5Q/dkWkBT/vGsp3qERiPIwtTq5lX4PCLHtUprAJZp8wQj5ZcwDaFCU7+yVMjYbeXpIf927cA==}
     engines: {node: '>= 18'}
     peerDependencies:
@@ -1035,7 +1037,7 @@ packages:
         optional: true
     dependencies:
       '@babel/parser': 7.26.3
-      '@intlify/shared': 10.0.5
+      '@intlify/shared': 11.0.1
       vue: 3.5.13(typescript@5.7.2)
       vue-i18n: 10.0.5(vue@3.5.13)
     dev: false
@@ -5028,17 +5030,6 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt-swiper@2.0.0(rollup@4.28.1):
-    resolution: {integrity: sha512-9NJ7ipoo3sBqFOtnYccVjVPuywGqY1vA82R2YinHo/U4Mw8c0Uy/Q+ep7qihLWr/3wZq9BqFOKPuWKw5xKl77Q==}
-    dependencies:
-      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.28.1)
-      swiper: 11.1.15
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-    dev: false
-
   /nuxt@3.14.1592(eslint@9.17.0)(rollup@4.28.1)(typescript@5.7.2)(vite@5.4.11):
     resolution: {integrity: sha512-roWAQH4Mb6WY72cNos+YVw0DgTCNAhNygiAMCedM7hbX6ESTR2n3VH7tU0yIWDPe/hfFdii4M4wWTTNHOtS44g==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -6471,11 +6462,6 @@ packages:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.1.1
-    dev: false
-
-  /swiper@11.1.15:
-    resolution: {integrity: sha512-IzWeU34WwC7gbhjKsjkImTuCRf+lRbO6cnxMGs88iVNKDwV+xQpBCJxZ4bNH6gSrIbbyVJ1kuGzo3JTtz//CBw==}
-    engines: {node: '>= 4.7.0'}
     dev: false
 
   /system-architecture@0.1.0:

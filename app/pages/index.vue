@@ -9,7 +9,7 @@ div(
       data-aos="fade-up",
       class="fixed top-0 left-0 right-0 h-[210px] -z-10 flex items-center justify-center"
     )
-      p 來羽うみ
+      img(src="~/assets/img/logo.jpeg", class="h-[100px]", alt="Curva Umi Logo")
   wave
   div(
     class="bg-[#62B6CB] relative py-[20px] px-[10px] pb-[40px]"
@@ -29,6 +29,27 @@ div(
       class="max-w-[1200px] mx-auto relative z-20"
     )
       section(
+        class="mb-[20px] flex items-center justify-center gap-[10px] flex-wrap"
+      )
+        p(
+          data-aos="fade-up",
+          class="text-[18px] text-[#1B4965] whitespace-pre-wrap"
+        ) {{ $t('about-web') }}
+        a(
+          data-aos="fade-up",
+          href="https://t.co/oKazNascfC",
+          target="_blank",
+          class="group"
+        )
+          div(
+            class="flex items-center"
+          )
+            div(
+              class="flex items-center justify-center w-[30px] h-[30px] bg-[#CAE9FF] rounded-full md:group-hover:bg-[#1B4965]"
+            )
+              img(src="~/assets/img/discord.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
+            p うみサポ Discord
+      section(
         class="mb-[20px]"
       )
         h2(
@@ -43,17 +64,17 @@ div(
           div(
             class="md:flex items-start mt-[10px]"
           )
-            div(
-              data-aos="fade-up",
-              class="max-w-[430px] h-[720px] bg-[#CAE9FF] mx-auto w-full"
-            )
-              p(class="px-[10px]") 圖片
             //- div(
             //-   data-aos="fade-up",
-            //-   class="max-w-[430px] mx-auto w-full"
+            //-   class="max-w-[430px] h-[720px] bg-[#CAE9FF] mx-auto w-full"
             //- )
-            //-   //- p(class="px-[10px]") 圖片
-            //-   img(src="~/assets/img/picture.jpeg")
+            //-   p(class="px-[10px]") 圖片
+            div(
+              data-aos="fade-up",
+              class="max-w-[430px] mx-auto w-full"
+            )
+              //- p(class="px-[10px]") 圖片
+              img(src="~/assets/img/picture.jpeg")
             div(
               class="flex-1 mt-[10px] md:mt-0 md:ml-[10px] lg:ml-[30px]"
             )
@@ -145,10 +166,13 @@ div(
           class="py-[10px]",
           v-for="item in design.design"
         )
-          div(
-            class="w-full h-[200px] bg-slate-300"
+          ul(
+            class="bg-white flex items-center max-md:flex-col gap-[10px] p-[10px]"
           )
-            p {{ item }}
+            li(
+              v-for="img in item?.imgList",
+            )
+              img(:src="img.src", :alt="img.alt", class="max-h-[500px] object-contain mx-auto")
         div(
           v-if="design?.member?.length > 0"
         )
@@ -287,6 +311,10 @@ const information = [
     title: t('infor-like'),
     content: t('infor-like-content'),
   },
+  {
+    title: t('infor-like-food'),
+    content: t('infor-like-food-content'),
+  },
 ]
 
 const tags = [
@@ -309,12 +337,35 @@ const tags = [
     content: ['#うみコレオ'],
     tagLink: ['https://x.com/hashtag/%E3%81%86%E3%81%BF%E3%82%B3%E3%83%AC%E3%82%AA?src=hashtag_click'],
   },
+  {
+    title: t('all-type'),
+    content: ['#來羽うみ'],
+    tagLink: ['https://x.com/hashtag/%E4%BE%86%E7%BE%BD%E3%81%86%E3%81%BF?src=hashtag_click'],
+  },
 ]
+
 
 const designList = [
   {
     title: t('design01'),
-    design: ['圖片網址'],
+    design: [
+      {
+        imgList: [
+          {
+            src: './design/01/picture.jpeg',
+            alt: '初期衣裝1',
+          },
+          {
+            src: './design/01/picture2.jpeg',
+            alt: '初期衣裝2',
+          },
+          {
+            src: './design/01/picture3.jpeg',
+            alt: '初期衣裝3',
+          }
+        ],
+      },
+    ],
     member: [
       {
         title: `${t('design-1-1')}`,
