@@ -49,6 +49,10 @@ div(
             )
               img(src="~/assets/img/discord.svg", class="md:group-hover:invert md:group-hover:grayscale w-[16px]")
             p うみサポ Discord
+        p(
+          data-aos="fade-up",
+          class="text-[12px] text-[#1B4965] whitespace-pre-wrap"
+        ) {{ $t('ps') }}
       section(
         class="mb-[20px]"
       )
