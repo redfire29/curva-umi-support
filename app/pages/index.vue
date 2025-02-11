@@ -270,6 +270,11 @@ const { setLocale, t } = useI18n()
 
 const historyList = [
   {
+    time: '2025-02-11',
+    content: t('history-20250211-1'),
+    link: 'https://www.youtube.com/live/TOeNTd-pHtI?si=0j63Qov-tBfHUapO',
+  },
+  {
     time: '2025-01-23',
     content: t('history-20250123-1'),
     link: 'https://www.youtube.com/live/HRq1MVhPS5A?si=fg21_CmPBtaWUSAW',
