@@ -76,6 +76,7 @@ div
           li(
             v-for="song in list.songList",
             class="p-[10px] border-b-[1px] border-[#5FA8D3] cursor-pointer bg-[#CAE9FF]",
+            class="md:hover:opacity-70"
             @click="changeYoutube(song.songLink)"
             v-show="song.showDate",
           )

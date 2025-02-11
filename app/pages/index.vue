@@ -348,6 +348,11 @@ const tags = [
     tagLink: ['https://x.com/hashtag/%E3%81%86%E3%81%BF%E3%82%B3%E3%83%AC%E3%82%AA?src=hashtag_click'],
   },
   {
+    title: t('song-request'),
+    content: ['#うみクロス'],
+    tagLink: ['https://x.com/hashtag/%E3%81%86%E3%81%BF%E3%82%AF%E3%83%AD%E3%82%B9?src=hashtag_click'],
+  },
+  {
     title: t('all-type'),
     content: ['#來羽うみ'],
     tagLink: ['https://x.com/hashtag/%E4%BE%86%E7%BE%BD%E3%81%86%E3%81%BF?src=hashtag_click'],
