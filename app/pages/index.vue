@@ -241,7 +241,7 @@ div(
           class="text-[32px] mb-[20px] text-[#1B4965] font-bold tracking-[2px]"
         ) {{ $t('about-history') }}
         ul(
-          class="md:w-1/2"
+          class=""
         )
           li(
             v-for="history in historyList",
@@ -255,7 +255,7 @@ div(
             a(
               :href="history?.link"
               target="_blank"
-              class="border-b-[1px] border-[#1B4965] "
+              class="border-b-[1px] border-[#1B4965]"
               class="md:hover:text-[#CAE9FF]"
               v-if="history?.link"
             )
@@ -269,6 +269,11 @@ div(
 const { setLocale, t } = useI18n()
 
 const historyList = [
+  {
+    time: '2025-02-11',
+    content: t('history-20250220-1'),
+    link: 'https://www.youtube.com/live/kxVDGFxgOYQ?si=7wBLDuXVbKT5nDGK',
+  },
   {
     time: '2025-02-11',
     content: t('history-20250211-1'),
