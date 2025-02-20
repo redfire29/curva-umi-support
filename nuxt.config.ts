@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
   ],
   i18n: {
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
     // locales: ['ja', 'zh'],
     langDir: 'locales',
     locales: [
