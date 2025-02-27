@@ -1,5 +1,83 @@
 export default [
     {
+        "date": "2025/02/27",
+        "streamName": "【#歌枠】難易度S級⁈⚡️神曲に挑戦する歌枠🎤🐧Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "火炎",
+                "singer": "女王蜂",
+                "songTime": "00:06:20",
+                "songLink": "https://www.youtube.com/watch?v=w3AhT1-zTWU&t=380s"
+            },
+            {
+                "showDate": true,
+                "songName": "Gamble Rumble",
+                "singer": "m.o.v.e",
+                "songTime": "00:12:28",
+                "songLink": "https://www.youtube.com/watch?v=w3AhT1-zTWU&t=748s"
+            },
+            {
+                "showDate": true,
+                "songName": "神っぽいな",
+                "singer": "ピノキオピー feat. 初音ミク",
+                "songTime": "00:20:03",
+                "songLink": "https://www.youtube.com/watch?v=w3AhT1-zTWU&t=1203s"
+            },
+            {
+                "showDate": true,
+                "songName": "フォニイ",
+                "singer": "ツミキ feat. 可不",
+                "songTime": "00:23:28",
+                "songLink": "https://www.youtube.com/watch?v=w3AhT1-zTWU&t=1408s"
+            },
+            {
+                "showDate": true,
+                "songName": "怪物",
+                "singer": "YOASOBI",
+                "songTime": "00:28:56",
+                "songLink": "https://www.youtube.com/watch?v=w3AhT1-zTWU&t=1736s"
+            },
+            {
+                "showDate": true,
+                "songName": "私は最強",
+                "singer": "Ado",
+                "songTime": "00:32:27",
+                "songLink": "https://www.youtube.com/watch?v=w3AhT1-zTWU&t=1947s"
+            },
+            {
+                "showDate": true,
+                "songName": "六兆年と一夜物語",
+                "singer": "kemu feat. IA",
+                "songTime": "00:03:00",
+                "songLink": "https://www.youtube.com/watch?v=wOlilMZzeKE&t=180s"
+            },
+            {
+                "showDate": true,
+                "songName": "ヒバナ",
+                "singer": "DECO*27 feat. 初音ミク",
+                "songTime": "00:06:41",
+                "songLink": "https://www.youtube.com/watch?v=wOlilMZzeKE&t=401s"
+            },
+            {
+                "showDate": true,
+                "songName": "海色",
+                "singer": "AKINO from bless4",
+                "songTime": "00:02:02",
+                "songLink": "https://www.youtube.com/watch?v=AICnkvDUZ7g&t=122s"
+            },
+            {
+                "showDate": true,
+                "songName": "ノーザンクロス",
+                "singer": "シェリル・ノーム starring May'n",
+                "songTime": "00:06:18",
+                "songLink": "https://www.youtube.com/watch?v=AICnkvDUZ7g&t=378s"
+            }
+        ]
+    },
+    {
         "date": "2025/02/20",
         "streamName": "【#歌枠】最強アニソン縛り🎤冬でも激アツな歌枠🔥Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

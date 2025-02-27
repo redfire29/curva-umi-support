@@ -268,29 +268,6 @@ div(
 <script setup>
 const { setLocale, t } = useI18n()
 
-const historyList = [
-  {
-    time: '2025-02-11',
-    content: t('history-20250220-1'),
-    link: 'https://www.youtube.com/live/kxVDGFxgOYQ?si=7wBLDuXVbKT5nDGK',
-  },
-  {
-    time: '2025-02-11',
-    content: t('history-20250211-1'),
-    link: 'https://www.youtube.com/live/TOeNTd-pHtI?si=0j63Qov-tBfHUapO',
-  },
-  {
-    time: '2025-01-23',
-    content: t('history-20250123-1'),
-    link: 'https://www.youtube.com/live/HRq1MVhPS5A?si=fg21_CmPBtaWUSAW',
-  },
-  {
-    time: '2024-12-07',
-    content: t('history-241207-1'),
-    link: 'https://x.com/curva_umi/status/1865368844900118723',
-  },
-]
-
 import { gsap } from "gsap";
 
 onMounted(() => {
@@ -428,6 +405,34 @@ const designList = [
   //     },
   //   ]
   // }
+]
+
+const historyList = [
+  {
+    time: '2025-02-27',
+    content: t('history-20250227-1'),
+    link: 'https://www.youtube.com/live/w3AhT1-zTWU?si=--9AmD35XhFINtdT',
+  },
+  {
+    time: '2025-02-20',
+    content: t('history-20250220-1'),
+    link: 'https://www.youtube.com/live/kxVDGFxgOYQ?si=7wBLDuXVbKT5nDGK',
+  },
+  {
+    time: '2025-02-11',
+    content: t('history-20250211-1'),
+    link: 'https://www.youtube.com/live/TOeNTd-pHtI?si=0j63Qov-tBfHUapO',
+  },
+  {
+    time: '2025-01-23',
+    content: t('history-20250123-1'),
+    link: 'https://www.youtube.com/live/HRq1MVhPS5A?si=fg21_CmPBtaWUSAW',
+  },
+  {
+    time: '2024-12-07',
+    content: t('history-241207-1'),
+    link: 'https://x.com/curva_umi/status/1865368844900118723',
+  },
 ]
 
 useHead({
