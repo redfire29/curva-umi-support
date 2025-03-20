@@ -1,5 +1,69 @@
 export default [
     {
+        "date": "2025/03/20",
+        "streamName": "【#歌枠】お昼のまったり歌枠🎤🐧Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "ロマンティックあげるよ",
+                "singer": "橋本潮",
+                "songTime": "2:54",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=174s"
+            },
+            {
+                "showDate": true,
+                "songName": "星間飛行",
+                "singer": "ランカ・リー（中島愛）",
+                "songTime": "11:08",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=668s"
+            },
+            {
+                "showDate": true,
+                "songName": "神のまにまに",
+                "singer": "れるりり",
+                "songTime": "17:23",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=1043s"
+            },
+            {
+                "showDate": true,
+                "songName": "夜咄ディセイブ",
+                "singer": "じん",
+                "songTime": "26:49",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=1609s&pp=0gcJCTEAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "たばこ",
+                "singer": "コレサワ",
+                "songTime": "33:47",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=2027s&pp=0gcJCTEAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "Sincerely",
+                "singer": "TRUE",
+                "songTime": "42:07",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=2527s"
+            },
+            {
+                "showDate": true,
+                "songName": "世界は恋に落ちている",
+                "singer": "CHiCO with HoneyWorks",
+                "songTime": "49:42",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=2982s"
+            },
+            {
+                "showDate": true,
+                "songName": "YUME日和",
+                "singer": "島谷ひとみ",
+                "songTime": "59:17",
+                "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=3557s"
+            },
+        ]
+    },
+    {
         "date": "2025/02/27",
         "streamName": "【#歌枠】難易度S級⁈⚡️神曲に挑戦する歌枠🎤🐧Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
