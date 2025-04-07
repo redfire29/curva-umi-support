@@ -48,7 +48,7 @@ export default defineNuxtConfig({
         { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        // { hid: 'keywords', name: 'keywords', content: '' },
+        { hid: 'keywords', name: 'keywords', content: '來羽うみSupport,curva-umi-support,curva umi support,來羽うみ,Curva Umi' },
         // { hid: 'description', name: 'description', content: '' },
         // { hid: 'og:site_name', property: 'og:site_name', content: '' },
         { hid: 'og:image', property: 'og:image', content: 'https://redfire29.github.io/curva-umi-support/og-image.jpeg' },

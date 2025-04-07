@@ -321,8 +321,8 @@ const tags = [
   },
   {
     title: t('fan-name'),
-    content: ['#うみサポ'],
-    tagLink: ['https://x.com/hashtag/%E3%81%86%E3%81%BF%E3%82%B5%E3%83%9D?src=hashtag_click'],
+    content: ['うみサポ'],
+    tagLink: [''],
   },
   {
     title: t('fan-tag'),
