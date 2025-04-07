@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2025/04/07 - song list update  
+- 桜見れるかな？🌸お昼のアニソン歌枠🎤🐧Curva Umi Singing Stream
+
 2025/03/30 - song list update  
 - お昼のまったり歌枠🎤🐧Curva Umi Singing Stream
 

@@ -1,5 +1,69 @@
 export default [
     {
+        "date": "2025/3/31",
+        "streamName": "【#歌枠】桜見れるかな？🌸お昼のアニソン歌枠🎤🐧Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "花ハ踊レヤいろはにほ",
+                "singer": "チーム“ハナヤマタ”",
+                "songTime": "00:05:02",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=302s"
+            },
+            {
+                "showDate": true,
+                "songName": "空色デイズ",
+                "singer": "中川翔子",
+                "songTime": "00:13:42",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=822s"
+            },
+            {
+                "showDate": true,
+                "songName": "UNION",
+                "singer": "OxT",
+                "songTime": "00:22:06",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=1326s"
+            },
+            {
+                "showDate": true,
+                "songName": "桜流し",
+                "singer": "宇多田ヒカル",
+                "songTime": "00:27:43",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=1663s"
+            },
+            {
+                "showDate": true,
+                "songName": "Catch You Catch Me",
+                "singer": "グミ(日向めぐみ)",
+                "songTime": "00:37:55",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=2275s"
+            },
+            {
+                "showDate": true,
+                "songName": "CLEAR",
+                "singer": "坂本真綾",
+                "songTime": "00:41:49",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=2509s"
+            },
+            {
+                "showDate": true,
+                "songName": "コネクト",
+                "singer": "ClariS",
+                "songTime": "00:48:39",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=2919s"
+            },
+            {
+                "showDate": true,
+                "songName": "天使にふれたよ!",
+                "singer": "放課後ティータイム (豊崎愛生,日笠陽子,佐藤聡美,寿美菜子,竹達彩奈)",
+                "songTime": "00:56:25",
+                "songLink": "https://www.youtube.com/watch?v=T8qAMNmxeCc&t=3385s&pp=0gcJCTAAlc8ueATH"
+            }
+        ]
+    },
+    {
         "date": "2025/03/20",
         "streamName": "【#歌枠】お昼のまったり歌枠🎤🐧Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
