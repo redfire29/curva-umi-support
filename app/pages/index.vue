@@ -321,8 +321,8 @@ const tags = [
   },
   {
     title: t('fan-name'),
-    content: ['うみサポ'],
-    tagLink: [''],
+    content: ['#うみサポ'],
+    tagLink: ['https://x.com/search?q=%23%E3%81%86%E3%81%BF%E3%82%B5%E3%83%9D&src=hashtag_click'],
   },
   {
     title: t('fan-tag'),
@@ -408,6 +408,11 @@ const designList = [
 ]
 
 const historyList = [
+  {
+    time: '2025-04-10',
+    content: t('history-20250410-1'),
+    link: 'https://www.youtube.com/live/R-ZaTGDJej4?si=E2yjP5CeCSI2KViZ',
+  },
   {
     time: '2025-03-31',
     content: t('history-20250331-1'),

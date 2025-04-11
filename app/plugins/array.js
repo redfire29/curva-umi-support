@@ -1,5 +1,76 @@
 export default [
     {
+        "date": "2025/4/10",
+        "streamName": "【#歌枠】あなたの歌姫になりたい歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "一度だけの恋なら",
+                "singer": "ワルキューレ",
+                "songTime": "06:54",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=414s"
+            },
+            {
+                "showDate": true,
+                "songName": "ライオン",
+                "singer": "シェリル・ノーム starring May'n、ランカ・リー=中島愛",
+                "songTime": "13:15",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=795s"
+            },
+            {
+                "showDate": true,
+                "songName": "ワールドイズマイン",
+                "singer": "supercell feat. 初音ミク",
+                "songTime": "20:04",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=1204s"
+            },
+            {
+                "showDate": true,
+                "songName": "First Love",
+                "singer": "宇多田ヒカル",
+                "songTime": "29:11",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=1751s"
+            },
+            {
+                "showDate": true,
+                "songName": "START:DASH!!",
+                "singer": "高坂穂乃果（CV.新田恵海）、南ことり（CV.内田彩）、園田海未（CV.三森すずこ）",
+                "songTime": "36:11",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=2171s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "Sing My Pleasure",
+                "singer": "ヴィヴィ(VO.八木海莉)",
+                "songTime": "42:55",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=2575s"
+            },
+            {
+                "showDate": true,
+                "songName": "only my railgun",
+                "singer": "fripSide",
+                "songTime": "49:55",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=2995s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "深愛",
+                "singer": "水樹奈々",
+                "songTime": "58:35",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=3515s"
+            },
+            {
+                "showDate": true,
+                "songName": "Everything",
+                "singer": "MISIA",
+                "songTime": "1:06:15",
+                "songLink": "https://www.youtube.com/watch?v=R-ZaTGDJej4&t=3975s"
+            }
+        ]
+    },
+    {
         "date": "2025/3/31",
         "streamName": "【#歌枠】桜見れるかな？🌸お昼のアニソン歌枠🎤🐧Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

@@ -5,7 +5,7 @@ var startIndex = 0;
 var songSing = true;
 
 document.querySelectorAll('.ytd-expander#content #content-text')[getIndex].querySelectorAll('a').forEach((item, index) => {
-    var songlist = document.querySelectorAll('.ytd-expander#content #content-text')[getIndex].querySelectorAll('span')[0].textContent.split('\n');
+    var songlist = document.querySelectorAll('.ytd-expander#content #content-text')[getIndex].querySelectorAll('span')[0].textContent.split('\n').filter(line => line.trim() !== "");
 
     var getListName1 = songlist[index+startIndex]?.split(splitWord)[1]?.trim();
     var getListName2 = songlist[index+startIndex]?.split(splitWord)[0]?.split(item.textContent)[1]?.trim();
