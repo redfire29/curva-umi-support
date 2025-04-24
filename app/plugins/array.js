@@ -1,5 +1,83 @@
 export default [
     {
+        "date": "2025/04/24",
+        "streamName": "【#歌枠】お久しぶりなので全力で歌う歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:05",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=5s"
+            },
+            {
+                "showDate": true,
+                "songName": "Bunny Girl",
+                "singer": "AKASAKI",
+                "songTime": "00:07:13",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=433s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "月のワルツ",
+                "singer": "諫山実生",
+                "songTime": "00:12:53",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=773s"
+            },
+            {
+                "showDate": true,
+                "songName": "タマシイレボリューション",
+                "singer": "Superfly",
+                "songTime": "00:19:38",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=1178s"
+            },
+            {
+                "showDate": true,
+                "songName": "妄想感傷代償連盟",
+                "singer": "DECO*27 feat. 初音ミク",
+                "songTime": "00:26:05",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=1565s"
+            },
+            {
+                "showDate": true,
+                "songName": "乙女解剖",
+                "singer": "DECO*27 feat. 初音ミク",
+                "songTime": "00:31:44",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=1904s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛♡スクリ～ム!",
+                "singer": "AiScReam",
+                "songTime": "00:38:26",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=2306s"
+            },
+            {
+                "showDate": true,
+                "songName": "Stellar Stellar",
+                "singer": "星街すいせい",
+                "songTime": "00:45:01",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=2701s"
+            },
+            {
+                "showDate": true,
+                "songName": "涙色ハートビート",
+                "singer": "僕と僕。",
+                "songTime": "00:55:19",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=3319s"
+            },
+            {
+                "showDate": true,
+                "songName": "君の知らない物語",
+                "singer": "supercell",
+                "songTime": "01:03:30",
+                "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=3810s&pp=0gcJCTAAlc8ueATH"
+            }
+        ]
+    },
+    {
         "date": "2025/4/10",
         "streamName": "【#歌枠】あなたの歌姫になりたい歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

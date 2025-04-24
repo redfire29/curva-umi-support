@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2025/04/24 - song list update  
+- お久しぶりなので全力で歌う歌枠🎤🩵Curva Umi Singing Stream
+
 2025/04/11 - song list update  
 - あなたの歌姫になりたい歌枠🎤🩵Curva Umi Singing Stream
 
