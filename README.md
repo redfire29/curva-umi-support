@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2025/05/05 - song list update  
+- アニソンボカロ縛り⚡️まだまだ夜は終わらない歌枠🎤🐧來羽うみ/Curva Umi Singing Stream
+
 2025/04/24 - song list update  
 - お久しぶりなので全力で歌う歌枠🎤🩵Curva Umi Singing Stream
 

@@ -1,5 +1,104 @@
 export default [
     {
+        "date": "2025/05/05",
+        "streamName": "【#歌枠】アニソンボカロ縛り⚡️まだまだ夜は終わらない歌枠🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:05",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=5s"
+            },
+            {
+                "showDate": true,
+                "songName": "ワルキューレがとまらない",
+                "singer": "ワルキューレ",
+                "songTime": "00:05:45",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=345s"
+            },
+            {
+                "showDate": true,
+                "songName": "トライアングラー",
+                "singer": "坂本真綾",
+                "songTime": "00:13:16",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=796s"
+            },
+            {
+                "showDate": true,
+                "songName": "シニカルナイトプラン",
+                "singer": "Ayase feat. 初音ミク",
+                "songTime": "00:21:37",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=1297s"
+            },
+            {
+                "showDate": true,
+                "songName": "Fly Me To The Moon",
+                "singer": "Frank Sinatra",
+                "songTime": "00:28:10",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=1690s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "Realize",
+                "singer": "鈴木このみ",
+                "songTime": "00:35:35",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=2135s"
+            },
+            {
+                "showDate": true,
+                "songName": "バラライカ",
+                "singer": "月島きらり starring 久住小春",
+                "songTime": "00:41:15",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=2475s"
+            },
+            {
+                "showDate": true,
+                "songName": "メルト",
+                "singer": "ryo(supercell) feat. 初音ミク",
+                "songTime": "00:49:57",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=2997s"
+            },
+            {
+                "showDate": true,
+                "songName": "東京テディベア",
+                "singer": "Neru feat. 鏡音リン",
+                "songTime": "00:55:50",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=3350s"
+            },
+            {
+                "showDate": true,
+                "songName": "炎",
+                "singer": "LiSA",
+                "songTime": "01:00:55",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=3655s"
+            },
+            {
+                "showDate": true,
+                "songName": "ようこそジャパリパークへ",
+                "singer": "どうぶつビスケッツ×PPP",
+                "songTime": "01:08:46",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=4126s"
+            },
+            {
+                "showDate": true,
+                "songName": "命に嫌われている。",
+                "singer": "カンザキイオリ feat. 初音ミク",
+                "songTime": "01:15:32",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=4532s"
+            },
+            {
+                "showDate": true,
+                "songName": "フリージア",
+                "singer": "Uru",
+                "songTime": "01:22:34",
+                "songLink": "https://www.youtube.com/watch?v=hl35d_VJ6Ew&t=4954s"
+            }
+        ]
+    },
+    {
         "date": "2025/04/24",
         "streamName": "【#歌枠】お久しぶりなので全力で歌う歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
