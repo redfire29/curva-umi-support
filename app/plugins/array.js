@@ -1,5 +1,97 @@
 export default [
     {
+        "date": "2025/05/27",
+        "streamName": "【#歌枠】神曲が多すぎるっ🩵アニソン縛り歌枠🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "0:15",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=15s"
+            },
+            {
+                "showDate": true,
+                "songName": "もってけ！セーラーふく",
+                "singer": "平野綾、加藤英美里、福原香織、遠藤綾",
+                "songTime": "6:00",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=360s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "ハレ晴レユカイ",
+                "singer": "平野綾、茅原実里、後藤邑子",
+                "songTime": "13:15",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=795s"
+            },
+            {
+                "showDate": true,
+                "songName": "いってらっしゃい",
+                "singer": "ヒグチアイ",
+                "songTime": "20:43",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=1243s"
+            },
+            {
+                "showDate": true,
+                "songName": "ヴィーナスとジーザス",
+                "singer": "やくしまるえつこ",
+                "songTime": "26:03",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=1563s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "Don't say \"lazy\"",
+                "singer": "放課後ティータイム",
+                "songTime": "30:42",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=1842s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "青春コンプレックス",
+                "singer": "結束バンド",
+                "songTime": "35:11",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=2111s"
+            },
+            {
+                "showDate": true,
+                "songName": "明け星",
+                "singer": "LiSA",
+                "songTime": "41:03",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=2463s"
+            },
+            {
+                "showDate": true,
+                "songName": "光るなら",
+                "singer": "Goose house",
+                "songTime": "48:37",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=2917s"
+            },
+            {
+                "showDate": true,
+                "songName": "The Everlasting Guilty Crown",
+                "singer": "EGOIST",
+                "songTime": "55:48",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=3348s"
+            },
+            {
+                "showDate": true,
+                "songName": "uni-verse",
+                "singer": "オーイシマサヨシ",
+                "songTime": "1:03:41",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=3821s"
+            },
+            {
+                "showDate": true,
+                "songName": "Departures 〜あなたにおくるアイの歌〜",
+                "singer": "EGOIST",
+                "songTime": "1:12:22",
+                "songLink": "https://www.youtube.com/watch?v=xVXW5fBLVXc&t=4342s"
+            }
+        ]
+    },
+    {
         "date": "2025/05/05",
         "streamName": "【#歌枠】アニソンボカロ縛り⚡️まだまだ夜は終わらない歌枠🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
