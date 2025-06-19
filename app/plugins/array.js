@@ -1,5 +1,97 @@
 export default [
     {
+        "date": "2025/06/19",
+        "streamName": "【#歌枠】夏を迎え撃つ準備はいい？🍋🩵🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "ココロのちず",
+                "singer": "BOYSTYLE",
+                "songTime": "00:01:26",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=86s"
+            },
+            {
+                "showDate": true,
+                "songName": "少女レイ",
+                "singer": "みきとP feat. 初音ミク",
+                "songTime": "00:06:50",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=410s"
+            },
+            {
+                "showDate": true,
+                "songName": "Lemon",
+                "singer": "米津玄師",
+                "songTime": "00:15:30",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=930s"
+            },
+            {
+                "showDate": true,
+                "songName": "アゲハ蝶",
+                "singer": "ポルノグラフィティ",
+                "songTime": "00:21:21",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=1281s"
+            },
+            {
+                "showDate": true,
+                "songName": "射手座☆午後九時Don't be late",
+                "singer": "シェリル・ノーム starring May'n",
+                "songTime": "00:27:38",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=1658s"
+            },
+            {
+                "showDate": true,
+                "songName": "右肩の蝶",
+                "singer": "のりぴー feat. 鏡音レン",
+                "songTime": "00:34:45",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=2085s"
+            },
+            {
+                "showDate": true,
+                "songName": "花に亡霊",
+                "singer": "ヨルシカ",
+                "songTime": "00:41:17",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=2477s"
+            },
+            {
+                "showDate": true,
+                "songName": "タイプ:ワイルド",
+                "singer": "松本梨香",
+                "songTime": "00:46:16",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=2776s"
+            },
+            {
+                "showDate": true,
+                "songName": "ビビデバ",
+                "singer": "星街すいせい",
+                "songTime": "00:52:37",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=3157s"
+            },
+            {
+                "showDate": true,
+                "songName": "オリオンをなぞる",
+                "singer": "UNISON SQUARE GARDEN",
+                "songTime": "00:56:46",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=3406s"
+            },
+            {
+                "showDate": true,
+                "songName": "Calc.",
+                "singer": "ジミーサムP feat. 初音ミク",
+                "songTime": "01:04:19",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=3859s"
+            },
+            {
+                "showDate": true,
+                "songName": "創聖のアクエリオン",
+                "singer": "AKINO",
+                "songTime": "01:13:03",
+                "songLink": "https://www.youtube.com/watch?v=-nNHZAV9Ijo&t=4383s"
+            }
+        ]
+    },
+    {
         "date": "2025/05/27",
         "streamName": "【#歌枠】神曲が多すぎるっ🩵アニソン縛り歌枠🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

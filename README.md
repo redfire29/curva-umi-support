@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2025/06/19 - song list update  
+- 夏を迎え撃つ準備はいい？🍋🩵🎤🐧來羽うみ/Curva Umi Singing Stream
+
 2025/05/27 - song list update  
 - 神曲が多すぎるっ🩵アニソン縛り歌枠🎤🐧來羽うみ/Curva Umi Singing Stream
 
