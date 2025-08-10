@@ -1,5 +1,112 @@
 export default [
     {
+        "date": "2025/8/4",
+        "streamName": "【#歌枠】激唱！リベンジに熱く燃えてる歌枠🔥🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:14",
+                "songLink": "https://www.youtube.com/watch?v=9cahdDlSJXg&t=14s"
+            },
+            {
+                "showDate": true,
+                "songName": "プラネタリウム",
+                "singer": "大塚愛",
+                "songTime": "09:47",
+                "songLink": "https://www.youtube.com/watch?v=9cahdDlSJXg&t=587s"
+            },
+            {
+                "showDate": true,
+                "songName": "シャルル",
+                "singer": "flower",
+                "songTime": "16:36",
+                "songLink": "https://www.youtube.com/watch?v=9cahdDlSJXg&t=996s"
+            },
+            {
+                "showDate": true,
+                "songName": "Beautiful World",
+                "singer": "宇多田ヒカル",
+                "songTime": "24:50",
+                "songLink": "https://www.youtube.com/watch?v=9cahdDlSJXg&t=1490s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛♡スクリ～ム!",
+                "singer": "AiScReam",
+                "songTime": "31:45",
+                "songLink": "https://www.youtube.com/watch?v=9cahdDlSJXg&t=1905s"
+            },
+            {
+                "showDate": true,
+                "songName": "深海少女",
+                "singer": "ゆうゆ",
+                "songTime": "42:06",
+                "songLink": "https://www.youtube.com/watch?v=9cahdDlSJXg&t=2526s"
+            },
+            {
+                "showDate": true,
+                "songName": "ミュージックミュージック",
+                "singer": "とあ",
+                "songTime": "02:09",
+                "songLink": "https://www.youtube.com/watch?v=APPaAbWSoZU&t=129s"
+            },
+            {
+                "showDate": true,
+                "songName": "EVIL PENGUIN",
+                "singer": "來羽うみ",
+                "songTime": "08:47",
+                "songLink": "https://www.youtube.com/watch?v=APPaAbWSoZU&t=527s"
+            },
+            {
+                "showDate": true,
+                "songName": "ファンサ",
+                "singer": "mona(CV：夏川椎菜)",
+                "songTime": "20:28",
+                "songLink": "https://www.youtube.com/watch?v=APPaAbWSoZU&t=1228s"
+            }
+        ]
+    },
+    {
+        "date": "2025/7/21",
+        "streamName": "【#歌枠】海の日だ！半年記念だ！収益化だ！✨🐧⚽️來羽うみ/Curva Umi Karaoke Live Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "10:11",
+                "songLink": "https://www.youtube.com/watch?v=pA8CZnvr3w0&t=611s"
+            },
+            {
+                "showDate": true,
+                "songName": "コネクト",
+                "singer": "ClariS",
+                "songTime": "17:48",
+                "songLink": "https://www.youtube.com/watch?v=pA8CZnvr3w0&t=1068s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛♡スクリ～ム!",
+                "singer": "AiScReam",
+                "songTime": "25:36",
+                "songLink": "https://www.youtube.com/watch?v=pA8CZnvr3w0&t=1536s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "海色",
+                "singer": "AKINO from bless4",
+                "songTime": "32:49",
+                "songLink": "https://www.youtube.com/watch?v=pA8CZnvr3w0&t=1969s"
+            }
+        ]
+    },
+    {
         "date": "2025/06/19",
         "streamName": "【#歌枠】夏を迎え撃つ準備はいい？🍋🩵🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

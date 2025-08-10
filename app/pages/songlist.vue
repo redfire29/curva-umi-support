@@ -91,13 +91,13 @@ div
       :class="{'opacity-100': iframeShow, 'opacity-0 pointer-events-none':!iframeShow}"
     )
       div(
-        class="absolute top-0 bottom-0 right-0 left-0 z-30",
-        @click="iframeShow = false"
+        class="absolute top-0 bottom-0 right-0 left-0 z-30 md:hidden",
+        @click="iframeClose()"
       )
       div(class="relative z-40 w-full")
         div(
-          class="w-[30px] h-[30px] absolute -top-[50px] right-0 rotate-45 cursor-pointer",
-          @click="iframeShow = false"
+          class="w-[30px] h-[30px] absolute -top-[50px] right-0 rotate-45 cursor-pointer md:hidden",
+          @click="iframeClose()"
         )
           div(
             class="w-full h-[1px] bg-white absolute left-0 top-[calc(50%-0.5px)]"
@@ -171,6 +171,11 @@ const changeYoutube = (url) => {
   iframeID.value = videoId;
   iframeStart.value = time;
   iframeShow.value = true;
+}
+
+const iframeClose = () => {
+  iframeShow.value = false;
+  iframeStart.value = '';
 }
 
 const dateSelect = () => {

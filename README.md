@@ -12,6 +12,10 @@
 
 ### 更新list  
 ```
+2025/08/10 - song list update  
+- 海の日だ！半年記念だ！収益化だ！✨🐧⚽️來羽うみ/Curva Umi Karaoke Live Stream
+- 激唱！リベンジに熱く燃えてる歌枠🔥🎤🐧來羽うみ/Curva Umi Singing Stream
+
 2025/06/19 - song list update  
 - 夏を迎え撃つ準備はいい？🍋🩵🎤🐧來羽うみ/Curva Umi Singing Stream
 
