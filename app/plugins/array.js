@@ -1,5 +1,104 @@
 export default [
     {
+        "date": "2025/9/4",
+        "streamName": "【#歌枠】アニソン・ボカロたくさん歌うぞぉぉぉぉ🩵🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "0:00:03",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=3s"
+            },
+            {
+                "showDate": true,
+                "songName": "Fire Flower",
+                "singer": "halyosy feat. 鏡音レン",
+                "songTime": "0:04:53",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=293s"
+            },
+            {
+                "showDate": true,
+                "songName": "魂のルフラン",
+                "singer": "高橋洋子",
+                "songTime": "0:12:44",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=764s"
+            },
+            {
+                "showDate": true,
+                "songName": "unravel",
+                "singer": "TK from 凛として時雨",
+                "songTime": "0:21:01",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=1261s"
+            },
+            {
+                "showDate": true,
+                "songName": "おじゃま虫",
+                "singer": "DECO*27 feat. 初音ミク",
+                "songTime": "0:29:27",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=1767s"
+            },
+            {
+                "showDate": true,
+                "songName": "ノーザンクロス",
+                "singer": "シェリル・ノーム starring May'n",
+                "songTime": "0:38:03",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=2283s"
+            },
+            {
+                "showDate": true,
+                "songName": "ANIMA",
+                "singer": "ReoNa",
+                "songTime": "0:45:26",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=2726s"
+            },
+            {
+                "showDate": true,
+                "songName": "AMAS",
+                "singer": "LiSA",
+                "songTime": "0:50:05",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=3005s"
+            },
+            {
+                "showDate": true,
+                "songName": "ハイタッチ☆メモリー",
+                "singer": "小倉唯",
+                "songTime": "0:56:05",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=3365s"
+            },
+            {
+                "showDate": true,
+                "songName": "Baby Sweet Berry Love",
+                "singer": "小倉唯",
+                "songTime": "1:00:40",
+                "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=3640s"
+            },
+            {
+                "showDate": true,
+                "songName": "secret base ~君がくれたもの~",
+                "singer": "ZONE",
+                "songTime": "04:31",
+                "songLink": "https://www.youtube.com/watch?v=q-iTDNJLLyE&t=271s"
+            },
+            {
+                "showDate": true,
+                "songName": "youthful beautiful",
+                "singer": "内田真礼",
+                "songTime": "12:41",
+                "songLink": "https://www.youtube.com/watch?v=q-iTDNJLLyE&t=761s"
+            },
+            {
+                "showDate": true,
+                "songName": "UNION",
+                "singer": "OxT",
+                "songTime": "14:19",
+                "songLink": "https://www.youtube.com/watch?v=q-iTDNJLLyE&t=859s"
+            }
+        ]
+    },
+    {
         "date": "2025/8/4",
         "streamName": "【#歌枠】激唱！リベンジに熱く燃えてる歌枠🔥🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
