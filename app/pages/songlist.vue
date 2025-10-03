@@ -108,7 +108,7 @@ div
         iframe(
           :src="`https://www.youtube.com/embed/${iframeID}?autoplay=1&start=${iframeStart}`",
           allow="autoplay",
-          class="w-full aspect-video",
+          class="w-full aspect-video max-w-[1500px] mx-auto max-h-[calc(100vh-170px)]",
           v-if="iframeID && iframeStart"
         )
         //- allow="autoplay",

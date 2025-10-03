@@ -1,5 +1,83 @@
 export default [
     {
+        "date": "2025/10/2",
+        "streamName": "【#歌枠】久しぶりなのでアニソン祭りだぁぁっ🐧🎤來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "ブルーバード",
+                "singer": "いきものがかり (生物股長)",
+                "songTime": "11:00",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=660s"
+            },
+            {
+                "showDate": true,
+                "songName": "ライオン",
+                "singer": "シェリル・ノーム starring May'n、ランカ・リー=中島愛",
+                "songTime": "18:21",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=1101s"
+            },
+            {
+                "showDate": true,
+                "songName": "甲賀忍法帖",
+                "singer": "陰陽座",
+                "songTime": "29:14",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=1754s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "again",
+                "singer": "YUI",
+                "songTime": "37:13",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=2233s"
+            },
+            {
+                "showDate": true,
+                "songName": "ルーズ",
+                "singer": "Uru",
+                "songTime": "44:14",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=2654s"
+            },
+            {
+                "showDate": true,
+                "songName": "ダイアモンド クレバス",
+                "singer": "中島愛",
+                "songTime": "52:54",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=3174s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "インパーフェクト",
+                "singer": "オーイシマサヨシ",
+                "songTime": "1:00:21",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=3621s"
+            },
+            {
+                "showDate": true,
+                "songName": "crossing field",
+                "singer": "LiSA",
+                "songTime": "1:07:06",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=4026s"
+            },
+            {
+                "showDate": true,
+                "songName": "Synchrogazer",
+                "singer": "水樹奈々",
+                "songTime": "1:14:55",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=4495s"
+            },
+            {
+                "showDate": true,
+                "songName": "空色デイズ",
+                "singer": "中川翔子",
+                "songTime": "1:21:52",
+                "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=4912s"
+            }
+        ]
+    },
+    {
         "date": "2025/9/4",
         "streamName": "【#歌枠】アニソン・ボカロたくさん歌うぞぉぉぉぉ🩵🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
