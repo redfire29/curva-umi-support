@@ -1,5 +1,69 @@
 export default [
     {
+        "date": "2025/11/3",
+        "streamName": "【#歌枠】オリジナル曲を歌ってみます！！！🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "Knight！！",
+                "singer": "來羽うみ",
+                "songTime": "00:05:15",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=315s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "EVIL PENGUIN",
+                "singer": "來羽うみ",
+                "songTime": "00:15:14",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=914s"
+            },
+            {
+                "showDate": true,
+                "songName": "世界征服ヴァルキリー",
+                "singer": "來羽うみ",
+                "songTime": "00:25:41",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=1541s"
+            },
+            {
+                "showDate": true,
+                "songName": "涙色ハートビート",
+                "singer": "來羽うみ",
+                "songTime": "00:32:54",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=1974s"
+            },
+            {
+                "showDate": true,
+                "songName": "僕、強くなりたい！",
+                "singer": "來羽うみ",
+                "songTime": "00:41:33",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=2493s"
+            },
+            {
+                "showDate": true,
+                "songName": "色恋子",
+                "singer": "來羽うみ",
+                "songTime": "00:51:35",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=3095s"
+            },
+            {
+                "showDate": true,
+                "songName": "おやすみせがい",
+                "singer": "來羽うみ",
+                "songTime": "01:01:37",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=3697s"
+            },
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "01:11:24",
+                "songLink": "https://www.youtube.com/watch?v=TeEt649K6-g&t=4284s"
+            }
+        ]
+    },
+    {
         "date": "2025/10/2",
         "streamName": "【#歌枠】久しぶりなのでアニソン祭りだぁぁっ🐧🎤來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

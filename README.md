@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2025/11/03 - song list update  
+- オリジナル曲を歌ってみます！！！🎤🐧來羽うみ/Curva Umi Singing Stream
+
 2025/10/03 - song list update  
 - 久しぶりなのでアニソン祭りだぁぁっ🐧🎤來羽うみ/Curva Umi Singing Stream
 
