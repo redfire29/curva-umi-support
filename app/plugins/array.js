@@ -198,7 +198,7 @@ export default [
             },
             {
                 "showDate": true,
-                "songName": "AMAS",
+                "songName": "ADAMAS",
                 "singer": "LiSA",
                 "songTime": "0:50:05",
                 "songLink": "https://www.youtube.com/watch?v=z_ZOos5Ez08&t=3005s"
