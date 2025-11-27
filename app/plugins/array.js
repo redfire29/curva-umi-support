@@ -1,5 +1,83 @@
 export default [
     {
+        "date": "2025/11/26",
+        "streamName": "【#歌枠】テンション上がるアニソン縛り🩵🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:00",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys"
+            },
+            {
+                "showDate": true,
+                "songName": "FIRE!!",
+                "singer": "和田光司",
+                "songTime": "00:06:17",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=377s"
+            },
+            {
+                "showDate": true,
+                "songName": "ターゲット～赤い衝撃～",
+                "singer": "和田光司",
+                "songTime": "00:12:49",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=769s"
+            },
+            {
+                "showDate": true,
+                "songName": "おジャ魔女カーニバル！！",
+                "singer": "MAHO堂",
+                "songTime": "00:19:40",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=1180s"
+            },
+            {
+                "showDate": true,
+                "songName": "新時代",
+                "singer": "Ado",
+                "songTime": "00:29:25",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=1765s"
+            },
+            {
+                "showDate": true,
+                "songName": "私は最強",
+                "singer": "Ado",
+                "songTime": "00:34:17",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=2057s"
+            },
+            {
+                "showDate": true,
+                "songName": "ペガサス幻想",
+                "singer": "MAKE-UP",
+                "songTime": "00:41:30",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=2490s"
+            },
+            {
+                "showDate": true,
+                "songName": "ロマンティックあげるよ",
+                "singer": "橋本潮",
+                "songTime": "00:48:24",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=2904s"
+            },
+            {
+                "showDate": true,
+                "songName": "only my railgun",
+                "singer": "FripSide",
+                "songTime": "00:56:02",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=3362s"
+            },
+            {
+                "showDate": true,
+                "songName": "God knows…",
+                "singer": "涼宮ハルヒ (CV：平野綾)",
+                "songTime": "01:02:58",
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=3778s"
+            }
+        ]
+    },
+    {
         "date": "2025/11/3",
         "streamName": "【#歌枠】オリジナル曲を歌ってみます！！！🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
