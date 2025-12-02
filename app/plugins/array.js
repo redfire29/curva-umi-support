@@ -10,7 +10,7 @@ export default [
                 "songName": "海色バスルーム",
                 "singer": "來羽うみ",
                 "songTime": "00:00:00",
-                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys"
+                "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=0s"
             },
             {
                 "showDate": true,

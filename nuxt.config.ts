@@ -8,7 +8,11 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     'dayjs-nuxt',
+    '@nuxtjs/sitemap',
   ],
+  site: {
+    url: 'https://redfire29.github.io',
+  },
   i18n: {
     strategy: 'prefix_and_default',
     // locales: ['ja', 'zh'],
@@ -56,7 +60,7 @@ export default defineNuxtConfig({
         // { hid: 'og:description', property: 'og:description', content: '' },
         // { name: 'apple-mobile-web-app-title', content: '', },
       ],
-      link:[
+      link: [
         { rel: 'icon', type: 'image/png', href: '/curva-umi-support/favicon-96x96.png', sizes: '96x96', },
         { rel: 'icon', type: 'image/svg+xml', href: '/curva-umi-support/favicon.svg', },
         { rel: 'shortcut icon', href: '/curva-umi-support/favicon.ico', },
