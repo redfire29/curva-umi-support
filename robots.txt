@@ -1,1 +1,3 @@
-
+User-agent: *
+Allow: /
+Sitemap: https://redfire29.github.io/curva-umi-support/sitemap.xml
