@@ -15,7 +15,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "生まれて初めて",
-                "singer": "神田沙也加",
+                "singer": "神田沙也加 & 松たか子 (アナと雪の女王)",
                 "songTime": "00:17:44",
                 "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=1064s"
             },
