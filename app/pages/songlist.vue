@@ -164,9 +164,11 @@ const SearchSong = (searchKey) => {
 }
 
 const changeYoutube = (url) => {
-  const match = url.match(/v=([^&]+)&?t=(\d+)/);
+  const match = url.match(/v=([^&]+)/);
+  if (!match) return;
   const videoId = match[1];
-  const time = match[2];
+  const timeMatch = url.match(/[?&]t=(\d+)/);
+  const time = timeMatch ? timeMatch[1] : '0';
 
   iframeID.value = videoId;
   iframeStart.value = time;
