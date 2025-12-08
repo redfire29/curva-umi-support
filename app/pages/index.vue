@@ -305,6 +305,14 @@ const information = [
     content: t('infor-birthday-content'),
   },
   {
+    title: t('infor-blood'),
+    content: 'O',
+  },
+  {
+    title: 'MBTI',
+    content: 'ISFP',
+  },
+  {
     title: t('infor-like'),
     content: t('infor-like-content'),
   },
@@ -408,6 +416,11 @@ const designList = [
 ]
 
 const historyList = [
+  {
+    time: '2025-12-8',
+    content: t('history-20251208-1'),
+    link: 'https://www.youtube.com/live/ItNOFoiCwfs?si=mpK0GvtCszmYa1vQ',
+  },
   {
     time: '2025-11-26',
     content: t('history-20251126-1'),

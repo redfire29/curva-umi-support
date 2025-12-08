@@ -1,5 +1,90 @@
 export default [
     {
+        "date": "2025/12/8",
+        "streamName": "【#歌枠】誕生日記念歌枠🎂✨進化した歌を聴いてくださぁぁぁい🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:00",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs"
+            },
+            {
+                "showDate": true,
+                "songName": "生まれて初めて",
+                "singer": "神田沙也加",
+                "songTime": "00:17:44",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=1064s"
+            },
+            {
+                "showDate": true,
+                "songName": "Plazma",
+                "singer": "米津玄師",
+                "songTime": "00:25:11",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=1511s"
+            },
+            {
+                "showDate": true,
+                "songName": "JANE DOE",
+                "singer": "米津玄師 & 宇多田ヒカル",
+                "songTime": "00:28:17",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=1697s"
+            },
+            {
+                "showDate": true,
+                "songName": "可愛くてごめん",
+                "singer": "みきとP",
+                "songTime": "00:35:34",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=2134s"
+            },
+            {
+                "showDate": true,
+                "songName": "深海のリトルクライ",
+                "singer": "sasakure.UK",
+                "songTime": "00:42:06",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=2526s"
+            },
+            {
+                "showDate": true,
+                "songName": "シルシ",
+                "singer": "LiSA",
+                "songTime": "00:48:50",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=2930s"
+            },
+            {
+                "showDate": true,
+                "songName": "Snow halation",
+                "singer": "μ's",
+                "songTime": "00:56:37",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=3397s"
+            },
+            {
+                "showDate": true,
+                "songName": "フリージア",
+                "singer": "Uru",
+                "songTime": "01:05:42",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=3942s"
+            },
+            {
+                "showDate": true,
+                "songName": "Everything",
+                "singer": "MISIA",
+                "songTime": "01:26:56",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=5216s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛言葉III",
+                "singer": "DECO*27",
+                "songTime": "01:39:52",
+                "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=5992s"
+            }
+        ]
+    },
+    {
         "date": "2025/11/26",
         "streamName": "【#歌枠】テンション上がるアニソン縛り🩵🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
