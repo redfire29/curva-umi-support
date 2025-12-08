@@ -36,7 +36,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "可愛くてごめん",
-                "singer": "みきとP",
+                "singer": "HoneyWorks feat. かぴ",
                 "songTime": "00:35:34",
                 "songLink": "https://www.youtube.com/watch?v=ItNOFoiCwfs&t=2134s"
             },
