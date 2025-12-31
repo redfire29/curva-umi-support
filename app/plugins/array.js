@@ -1,5 +1,97 @@
 export default [
     {
+        "date": "2025/12/31",
+        "streamName": "【#歌枠】今年最後なので全力で歌う歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:00",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4"
+            },
+            {
+                "showDate": true,
+                "songName": "初恋サイダー",
+                "singer": "Buono!",
+                "songTime": "00:06:38",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=398s"
+            },
+            {
+                "showDate": true,
+                "songName": "ブルーバード",
+                "singer": "いきものがかり",
+                "songTime": "00:13:16",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=796s"
+            },
+            {
+                "showDate": true,
+                "songName": "My Soul, Your Beats!",
+                "singer": "Lia",
+                "songTime": "00:16:58",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=1018s"
+            },
+            {
+                "showDate": true,
+                "songName": "からくりピエロ",
+                "singer": "40mP feat. 初音ミク",
+                "songTime": "00:24:40",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=1480s"
+            },
+            {
+                "showDate": true,
+                "songName": "ドーナツホール",
+                "singer": "ハチ (米津玄師)",
+                "songTime": "00:29:07",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=1747s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛♡スクリ～ム！",
+                "singer": "AiScReam",
+                "songTime": "00:35:37",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=2137s"
+            },
+            {
+                "showDate": true,
+                "songName": "ギラギラ",
+                "singer": "Ado",
+                "songTime": "00:44:20",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=2660s"
+            },
+            {
+                "showDate": true,
+                "songName": "夜に駆ける",
+                "singer": "YOASOBI",
+                "songTime": "00:48:53",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=2933s"
+            },
+            {
+                "showDate": true,
+                "songName": "晩餐歌",
+                "singer": "tuki.",
+                "songTime": "00:55:51",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=3351s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "SAD SONG",
+                "singer": "ちゃんみな",
+                "songTime": "01:05:53",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=3953s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "あなたがいることで",
+                "singer": "Uru",
+                "songTime": "01:14:50",
+                "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=4490s"
+            }
+        ]
+    },
+    {
         "date": "2025/12/8",
         "streamName": "【#歌枠】誕生日記念歌枠🎂✨進化した歌を聴いてくださぁぁぁい🎤🐧來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

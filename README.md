@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2025/12/31 - song list update  
+- 今年最後なので全力で歌う歌枠🎤🩵Curva Umi Singing Stream
+
 2025/12/08 - song list update  
 - 誕生日記念歌枠🎂✨進化した歌を聴いてくださぁぁぁい🎤🐧來羽うみ/Curva Umi Singing Stream
 

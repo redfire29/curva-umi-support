@@ -417,6 +417,11 @@ const designList = [
 
 const historyList = [
   {
+    time: '2025-12-31',
+    content: t('history-20251231-1'),
+    link: 'https://www.youtube.com/live/ItNOFoiCwfs?si=mpK0GvtCszmYa1vQ',
+  },
+  {
     time: '2025-12-8',
     content: t('history-20251208-1'),
     link: 'https://www.youtube.com/live/ItNOFoiCwfs?si=mpK0GvtCszmYa1vQ',
