@@ -1,5 +1,97 @@
 export default [
     {
+        "date": "2026/1/22",
+        "streamName": "【#歌枠】來羽うみ🐧⚽️1周年記念歌枠✨お知らせもあるよぉぉぉ🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "IRIS OUT",
+                "singer": "米津玄師",
+                "songTime": "00:09:58",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=598s"
+            },
+            {
+                "showDate": true,
+                "songName": "JANE DOE",
+                "singer": "米津玄師, 宇多田ヒカル",
+                "songTime": "00:12:26",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=746s"
+            },
+            {
+                "showDate": true,
+                "songName": "神のまにまに",
+                "singer": "れるりり feat. 初音ミク",
+                "songTime": "00:20:22",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=1222s"
+            },
+            {
+                "showDate": true,
+                "songName": "完全感覚Dreamer",
+                "singer": "ONE OK ROCK",
+                "songTime": "00:24:38",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=1478s"
+            },
+            {
+                "showDate": true,
+                "songName": "アイドル",
+                "singer": "YOASOBI",
+                "songTime": "00:31:26",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=1886s"
+            },
+            {
+                "showDate": true,
+                "songName": "サインはB",
+                "singer": "B小町",
+                "songTime": "00:35:07",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=2107s"
+            },
+            {
+                "showDate": true,
+                "songName": "シャルル",
+                "singer": "バルーン",
+                "songTime": "00:42:56",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=2576s"
+            },
+            {
+                "showDate": true,
+                "songName": "丸の内サディスティック",
+                "singer": "椎名林檎",
+                "songTime": "00:52:02",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=3122s"
+            },
+            {
+                "showDate": true,
+                "songName": "First Love",
+                "singer": "宇多田ヒカル",
+                "songTime": "00:56:10",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=3370s"
+            },
+            {
+                "showDate": true,
+                "songName": "アイノカタチ",
+                "singer": "MISIA",
+                "songTime": "01:06:16",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=3976s"
+            },
+            {
+                "showDate": true,
+                "songName": "創聖のアクエリオン",
+                "singer": "AKINO",
+                "songTime": "01:18:50",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=4730s"
+            },
+            {
+                "showDate": true,
+                "songName": "EVIL PENGUIN",
+                "singer": "來羽うみ",
+                "songTime": "01:31:21",
+                "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=5481s"
+            }
+        ]
+    },
+    {
         "date": "2025/12/31",
         "streamName": "【#歌枠】今年最後なので全力で歌う歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
