@@ -450,7 +450,7 @@
                 <div class="glass-card">
                   <!-- Header -->
                   <div
-                    class="p-[15px] md:p-[20px] flex items-center justify-between cursor-pointer bg-deep-sea/95 backdrop-blur-md hover:bg-white/10 transition-colors sticky top-[340px] md:top-[280px] z-20 border-b border-white/10 rounded-2xl"
+                    class="p-[15px] md:p-[20px] flex items-center justify-between cursor-pointer bg-deep-sea hover:brightness-125 transition sticky top-[340px] md:top-[280px] z-20 border-b border-white/10 rounded-2xl"
                     onclick={() => (list.showList = !list.showList)}
                     onkeydown={(e) =>
                       e.key === "Enter" && (list.showList = !list.showList)}
