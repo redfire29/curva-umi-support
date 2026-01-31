@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
+import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import yaml from '@rollup/plugin-yaml';
@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://redfire29.github.io',
   base: '/curva-umi-support',
   integrations: [
-    vue(),
+    svelte(),
     tailwind(),
     sitemap()
   ],
