@@ -176,6 +176,7 @@
           }
         }
       }
+    } else {
       allSongSH(true);
     }
   };
