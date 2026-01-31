@@ -489,7 +489,7 @@
                       : 'max-h-0 opacity-0'}"
                   >
                     <ul class="border-t border-white/10">
-                      {#each list.songList as song}
+                      {#each list.songList as song, i}
                         {#if song.showDate}
                           <li
                             class="p-[12px_20px] border-b border-white/5 last:border-0 hover:bg-mint-green/10 transition-colors cursor-pointer group flex items-center justify-between gap-[10px] {currentPlayingUrl ===
@@ -504,6 +504,10 @@
                             role="button"
                             tabindex="0"
                           >
+                            <span
+                              class="text-pearl-white/40 font-mono text-sm w-[30px] text-center shrink-0"
+                              >{i + 1}</span
+                            >
                             <div class="flex-1">
                               <p
                                 class="text-[15px] font-medium text-pearl-white group-hover:text-mint-green transition-colors"
