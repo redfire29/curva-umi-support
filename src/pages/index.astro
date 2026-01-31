@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IndexContent from '../components/pages/index.vue';
+import ja from '../locales/ja.yml';
+
+const locale = 'ja';
+const messages = ja;
+---
+
+<Layout title="Curva Umi Support">
+  <IndexContent client:load locale={locale} messages={messages} />
+</Layout>

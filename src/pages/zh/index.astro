@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IndexContent from '../../components/pages/index.vue';
+import zh from '../../locales/zh.yml';
+
+const locale = 'zh';
+const messages = zh;
+---
+
+<Layout title="來羽うみSupport">
+  <IndexContent client:load locale={locale} messages={messages} />
+</Layout>

@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SonglistContent from '../../components/pages/songlist.vue';
+import zh from '../../locales/zh.yml';
+
+const locale = 'zh';
+const messages = zh;
+const title = zh['song-list'] || '歌單';
+---
+
+<Layout title={title}>
+  <SonglistContent client:load locale={locale} messages={messages} />
+</Layout>

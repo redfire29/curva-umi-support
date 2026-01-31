@@ -1,39 +1,32 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "astro-ver",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "deploy": "pnpm generate --force && node ./deploy/ghpages.js",
-    "nrd": "nuxt-rd"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^9.5.6",
-    "@vueuse/core": "^12.0.0",
-    "@vueuse/nuxt": "^12.0.0",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vue": "^5.1.4",
+    "@types/lodash-es": "^4.17.12",
+    "@vueuse/core": "^10.0.0",
     "aos": "^2.3.4",
-    "dayjs-nuxt": "^2.1.11",
+    "astro": "^5.17.1",
+    "dayjs": "^1.11.10",
     "gsap": "^3.12.5",
-    "nuxt": "^3.14.1592",
-    "vite-plugin-pug": "^0.4.1",
-    "vue": "latest",
-    "vue-router": "latest"
+    "lodash-es": "^4.17.23",
+    "tailwindcss": "^3.0.0",
+    "typescript": "^5.9.3",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/sitemap": "^7.4.7",
-    "@nuxtjs/tailwindcss": "^6.12.2",
-    "gh-pages": "^6.2.0",
-    "nuxt-lodash": "^2.5.3",
-    "path": "^0.12.7"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild"
-    ]
+    "@rollup/plugin-yaml": "^4.1.2",
+    "pug": "^3.0.0",
+    "sass": "^1.0.0"
   }
 }
