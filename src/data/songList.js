@@ -1,5 +1,62 @@
 export default [
     {
+        "date": "2026/2/6",
+        "streamName": "【#歌枠】お風呂の日にちょっとだけゲリラ歌枠🫧🩵來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:00",
+                "songLink": "https://www.youtube.com/watch?v=Mi8057rFUUw"
+            },
+            {
+                "showDate": true,
+                "songName": "カブトムシ",
+                "singer": "aiko",
+                "songTime": "00:09:20",
+                "songLink": "https://www.youtube.com/watch?v=Mi8057rFUUw&t=560s"
+            },
+            {
+                "showDate": true,
+                "songName": "たばこ",
+                "singer": "コレサワ",
+                "songTime": "00:17:22",
+                "songLink": "https://www.youtube.com/watch?v=Mi8057rFUUw&t=1042s"
+            },
+            {
+                "showDate": true,
+                "songName": "三日月",
+                "singer": "絢香",
+                "songTime": "00:28:04",
+                "songLink": "https://www.youtube.com/watch?v=Mi8057rFUUw&t=1684s"
+            },
+            {
+                "showDate": true,
+                "songName": "Violet snow",
+                "singer": "結城アイラ",
+                "songTime": "00:37:19",
+                "songLink": "https://www.youtube.com/watch?v=Mi8057rFUUw&t=2239s"
+            },
+            {
+                "showDate": true,
+                "songName": "雪の華",
+                "singer": "中島美嘉",
+                "songTime": "00:44:35",
+                "songLink": "https://www.youtube.com/watch?v=Mi8057rFUUw&t=2675s"
+            },
+            {
+                "showDate": true,
+                "songName": "光",
+                "singer": "宇多田ヒカル",
+                "songTime": "00:53:40",
+                "songLink": "https://www.youtube.com/watch?v=Mi8057rFUUw&t=3220s"
+            }
+        ]
+    },
+    {
         "date": "2026/1/22",
         "streamName": "【#歌枠】來羽うみ🐧⚽️1周年記念歌枠✨お知らせもあるよぉぉぉ🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
