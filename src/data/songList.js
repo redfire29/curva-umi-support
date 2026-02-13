@@ -1,5 +1,76 @@
 export default [
     {
+        "date": "2026/2/13",
+        "streamName": "【#歌枠】うたチョコ配布祭🍫來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "Perfume",
+                "singer": "チョコレイト・ディスコ",
+                "songTime": "00:00:00",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "國生さゆり",
+                "singer": "バレンタイン・キッス",
+                "songTime": "00:08:22",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=502s"
+            },
+            {
+                "showDate": true,
+                "songName": "Buono!",
+                "singer": "初恋サイダー",
+                "songTime": "00:15:10",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=910s"
+            },
+            {
+                "showDate": true,
+                "songName": "M!LK",
+                "singer": "好きすぎて滅!",
+                "songTime": "00:21:01",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=1261s"
+            },
+            {
+                "showDate": true,
+                "songName": "小倉唯",
+                "singer": "HoneyCome!!",
+                "songTime": "00:30:54",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=1854s"
+            },
+            {
+                "showDate": true,
+                "songName": "HoneyWorks feat. GUMI",
+                "singer": "金曜日のおはよう",
+                "songTime": "00:37:24",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=2244s"
+            },
+            {
+                "showDate": true,
+                "songName": "EasyPop feat. 巡音ルカ,GUMI",
+                "singer": "ハッピーシンセサイザ",
+                "songTime": "00:44:29",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=2669s"
+            },
+            {
+                "showDate": true,
+                "songName": "ryo(supercell) feat. 初音ミク",
+                "singer": "メルト",
+                "songTime": "00:50:58",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=3058s"
+            },
+            {
+                "showDate": true,
+                "songName": "CHiCO with HoneyWorks",
+                "singer": "世界は恋に落ちている",
+                "songTime": "00:58:26",
+                "songLink": "https://www.youtube.com/watch?v=fMuAT1PiFWM&t=3506s"
+            }
+        ]
+    },
+    {
         "date": "2026/2/6",
         "streamName": "【#歌枠】お風呂の日にちょっとだけゲリラ歌枠🫧🩵來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

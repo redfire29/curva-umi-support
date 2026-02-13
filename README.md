@@ -12,10 +12,14 @@
 
 ### 更新list  
 ```
+2026/02/13 - song list update
+- うたチョコ配布祭🍫來羽うみ🐧⚽️Curva Umi Singing Stream
+
 2026/02/06 - song list update
 - お風呂の日にちょっとだけゲリラ歌枠🫧🩵來羽うみ🐧⚽️Curva Umi Singing Stream
 
 2026/01/22 - song list update  
+
 - 來羽うみ🐧⚽️1周年記念歌枠✨お知らせもあるよぉぉぉ🎤🩵Curva Umi Singing Stream
 
 2025/12/31 - song list update  
