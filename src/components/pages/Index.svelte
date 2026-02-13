@@ -496,16 +496,19 @@
           <div>
             <div class="md:flex items-start mt-[10px]">
               <div data-aos="fade-up" class="max-w-[430px] mx-auto w-full">
-                <img src="/curva-umi-support/img/picture.jpeg" alt="Picture" />
+                <img
+                  src="/curva-umi-support/img/picture.jpeg"
+                  alt="來羽うみ (Curva Umi) Artist Photo"
+                />
               </div>
               <div class="flex-1 mt-[10px] md:mt-0 md:ml-[10px] lg:ml-[30px]">
-                <h3
+                <h1
                   data-aos="fade-up"
                   class="text-[22px] text-coral-sun mb-[10px]"
                 >
                   <span>來羽うみ</span>
                   <span class="text-[18px] ml-[5px]">Curva Umi</span>
-                </h3>
+                </h1>
                 <p
                   data-aos="fade-up"
                   class="text-[18px] text-pearl-white mb-[10px] whitespace-pre-wrap"

@@ -7,17 +7,26 @@ import zh from "../locales/zh.yml";
 
 interface Props {
     title?: string;
-    frontmatter?: { title?: string }; // Fallback if using markdown layout
+    description?: string;
+    frontmatter?: { title?: string; description?: string }; // Fallback if using markdown layout
 }
 
 const { currentLocale } = Astro;
 const locale = currentLocale || "ja";
 const messages = locale === "ja" ? ja : zh;
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const displayTitle = title || Astro.props.frontmatter?.title || "Home";
+const displayDescription =
+    description ||
+    Astro.props.frontmatter?.description ||
+    "來羽うみ (Curva Umi) 非官方應援網站 - 這裡整理了來羽うみ的個人資料、歌唱清單、以及粉絲創作等資訊。Covering Curva Umi's profile, song list, and fan works.";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(
+    "/curva-umi-support/og-image.jpeg",
+    Astro.site,
+).toString();
 ---
 
 <!doctype html>
@@ -50,11 +59,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             name="keywords"
             content="來羽うみSupport,curva-umi-support,curva umi support,來羽うみ,Curva Umi"
         />
+        <meta name="description" content={displayDescription} />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalURL} />
         <meta
-            property="og:image"
-            content="https://redfire29.github.io/curva-umi-support/og-image.jpeg"
+            property="og:title"
+            content={`${displayTitle} - 來羽うみSupport`}
         />
+        <meta property="og:description" content={displayDescription} />
+        <meta property="og:image" content={ogImage} />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content={`${displayTitle} - 來羽うみSupport`}
+        />
+        <meta name="twitter:description" content={displayDescription} />
+        <meta name="twitter:image" content={ogImage} />
+
         <title>{displayTitle} - 來羽うみSupport</title>
         <slot name="head" />
     </head>
