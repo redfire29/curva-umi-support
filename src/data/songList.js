@@ -143,7 +143,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "JANE DOE",
-                "singer": "米津玄師, 宇多田ヒカル",
+                "singer": "米津玄師 & 宇多田ヒカル",
                 "songTime": "00:12:26",
                 "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=746s"
             },
@@ -178,7 +178,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "シャルル",
-                "singer": "バルーン",
+                "singer": "flower",
                 "songTime": "00:42:56",
                 "songLink": "https://www.youtube.com/watch?v=qPItULFQajY&t=2576s"
             },
@@ -242,7 +242,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "ブルーバード",
-                "singer": "いきものがかり",
+                "singer": "いきものがかり (生物股長)",
                 "songTime": "00:13:16",
                 "songLink": "https://www.youtube.com/watch?v=fez-scLOzR4&t=796s"
             },
@@ -461,7 +461,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "only my railgun",
-                "singer": "FripSide",
+                "singer": "fripSide",
                 "songTime": "00:56:02",
                 "songLink": "https://www.youtube.com/watch?v=m7pPUub8Sys&t=3362s"
             },
@@ -1170,7 +1170,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "涙色ハートビート",
-                "singer": "僕と僕。",
+                "singer": "來羽うみ",
                 "songTime": "00:55:19",
                 "songLink": "https://www.youtube.com/watch?v=wPdS9uk_8B4&t=3319s"
             },
@@ -1341,7 +1341,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "神のまにまに",
-                "singer": "れるりり",
+                "singer": "れるりり feat. 初音ミク",
                 "songTime": "17:23",
                 "songLink": "https://www.youtube.com/watch?v=xaSPFvWIHhk&t=1043s"
             },
