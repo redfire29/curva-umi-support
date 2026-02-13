@@ -1,5 +1,6 @@
 ---
 import "../assets/css/main.css";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
 import AppHeader from "../components/AppHeader.svelte";
 import AppFooter from "../components/AppFooter.svelte";
 import ja from "../locales/ja.yml";
@@ -20,8 +21,31 @@ const displayTitle = title || Astro.props.frontmatter?.title || "Home";
 const displayDescription =
     description ||
     Astro.props.frontmatter?.description ||
-    "來羽うみ (Curva Umi) 非官方應援網站 - 這裡整理了來羽うみ的個人資料、歌唱清單、以及粉絲創作等資訊。Covering Curva Umi's profile, song list, and fan works.";
+    messages["site-description"];
 
+const base = import.meta.env.BASE_URL;
+let path = Astro.url.pathname;
+if (path.startsWith(base)) {
+    path = path.slice(base.length);
+}
+if (path.startsWith("/")) {
+    path = path.slice(1);
+}
+if (locale !== "ja" && path.startsWith(locale)) {
+    path = path.slice(locale.length);
+    if (path.startsWith("/")) {
+        path = path.slice(1);
+    }
+}
+const slug = path;
+
+const jaURL = getAbsoluteLocaleUrl("ja", slug);
+const zhURL = getAbsoluteLocaleUrl("zh", slug);
+
+const ogLocale = locale === "ja" ? "ja_JP" : "zh_TW";
+const ogLocaleAlternate = locale === "ja" ? "zh_TW" : "ja_JP";
+
+// Remove base path /curva-umi-support
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(
     "/curva-umi-support/og-image.jpeg",
@@ -53,6 +77,8 @@ const ogImage = new URL(
         />
         <link rel="manifest" href="/curva-umi-support/site.webmanifest" />
         <link rel="canonical" href={canonicalURL} />
+        <link rel="alternate" hreflang="ja" href={jaURL} />
+        <link rel="alternate" hreflang="zh-TW" href={zhURL} />
         <meta name="generator" content={Astro.generator} />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -62,6 +88,8 @@ const ogImage = new URL(
         <meta name="description" content={displayDescription} />
 
         <!-- Open Graph -->
+        <meta property="og:locale" content={ogLocale} />
+        <meta property="og:locale:alternate" content={ogLocaleAlternate} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalURL} />
         <meta
