@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/02/21 - song list update
+- 今夜もバチバチ⚡️に歌う🎤來羽うみ🐧⚽️Curva Umi Singing Stream
+
 2026/02/13 - song list update
 - うたチョコ配布祭🍫來羽うみ🐧⚽️Curva Umi Singing Stream
 
