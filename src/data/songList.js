@@ -1,5 +1,83 @@
 export default [
     {
+        "date": "2026/2/18",
+        "streamName": "【#歌枠】今夜もバチバチ⚡️に歌う🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:06",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=6s"
+            },
+            {
+                "showDate": true,
+                "songName": "ピースサイン",
+                "singer": "米津玄師",
+                "songTime": "00:07:28",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=448s"
+            },
+            {
+                "showDate": true,
+                "songName": "月のワルツ",
+                "singer": "諫山実生",
+                "songTime": "00:16:05",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=965s"
+            },
+            {
+                "showDate": true,
+                "songName": "シュガーソングとビターステップ",
+                "singer": "UNISON SQUARE GARDEN",
+                "songTime": "00:23:03",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=1383s"
+            },
+            {
+                "showDate": true,
+                "songName": "白日",
+                "singer": "King Gnu",
+                "songTime": "00:29:30",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=1770s"
+            },
+            {
+                "showDate": true,
+                "songName": "気まぐれロマンティック",
+                "singer": "いきものがかり",
+                "songTime": "00:34:17",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=2057s"
+            },
+            {
+                "showDate": true,
+                "songName": "天ノ弱",
+                "singer": "164 feat. GUMI",
+                "songTime": "00:40:27",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=2427s"
+            },
+            {
+                "showDate": true,
+                "songName": "砂の惑星",
+                "singer": "ハチ feat. 初音ミク",
+                "songTime": "00:48:02",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=2882s"
+            },
+            {
+                "showDate": true,
+                "songName": "パート・オブ・ユア・ワールド",
+                "singer": "すずきまゆみ",
+                "songTime": "00:54:28",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=3268s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "フリージア",
+                "singer": "Uru",
+                "songTime": "01:01:15",
+                "songLink": "https://www.youtube.com/watch?v=NVQ3T0NeXbI&t=3675s"
+            }
+        ]
+    },
+    {
         "date": "2026/2/13",
         "streamName": "【#歌枠】うたチョコ配布祭🍫來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
