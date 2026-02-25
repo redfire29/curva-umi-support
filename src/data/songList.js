@@ -1,5 +1,90 @@
 export default [
     {
+        "date": "2026/2/24",
+        "streamName": "【#歌枠】お知らせがあるのでアニソン縛り歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:06",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=6s"
+            },
+            {
+                "showDate": true,
+                "songName": "めざせポケモンマスター",
+                "singer": "松本梨香",
+                "songTime": "00:05:43",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=343s"
+            },
+            {
+                "showDate": true,
+                "songName": "brave heart",
+                "singer": "宮崎歩",
+                "songTime": "00:14:52",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=892s"
+            },
+            {
+                "showDate": true,
+                "songName": "Butter-Fly",
+                "singer": "和田光司",
+                "songTime": "00:19:02",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=1142s"
+            },
+            {
+                "showDate": true,
+                "songName": "限界突破×サバイバー",
+                "singer": "氷川きよし",
+                "songTime": "00:27:40",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=1660s"
+            },
+            {
+                "showDate": true,
+                "songName": "unravel",
+                "singer": "TK from 凛として時雨",
+                "songTime": "00:34:43",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=2083s"
+            },
+            {
+                "showDate": true,
+                "songName": "一度だけの恋なら",
+                "singer": "ワルキューレ",
+                "songTime": "00:40:17",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=2417s"
+            },
+            {
+                "showDate": true,
+                "songName": "プラチナ",
+                "singer": "坂本真綾",
+                "songTime": "00:46:27",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=2787s"
+            },
+            {
+                "showDate": true,
+                "songName": "Bのリベンジ",
+                "singer": "B小町",
+                "songTime": "00:52:26",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=3146s"
+            },
+            {
+                "showDate": true,
+                "songName": "ライオン",
+                "singer": "May'n, 中島愛",
+                "songTime": "01:11:22",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=4282s"
+            },
+            {
+                "showDate": true,
+                "songName": "God knows...",
+                "singer": "涼宮ハルヒ (平野綾)",
+                "songTime": "01:19:59",
+                "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=4799s"
+            }
+        ]
+    },
+    {
         "date": "2026/2/18",
         "streamName": "【#歌枠】今夜もバチバチ⚡️に歌う🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

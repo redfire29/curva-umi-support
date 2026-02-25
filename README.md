@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/02/24 - song list update
+- お知らせがあるのでアニソン縛り歌枠🎤🩵Curva Umi Singing Stream
+
 2026/02/21 - song list update
 - 今夜もバチバチ⚡️に歌う🎤來羽うみ🐧⚽️Curva Umi Singing Stream
 

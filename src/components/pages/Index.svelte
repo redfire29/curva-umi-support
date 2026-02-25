@@ -123,6 +123,11 @@
 
   const historyList = [
     {
+      time: "2026-02-24",
+      content: t("history-20260224-1"),
+      link: "https://www.youtube.com/live/kajBPIsd_Rw",
+    },
+    {
       time: "2026-02-18",
       content: t("history-20260218-1"),
       link: "https://www.youtube.com/live/NVQ3T0NeXbI",
