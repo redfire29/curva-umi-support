@@ -1,0 +1,7 @@
+languageIds:
+  - svelte
+  - javascript
+  - typescript
+  - astro
+usageMatchRegex:
+  - "[^a-zA-Z0-9_$]t\\(\\s*['\"`]({key})['\"`]"

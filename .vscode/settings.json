@@ -8,5 +8,8 @@
     "i18n-ally.displayLanguage": "zh",
     "i18n-ally.enabledParsers": [
         "yaml"
+    ],
+    "i18n-ally.enabledFrameworks": [
+        "custom"
     ]
 }

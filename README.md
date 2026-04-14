@@ -12,6 +12,12 @@
 
 ### 更新list  
 ```
+2026/04/14 - info update
+- Youtube 會員貼圖增加
+
+2026/04/13 - song list update
+- 春ってあっという間だよね歌枠🎤🌸來羽うみ Curva Umi Singing Stream
+
 2026/02/24 - song list update
 - お知らせがあるのでアニソン縛り歌枠🎤🩵Curva Umi Singing Stream
 

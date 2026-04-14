@@ -1,5 +1,76 @@
 export default [
     {
+        "date": "2026/4/13",
+        "streamName": "【#歌枠】春ってあっという間だよね歌枠🎤🌸來羽うみ Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:00",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY"
+            },
+            {
+                "showDate": true,
+                "songName": "花ハ踊レヤいろはにほ",
+                "singer": "チーム“ハナヤマタ”",
+                "songTime": "00:07:58",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=478s"
+            },
+            {
+                "showDate": true,
+                "songName": "春よ、来い",
+                "singer": "松任谷由実",
+                "songTime": "00:15:55",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=955s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "チェリー",
+                "singer": "スピッツ",
+                "songTime": "00:24:15",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=1455s"
+            },
+            {
+                "showDate": true,
+                "songName": "春雷",
+                "singer": "米津玄師",
+                "songTime": "00:32:42",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=1962s"
+            },
+            {
+                "showDate": true,
+                "songName": "Sincerely",
+                "singer": "TRUE",
+                "songTime": "00:41:28",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=2488s"
+            },
+            {
+                "showDate": true,
+                "songName": "さくらんぼ",
+                "singer": "大塚愛",
+                "songTime": "00:47:30",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=2850s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛をこめて花束を",
+                "singer": "Superfly",
+                "songTime": "00:53:17",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=3197s"
+            },
+            {
+                "showDate": true,
+                "songName": "ハナミズキ",
+                "singer": "一青窈",
+                "songTime": "01:01:40",
+                "songLink": "https://www.youtube.com/watch?v=n6e2zEWg_KY&t=3700s"
+            }
+        ]
+    },
+    {
         "date": "2026/2/24",
         "streamName": "【#歌枠】お知らせがあるのでアニソン縛り歌枠🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
@@ -71,14 +142,14 @@ export default [
             {
                 "showDate": true,
                 "songName": "ライオン",
-                "singer": "May'n, 中島愛",
+                "singer": "シェリル・ノーム starring May'n、ランカ・リー=中島愛",
                 "songTime": "01:11:22",
                 "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=4282s"
             },
             {
                 "showDate": true,
                 "songName": "God knows...",
-                "singer": "涼宮ハルヒ (平野綾)",
+                "singer": "涼宮ハルヒ (CV：平野綾)",
                 "songTime": "01:19:59",
                 "songLink": "https://www.youtube.com/watch?v=kajBPIsd_Rw&t=4799s"
             }
