@@ -1,5 +1,75 @@
 export default [
     {
+        "date": "2026/5/3",
+        "streamName": "【#歌枠】温度差ジェットコースターな歌枠⚡️🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "Umi",
+                "songTime": "00:00:07",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=7s"
+            },
+            {
+                "showDate": true,
+                "songName": "Bunny Girl",
+                "singer": "AKASAKI",
+                "songTime": "00:07:40",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=460s"
+            },
+            {
+                "showDate": true,
+                "songName": "ルマ／かいりきベア feat.初音ミク",
+                "songTime": "00:15:59",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=959s"
+            },
+            {
+                "showDate": true,
+                "songName": "シニカルナイトプラン",
+                "singer": "Ayase feat. 初音ミク",
+                "songTime": "00:20:48",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=1248s"
+            },
+            {
+                "showDate": true,
+                "songName": "絶頂讃歌",
+                "singer": "和ぬか",
+                "songTime": "00:27:47",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=1667s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "世界の約束",
+                "singer": "倍賞千恵子",
+                "songTime": "00:33:28",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=2008s"
+            },
+            {
+                "showDate": true,
+                "songName": "Again",
+                "singer": "YUI",
+                "songTime": "00:39:57",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=2397s"
+            },
+            {
+                "showDate": true,
+                "songName": "夜に駆ける",
+                "singer": "YOASOBI",
+                "songTime": "00:49:39",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=2979s"
+            },
+            {
+                "showDate": true,
+                "songName": "あなたがいることで",
+                "singer": "Uru",
+                "songTime": "00:57:03",
+                "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=3423s"
+            }
+        ]
+    },
+    {
         "date": "2026/4/13",
         "streamName": "【#歌枠】春ってあっという間だよね歌枠🎤🌸來羽うみ Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
