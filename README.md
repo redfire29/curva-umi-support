@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/05/03 - song list update
+- 溫度差ジェットコースターな歌枠⚡️🎤來羽うみ🐧⚽️Curva Umi Singing Stream
+
 2026/04/14 - info update
 - Youtube 會員貼圖增加
 
