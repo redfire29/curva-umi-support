@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/05/07 - song list update
+- 懐かしのボカロ、アニソン歌枠🎤來羽うみ🐧⚽️Curva Umi Singing Stream
+
 2026/05/03 - song list update
 - 溫度差ジェットコースターな歌枠⚡️🎤來羽うみ🐧⚽️Curva Umi Singing Stream
 

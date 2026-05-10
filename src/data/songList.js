@@ -1,5 +1,97 @@
 export default [
     {
+        "date": "2026/5/7",
+        "streamName": "【#歌枠】懐かしのボカロ、アニソン歌枠🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:05",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=5s&pp=0gcJCTAAlc8ueATH"
+            },
+            {
+                "showDate": true,
+                "songName": "ウィーアー！",
+                "singer": "北谷洋",
+                "songTime": "00:05:52",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=352s"
+            },
+            {
+                "showDate": true,
+                "songName": "右肩の蝶",
+                "singer": "のりぴー feat. 鏡音レン",
+                "songTime": "00:12:23",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=743s"
+            },
+            {
+                "showDate": true,
+                "songName": "さぁ",
+                "singer": "SURFACE",
+                "songTime": "00:19:53",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=1193s"
+            },
+            {
+                "showDate": true,
+                "songName": "ミュージックミュージック",
+                "singer": "とあ",
+                "songTime": "00:25:28",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=1528s"
+            },
+            {
+                "showDate": true,
+                "songName": "カミサマネジマキ",
+                "singer": "feat.GUMI",
+                "songTime": "00:29:34",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=1774s"
+            },
+            {
+                "showDate": true,
+                "songName": "タッチ",
+                "singer": "岩崎良美",
+                "songTime": "00:37:44",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=2264s"
+            },
+            {
+                "showDate": true,
+                "songName": "ムーンライト伝説",
+                "singer": "DALI",
+                "songTime": "00:41:02",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=2462s"
+            },
+            {
+                "showDate": true,
+                "songName": "東京テディベア",
+                "singer": "Neru feat. 鏡音リン",
+                "songTime": "00:47:37",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=2857s"
+            },
+            {
+                "showDate": true,
+                "songName": "六兆年と一夜物語",
+                "singer": "kemu feat. IA",
+                "songTime": "00:53:48",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=3228s"
+            },
+            {
+                "showDate": true,
+                "songName": "魂のルフラン",
+                "singer": "高橋洋子",
+                "songTime": "00:59:26",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=3566s"
+            },
+            {
+                "showDate": true,
+                "songName": "世界が終るまでは",
+                "singer": "WANDS 上杉昇",
+                "songTime": "01:06:54",
+                "songLink": "https://www.youtube.com/watch?v=yB2zE5HMbfE&t=4014s"
+            },
+        ]
+    },
+    {
         "date": "2026/5/3",
         "streamName": "【#歌枠】温度差ジェットコースターな歌枠⚡️🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
@@ -8,7 +100,7 @@ export default [
             {
                 "showDate": true,
                 "songName": "海色バスルーム",
-                "singer": "Umi",
+                "singer": "來羽うみ",
                 "songTime": "00:00:07",
                 "songLink": "https://www.youtube.com/watch?v=VVeAe0ewpek&t=7s"
             },
