@@ -1,6 +1,7 @@
 <script>
   import { onMount, tick } from "svelte";
-  import { find, get, set, filter, forEach, concat } from "lodash-es";
+  import { slide } from "svelte/transition";
+  import { get, forEach, concat } from "lodash-es";
   import dayjs from "dayjs";
   import { gsap } from "gsap";
   import songListArray from "../../data/songList.js";
@@ -25,10 +26,31 @@
 
   let songListAll = $state([]);
   let showSongArray = $state([]);
-  let dateList = $state([]);
-  let selectDate = $state(""); // This is bound to select, needs to hold the value.
-  // Select value in Vue was object or string. check options.
-  // Vue: :value='date' (object) and :value="" (string). Svelte binding to object works.
+  let selectedYear = $state("");
+  let selectedMonth = $state("");
+  let filterPanelHeight = $state(0);
+
+  // 1. 取得所有可用的年份，去重並降序排列
+  const availableYears = $derived.by(() => {
+    const years = new Set();
+    songListArray.forEach(v => {
+      years.add(dayjs(v.date).format("YYYY"));
+    });
+    return ["", ...Array.from(years).sort((a, b) => b.localeCompare(a))]; // "" 代表全部
+  });
+
+  // 2. 根據目前選定的年份，動態取得有直播歌單的月份，去重並升序排列
+  const availableMonths = $derived.by(() => {
+    if (!selectedYear) return [""];
+    const months = new Set();
+    songListArray.forEach(v => {
+      const d = dayjs(v.date);
+      if (d.format("YYYY") === selectedYear) {
+        months.add(d.format("MM"));
+      }
+    });
+    return ["", ...Array.from(months).sort((a, b) => a.localeCompare(b))]; // "" 代表全部
+  });
 
   let searchWord = $state("");
   let searchSingerInput = $state("");
@@ -36,6 +58,7 @@
   // Favorites logic
   let favorites = $state([]); // Stores songLinks
   let showOnlyFavorites = $state(false);
+  let visibleGroupsCount = $derived(showSongArray.filter(g => g.showDate).length);
 
   // Portal Action
   function portal(node) {
@@ -62,8 +85,8 @@
   };
 
   const SearchSong = (searchKey) => {
-    if (searchKey === "songName") searchSingerInput = "";
-    if (searchKey === "singer") searchWord = "";
+    if (searchKey === "songName" && searchSingerInput !== "") searchSingerInput = "";
+    if (searchKey === "singer" && searchWord !== "") searchWord = "";
 
     const term = searchKey === "songName" ? searchWord : searchSingerInput;
 
@@ -109,25 +132,30 @@
 
   // Touch logic
   let touchStartY = 0;
+  let touchStartX = 0;
   let ignoreClick = false;
 
   const onTouchStart = (e) => {
     touchStartY = e.touches[0].clientY;
+    touchStartX = e.touches[0].clientX;
     ignoreClick = false;
   };
 
   const onTouchEnd = (e) => {
     const touchEndY = e.changedTouches[0].clientY;
-    const diff = touchEndY - touchStartY;
-    const minSwipeDistance = 30;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffY = touchEndY - touchStartY;
+    const diffX = touchEndX - touchStartX;
+    const minSwipeDistance = 40;
 
-    if (Math.abs(diff) > minSwipeDistance) {
+    // 僅在垂直滑動大於閾值且垂直位移為水平位移的 1.5 倍以上時，才觸發展開/收合，防範誤觸與橫向滑動
+    if (Math.abs(diffY) > minSwipeDistance && Math.abs(diffY) > Math.abs(diffX) * 1.5) {
       ignoreClick = true;
       setTimeout(() => {
         ignoreClick = false;
       }, 300);
 
-      if (diff < 0) {
+      if (diffY < 0) {
         isExpanded = true;
       } else {
         isExpanded = false;
@@ -161,25 +189,37 @@
     // Just blindly follow Vue logic.
   };
 
-  const dateSelect = () => {
-    const val = selectDate;
-    if (val && val.date) {
-      // selectDate is object
-      allSongSH(false);
-      const SD = val.date;
-      for (let v of showSongArray) {
-        const matchDate = dayjs(v.date).format("YYYY/MM/DD");
-        if (matchDate.match(new RegExp(SD, "i"))) {
-          v.showDate = true;
-          for (let song of v.songList) {
-            song.showDate = true;
-          }
+  const filterByDate = () => {
+    allSongSH(false);
+
+    if (selectedYear === "") {
+      if (searchWord === "" && searchSingerInput === "") {
+        allSongSH(true);
+      }
+      return;
+    }
+
+    const filterPrefix = selectedMonth 
+      ? `${selectedYear}/${selectedMonth}` 
+      : selectedYear;
+
+    for (let v of showSongArray) {
+      const matchDate = dayjs(v.date).format("YYYY/MM/DD");
+      if (matchDate.startsWith(filterPrefix)) {
+        v.showDate = true;
+        for (let song of v.songList) {
+          song.showDate = true;
         }
       }
-    } else {
-      allSongSH(true);
     }
   };
+
+  $effect(() => {
+    // 監聽年份和月份的變化，自動觸發過濾
+    const y = selectedYear;
+    const m = selectedMonth;
+    filterByDate();
+  });
 
   const toggleFavorite = (songLink) => {
     if (favorites.includes(songLink)) {
@@ -228,6 +268,38 @@
     }
   };
 
+  let debounceTimer;
+  $effect(() => {
+    const word = searchWord;
+    const singer = searchSingerInput;
+    
+    // 如果資料尚未加載完成，先不處理
+    if (!songListAll || songListAll.length === 0) return;
+    
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      if (word === "" && singer === "") {
+        if (!showOnlyFavorites) {
+          if (selectedYear === "") {
+            allSongSH(true);
+          } else {
+            filterByDate();
+          }
+        } else {
+          toggleShowFavorites(true);
+        }
+      } else if (word !== "") {
+        selectedYear = ""; // 開始搜尋時，自動重置日期篩選標籤
+        selectedMonth = "";
+        SearchSong("songName");
+      } else if (singer !== "") {
+        selectedYear = ""; // 開始搜尋時，自動重置日期篩選標籤
+        selectedMonth = "";
+        SearchSong("singer");
+      }
+    }, 300);
+  });
+
   const checkMobile = () => {
     isMobile = window.innerWidth < 1024;
   };
@@ -242,29 +314,10 @@
     // We will create a fresh structure to be safe and reactive.
 
     let processedAll = [];
-    let processedDateList = [];
 
     forEach(songListArray, (v) => {
       // Clone v to avoid mutating import
       let vClone = { ...v, showDate: true, songList: [] };
-
-      const getYear = { date: dayjs(v.date).format("YYYY") };
-      const getM = dayjs(v.date).format("YYYY/MM");
-
-      const findYear = find(processedDateList, { date: getYear.date });
-      if (findYear) {
-        const findM = find(processedDateList, { date: getM });
-        if (findM) {
-          processedDateList.push({ date: dayjs(v.date).format("YYYY/MM/DD") });
-        } else {
-          processedDateList.push({ date: getM });
-          processedDateList.push({ date: dayjs(v.date).format("YYYY/MM/DD") });
-        }
-      } else {
-        processedDateList.push(getYear);
-        processedDateList.push({ date: getM });
-        processedDateList.push({ date: dayjs(v.date).format("YYYY/MM/DD") });
-      }
 
       if (v.songList) {
         vClone.songList = v.songList.map((s) => ({ ...s, showDate: true }));
@@ -274,13 +327,7 @@
 
     // Update state
     songListAll = processedAll;
-    showSongArray = songListAll; // Reference assign works for Proxy if songListAll is Proxy?
-    // Actually simpler:
-    // songListAll = $state(processedAll) ? No, we just assign to the let variable, Svelte makes it reactive.
-    // But we need showSongArray to point to it.
-    // In Svelte 5, if we do showSongArray = songListAll, they point to same proxy.
-
-    dateList = processedDateList;
+    showSongArray = songListAll;
 
     // Load Favorites
     const savedFavs = localStorage.getItem("curva_fav_songs");
@@ -337,7 +384,7 @@
         <!-- Left Column -->
         <div class="space-y-[20px]">
           <!-- Search -->
-          <div class="glass-card p-[20px] sticky top-[77px] z-30">
+          <div bind:clientHeight={filterPanelHeight} class="glass-card p-[20px] sticky top-[77px] z-30">
             <div class="flex items-center justify-between mb-[15px]">
               <h2 class="text-[24px] font-bold text-mint-green">
                 {t("searchSong")}
@@ -372,7 +419,7 @@
                   >
                 {/if}
                 <span class="text-sm font-medium"
-                  >{t("myFavorites") || "My Favorites"}</span
+                  >{t("myFavorites") || "My Favorites"} ({favorites.length})</span
                 >
               </button>
             </div>
@@ -380,14 +427,25 @@
               <!-- Search Inputs -->
               <div class="flex flex-col md:flex-row gap-[10px]">
                 <div
-                  class="flex-1 flex bg-white/10 rounded-lg overflow-hidden border border-mint-green/30 group focus-within:border-mint-green transition-colors"
+                  class="flex-1 flex bg-white/10 rounded-lg overflow-hidden border border-mint-green/30 group focus-within:border-mint-green transition-colors items-stretch"
                 >
-                  <input
-                    bind:value={searchWord}
-                    class="flex-1 bg-transparent text-pearl-white px-[15px] py-[10px] outline-none placeholder-pearl-white/40"
-                    placeholder={t("searchSongName")}
-                    onkeyup={(e) => e.key === "Enter" && SearchSong("songName")}
-                  />
+                  <div class="flex-1 relative flex items-center">
+                    <input
+                      bind:value={searchWord}
+                      class="w-full bg-transparent text-pearl-white pl-[15px] pr-[40px] py-[10px] outline-none placeholder-pearl-white/40"
+                      placeholder={t("searchSongName")}
+                      onkeyup={(e) => e.key === "Enter" && SearchSong("songName")}
+                    />
+                    {#if searchWord}
+                      <button
+                        onclick={() => searchWord = ""}
+                        class="absolute right-[10px] text-pearl-white/60 hover:text-mint-green transition-colors w-[24px] h-[24px] flex items-center justify-center bg-black/20 rounded-full text-[10px]"
+                        title="Clear"
+                      >
+                        ✕
+                      </button>
+                    {/if}
+                  </div>
                   <button
                     onclick={() => SearchSong("songName")}
                     class="px-[20px] bg-white/5 hover:bg-mint-green hover:text-deep-sea transition-colors flex items-center justify-center border-l border-white/10 shrink-0"
@@ -397,14 +455,25 @@
                 </div>
 
                 <div
-                  class="flex-1 flex bg-white/10 rounded-lg overflow-hidden border border-mint-green/30 group focus-within:border-mint-green transition-colors"
+                  class="flex-1 flex bg-white/10 rounded-lg overflow-hidden border border-mint-green/30 group focus-within:border-mint-green transition-colors items-stretch"
                 >
-                  <input
-                    bind:value={searchSingerInput}
-                    class="flex-1 bg-transparent text-pearl-white px-[15px] py-[10px] outline-none placeholder-pearl-white/40"
-                    placeholder={t("searchSinger")}
-                    onkeyup={(e) => e.key === "Enter" && SearchSong("singer")}
-                  />
+                  <div class="flex-1 relative flex items-center">
+                    <input
+                      bind:value={searchSingerInput}
+                      class="w-full bg-transparent text-pearl-white pl-[15px] pr-[40px] py-[10px] outline-none placeholder-pearl-white/40"
+                      placeholder={t("searchSinger")}
+                      onkeyup={(e) => e.key === "Enter" && SearchSong("singer")}
+                    />
+                    {#if searchSingerInput}
+                      <button
+                        onclick={() => searchSingerInput = ""}
+                        class="absolute right-[10px] text-pearl-white/60 hover:text-mint-green transition-colors w-[24px] h-[24px] flex items-center justify-center bg-black/20 rounded-full text-[10px]"
+                        title="Clear"
+                      >
+                        ✕
+                      </button>
+                    {/if}
+                  </div>
                   <button
                     onclick={() => SearchSong("singer")}
                     class="px-[20px] bg-white/5 hover:bg-mint-green hover:text-deep-sea transition-colors flex items-center justify-center border-l border-white/10 shrink-0"
@@ -414,32 +483,38 @@
                 </div>
               </div>
 
-              <!-- Date Filter -->
-              <div class="flex items-center gap-[10px]">
-                <span class="text-sm text-pearl-white/70"
-                  >{t("dateSelect")}:</span
-                >
-                <div class="relative flex-1">
-                  <select
-                    bind:value={selectDate}
-                    onchange={dateSelect}
-                    class="w-full bg-white/10 border border-mint-green/30 rounded-lg px-[15px] py-[8px] text-pearl-white outline-none focus:border-mint-green appearance-none cursor-pointer"
-                  >
-                    <option value="" class="text-deep-sea"
-                      >{t("selectAll")}</option
+              <!-- Date Filter Tabs -->
+              <div class="flex flex-col gap-[10px] p-[12px] bg-white/5 backdrop-blur-md border border-white/10 rounded-xl shadow-lg">
+                <!-- 年份選擇列 -->
+                <div class="flex flex-wrap gap-[8px]">
+                  {#each availableYears as year}
+                    <button
+                      onclick={() => { selectedYear = year; selectedMonth = ""; }}
+                      class="px-[12px] py-[6px] rounded-lg text-xs font-medium border transition-all active:scale-95 {selectedYear === year
+                        ? 'bg-mint-green border-transparent text-deep-sea shadow-md shadow-mint-green/20'
+                        : 'bg-white/5 border-white/10 text-pearl-white/80 hover:bg-white/10 hover:text-pearl-white'}"
                     >
-                    {#each dateList as date}
-                      <option value={date} class="text-deep-sea"
-                        >{date.date}</option
-                      >
-                    {/each}
-                  </select>
-                  <div
-                    class="absolute right-[10px] top-1/2 -translate-y-1/2 pointer-events-none"
-                  >
-                    <span class="text-[12px] opacity-70">▼</span>
-                  </div>
+                      {year === "" ? (locale === 'zh' ? '全部' : 'すべて') : `${year}年`}
+                    </button>
+                  {/each}
                 </div>
+
+                <!-- 月份選擇列 (僅在選取具體年份後展示) -->
+                {#if selectedYear !== ""}
+                  <div class="h-[1px] bg-white/10 my-[2px] animate-fadeIn" transition:slide={{ duration: 200 }}></div>
+                  <div class="flex flex-wrap gap-[8px] animate-fadeIn" transition:slide={{ duration: 200 }}>
+                    {#each availableMonths as month}
+                      <button
+                        onclick={() => { selectedMonth = month; }}
+                        class="px-[12px] py-[6px] rounded-lg text-xs font-medium border transition-all active:scale-95 {selectedMonth === month
+                          ? 'bg-curacao border-transparent text-deep-sea shadow-md shadow-curacao/20'
+                          : 'bg-white/5 border-white/10 text-pearl-white/80 hover:bg-white/10 hover:text-pearl-white'}"
+                      >
+                        {month === "" ? (locale === 'zh' ? '全部' : 'すべて') : `${parseInt(month)}月`}
+                      </button>
+                    {/each}
+                  </div>
+                {/if}
               </div>
             </div>
           </div>
@@ -451,7 +526,8 @@
                 <div class="glass-card">
                   <!-- Header -->
                   <div
-                    class="p-[15px] md:p-[20px] flex items-center justify-between cursor-pointer bg-deep-sea hover:brightness-125 transition sticky top-[340px] md:top-[280px] z-20 border-b border-white/10 rounded-2xl"
+                    class="p-[15px] md:p-[20px] flex items-center justify-between cursor-pointer bg-deep-sea hover:brightness-125 transition sticky z-20 border-b border-white/10 rounded-2xl"
+                    style="top: {77 + filterPanelHeight}px;"
                     onclick={() => (list.showList = !list.showList)}
                     onkeydown={(e) =>
                       e.key === "Enter" && (list.showList = !list.showList)}
@@ -484,11 +560,11 @@
                   </div>
 
                   <!-- Body -->
-                  <div
-                    class="transition-all duration-300 ease-in-out overflow-hidden {list.showList
-                      ? 'max-h-[2000px] opacity-100'
-                      : 'max-h-0 opacity-0'}"
-                  >
+                  {#if list.showList}
+                    <div
+                      transition:slide={{ duration: 300 }}
+                      class="overflow-hidden"
+                    >
                     <ul class="border-t border-white/10">
                       {#each list.songList as song, i}
                         {#if song.showDate}
@@ -559,16 +635,48 @@
                               <span
                                 class="text-mint-green opacity-0 group-hover:opacity-100 transition-opacity"
                                 >▶</span
-                              >
-                            </div>
-                          </li>
+                            >
+                          </div>
+                        </li>
                         {/if}
                       {/each}
                     </ul>
                   </div>
-                </div>
+                {/if}
+              </div>
               {/if}
             {/each}
+
+            {#if visibleGroupsCount === 0}
+              <div class="glass-card p-[40px] text-center flex flex-col items-center justify-center space-y-[15px] animate-fadeIn">
+                <span class="text-[50px] opacity-70">🐧❓</span>
+                {#if showOnlyFavorites}
+                  <h3 class="text-[18px] font-bold text-mint-green">
+                    {locale === 'zh' ? '目前還沒有收藏任何歌曲喔！' : 'お気に入りの曲はまだありません！'}
+                  </h3>
+                  <p class="text-[14px] text-pearl-white/60 max-w-[400px]">
+                    {locale === 'zh' 
+                      ? '點選歌單中歌曲旁的愛心圖示，就可以把喜歡的歌存到這裡，方便隨時點播喔！' 
+                      : '歌リストの曲の横にあるハートマークをクリックして、お気に入りの曲を登録しましょう！'}
+                  </p>
+                {:else}
+                  <h3 class="text-[18px] font-bold text-mint-green">
+                    {locale === 'zh' ? '找不到符合條件的歌曲' : '該当する曲が見つかりませんでした'}
+                  </h3>
+                  <p class="text-[14px] text-pearl-white/60">
+                    {locale === 'zh' 
+                      ? '換個關鍵字搜尋，或是清除搜尋條件再試一次吧！' 
+                      : '別のキーワードで検索するか、検索条件をクリアして再試行してください！'}
+                  </p>
+                  <button
+                    onclick={() => { searchWord = ""; searchSingerInput = ""; selectedYear = ""; selectedMonth = ""; }}
+                    class="px-[15px] py-[8px] bg-white/10 hover:bg-mint-green hover:text-deep-sea rounded-lg border border-mint-green/30 hover:border-transparent text-sm font-medium transition-colors"
+                  >
+                    {locale === 'zh' ? '重置搜尋條件' : '検索条件をクリア'}
+                  </button>
+                {/if}
+              </div>
+            {/if}
           </div>
         </div>
 
@@ -716,9 +824,15 @@
 
           <!-- Info -->
           <div
-            class="flex flex-col overflow-hidden transition-all duration-300 {isExpanded
+            class="flex flex-col overflow-hidden transition-all duration-300 touch-action-none cursor-pointer {isExpanded
               ? 'items-center text-center w-full px-[20px]'
               : 'flex-1 justify-center items-start'}"
+            ontouchstart={onTouchStart}
+            ontouchend={onTouchEnd}
+            onclick={() => { if (!isExpanded) toggleFullPlayer(); }}
+            role="button"
+            tabindex="0"
+            onkeydown={(e) => e.key === "Enter" && !isExpanded && toggleFullPlayer()}
           >
             <p
               class="font-bold text-mint-green w-full transition-all {isExpanded

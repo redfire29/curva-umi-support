@@ -275,11 +275,14 @@
     },
   ];
 
+  let isHeaderDark = $state(false);
+
   const handleScroll = () => {
     if (!contentRef) return;
     const rect = contentRef.getBoundingClientRect();
     const triggerPoint = 80;
     const isDark = rect.top <= triggerPoint;
+    isHeaderDark = isDark;
     window.dispatchEvent(
       new CustomEvent("update-header-style", { detail: { isDark } }),
     );
@@ -407,19 +410,25 @@
 
 <div class="overflow-hidden">
   <section
-    class="bg-white fixed top-0 left-0 right-0 h-[450px] z-0 flex justify-center items-center"
+    class="bg-white fixed top-0 left-0 right-0 h-[280px] md:h-[450px] z-0 flex flex-col justify-center items-center"
   >
     <div class="flex items-center justify-center">
       <img
         src="/curva-umi-support/img/logo.jpeg"
-        class="h-[150px]"
+        class="h-[100px] md:h-[150px] transition-all duration-300"
         alt="Curva Umi Logo"
       />
     </div>
+    {#if !isHeaderDark}
+      <div class="absolute bottom-[20px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[3px] animate-bounce text-deep-sea opacity-60 pointer-events-none transition-opacity duration-300">
+        <span class="text-[9px] font-bold tracking-[0.2em] font-mono">SCROLL</span>
+        <span class="text-[10px]">▼</span>
+      </div>
+    {/if}
   </section>
   <div
     bind:this={contentRef}
-    class="relative z-10 bg-[linear-gradient(to_bottom,#002B49,#0077B6)] min-h-screen mt-[450px]"
+    class="relative z-10 bg-[linear-gradient(to_bottom,#002B49,#0077B6)] min-h-screen mt-[280px] md:mt-[450px]"
   >
     <div
       class="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-full"
