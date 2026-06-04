@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/06/04 - song list update
+- 神曲だらけのボカロ歌枠🐧🎤來羽うみ/Curva Umi Singing Stream
+
 2026/05/07 - song list update
 - 懐かしのボカロ、アニソン歌枠🎤來羽うみ🐧⚽️Curva Umi Singing Stream
 

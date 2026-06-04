@@ -1,5 +1,76 @@
 export default [
     {
+        "date": "2026/6/4",
+        "streamName": "【#歌枠】神曲だらけのボカロ歌枠🐧🎤來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:10",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=10s"
+            },
+            {
+                "showDate": true,
+                "songName": "フォニイ",
+                "singer": "ツミキ feat. 可不",
+                "songTime": "00:08:41",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=521s"
+            },
+            {
+                "showDate": true,
+                "songName": "magnet",
+                "singer": "minato (流星P)",
+                "songTime": "00:14:20",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=860s"
+            },
+            {
+                "showDate": true,
+                "songName": "ロミオとシンデレラ",
+                "singer": "doriko",
+                "songTime": "00:20:39",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=1239s"
+            },
+            {
+                "showDate": true,
+                "songName": "えれくとりっく・えんじぇぅ",
+                "singer": "ヤスオP",
+                "songTime": "00:28:15",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=1695s"
+            },
+            {
+                "showDate": true,
+                "songName": "ロストワンの号哭",
+                "singer": "Neru",
+                "songTime": "00:34:05",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=2045s"
+            },
+            {
+                "showDate": true,
+                "songName": "テレキャスタービーボーイ",
+                "singer": "すりぃ",
+                "songTime": "00:42:34",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=2554s"
+            },
+            {
+                "showDate": true,
+                "songName": "ワールズエンド・ダンスホール",
+                "singer": "wowaka",
+                "songTime": "00:50:28",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=3028s"
+            },
+            {
+                "showDate": true,
+                "songName": "Tell Your World",
+                "singer": "livetune (kz)",
+                "songTime": "00:57:53",
+                "songLink": "https://www.youtube.com/watch?v=Er6tSdvLTxc&t=3473s"
+            },
+        ]
+    },
+    {
         "date": "2026/5/7",
         "streamName": "【#歌枠】懐かしのボカロ、アニソン歌枠🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
@@ -963,7 +1034,7 @@ export default [
             },
             {
                 "showDate": true,
-                "songName": "again",
+                "songName": "Again",
                 "singer": "YUI",
                 "songTime": "37:13",
                 "songLink": "https://www.youtube.com/watch?v=0hcpR1LH35g&t=2233s"
@@ -1955,7 +2026,7 @@ export default [
             },
             {
                 "showDate": true,
-                "songName": "snow halation",
+                "songName": "Snow halation",
                 "singer": "μ's",
                 "songTime": "1:21:08",
                 "songLink": "https://www.youtube.com/watch?v=kxVDGFxgOYQ&t=4868s"
