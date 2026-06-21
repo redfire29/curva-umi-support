@@ -1,5 +1,69 @@
 export default [
     {
+        "date": "2026/6/21",
+        "streamName": "【#歌枠】雨の日しっとり歌枠☂️🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "アイネクライネ",
+                "singer": "米津玄師",
+                "songTime": "00:06:32",
+                "songLink": "https://www.youtube.com/watch?v=OKKbo6DJZQ0&t=392s"
+            },
+            {
+                "showDate": true,
+                "songName": "JANE DOE",
+                "singer": "米津玄師 & 宇多田ヒカル",
+                "songTime": "00:16:53",
+                "songLink": "https://www.youtube.com/watch?v=OKKbo6DJZQ0&t=1013s"
+            },
+            {
+                "showDate": true,
+                "songName": "Beautiful World",
+                "singer": "宇多田ヒカル",
+                "songTime": "00:23:23",
+                "songLink": "https://www.youtube.com/watch?v=OKKbo6DJZQ0&t=1403s"
+            },
+            {
+                "showDate": true,
+                "songName": "レイン",
+                "singer": "秦基博 / シド",
+                "songTime": "00:02:25",
+                "songLink": "https://www.youtube.com/watch?v=v_4L-_NkHVo&t=145s"
+            },
+            {
+                "showDate": true,
+                "songName": "吉原ラメント",
+                "singer": "亜沙 feat. 重音テト",
+                "songTime": "00:09:29",
+                "songLink": "https://www.youtube.com/watch?v=v_4L-_NkHVo&t=569s"
+            },
+            {
+                "showDate": true,
+                "songName": "Cry Baby",
+                "singer": "Official髭男dism",
+                "songTime": "00:17:18",
+                "songLink": "https://www.youtube.com/watch?v=v_4L-_NkHVo&t=1038s"
+            },
+            {
+                "showDate": true,
+                "songName": "虹",
+                "singer": "菅田将暉",
+                "songTime": "00:27:19",
+                "songLink": "https://www.youtube.com/watch?v=v_4L-_NkHVo&t=1639s"
+            },
+            {
+                "showDate": true,
+                "songName": "メルト",
+                "singer": "ryo(supercell) feat. 初音ミク",
+                "songTime": "00:35:33",
+                "songLink": "https://www.youtube.com/watch?v=v_4L-_NkHVo&t=2133s"
+            }
+        ]
+    },
+    {
         "date": "2026/6/4",
         "streamName": "【#歌枠】神曲だらけのボカロ歌枠🐧🎤來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
