@@ -1,5 +1,74 @@
 export default [
     {
+        "date": "2026/7/20",
+        "streamName": "【#歌枠】海の日🐧🩵まもなく來羽うみ1.5年記念な歌枠✨🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色パズルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:12",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=12s"
+            },
+            {
+                "showDate": true,
+                "songName": "HOT LIMIT",
+                "singer": "T.M.Revolution",
+                "songTime": "12:51",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=771s"
+            },
+            {
+                "showDate": true,
+                "songName": "青い珊瑚礁",
+                "singer": "松田聖子",
+                "songTime": "19:29",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=1169s"
+            },
+            {
+                "showDate": true,
+                "songName": "花に亡霊",
+                "singer": "ヨルシカ",
+                "songTime": "26:03",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=1563s"
+            },
+            {
+                "showDate": true,
+                "songName": "綺羅",
+                "singer": "ado",
+                "songTime": "37:57",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=2277s"
+            },
+            {
+                "showDate": true,
+                "songName": "タマシイレボリューション",
+                "singer": "Superfly",
+                "songTime": "43:59",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=2639s"
+            },
+            {
+                "showDate": true,
+                "songName": "パート・オブ・ユア・ワールド",
+                "singer": "すずきまゆみ",
+                "songTime": "52:31",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=3151s"
+            },
+            {
+                "showDate": true,
+                "songName": "星降る海",
+                "singer": "月見ヤチヨ(cv.早見沙織) from 超かぐや姫！",
+                "songTime": "59:28",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=3568s"
+            },
+            {
+                "showDate": true,
+                "songTime": "49:11",
+                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=2951s"
+            }
+        ]
+    },
+    {
         "date": "2026/6/21",
         "streamName": "【#歌枠】雨の日しっとり歌枠☂️🎤來羽うみ🐧⚽️Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
