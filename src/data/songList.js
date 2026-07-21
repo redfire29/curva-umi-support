@@ -61,11 +61,6 @@ export default [
                 "songTime": "59:28",
                 "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=3568s"
             },
-            {
-                "showDate": true,
-                "songTime": "49:11",
-                "songLink": "https://www.youtube.com/watch?v=qSRNXCwA-Bc&t=2951s"
-            }
         ]
     },
     {
