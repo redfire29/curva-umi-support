@@ -1,12 +1,13 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
 
-  let { locale = 'ja', messages = {} } = $props();
+  let { locale = 'ja', messages = {}, isDark = false } = $props();
 
   const t = (key) => messages[key] || key;
-  let isScrolled = $state(false);
+  let isScrolled = $state(isDark);
 
   const handleHeaderStyle = (event) => {
+    if (isDark) return;
     isScrolled = event.detail.isDark;
   };
 
