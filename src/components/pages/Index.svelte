@@ -761,9 +761,9 @@
             class="relative border-l border-mint-green/30 ml-[10px] space-y-[30px]"
           >
             {#each historyList as history}
-              <li data-aos="fade-up" class="relative pl-[30px]">
+              <li data-aos="fade-up" class="relative pl-[30px] group">
                 <div
-                  class="absolute left-[-5px] top-[8px] w-[10px] h-[10px] rounded-full bg-mint-green shadow-[0_0_10px_rgba(152,226,198,0.5)]"
+                  class="absolute left-[-5px] top-[8px] w-[10px] h-[10px] rounded-full bg-mint-green shadow-[0_0_10px_rgba(152,226,198,0.5)] transition-all duration-300 group-hover:scale-[1.5] group-hover:shadow-[0_0_15px_rgba(152,226,198,0.8)] group-hover:bg-white"
                 ></div>
                 <p
                   class="text-[14px] text-mint-green mb-[5px] font-bold tracking-wider"
@@ -775,9 +775,11 @@
                     <a
                       href={history.link}
                       target="_blank"
-                      class="hover:text-mint-green transition-colors border-b border-transparent hover:border-mint-green"
-                      >{history?.content}</a
-                    >
+                      class="hover:text-mint-green transition-colors inline-flex items-center gap-1"
+                      >
+                      {history?.content}
+                      <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
                   {:else}
                     <p>{history?.content}</p>
                   {/if}
@@ -791,7 +793,8 @@
   </div>
 </div>
 
-<style>
+<style lang="postcss">
+  @reference "../../assets/css/main.css";
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl hover:bg-white/10 transition-colors duration-500;
   }

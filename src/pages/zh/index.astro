@@ -1,10 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import IndexContent from "../../components/pages/Index.svelte";
-import zh from "../../locales/zh.yml";
+import { ui } from "../../i18n/ui";
 
 const locale = "zh";
-const messages = zh;
+const messages = ui[locale];
 ---
 
 <Layout title="來羽うみSupport">

@@ -95,8 +95,9 @@
   </div>
 </header>
 
-<style>
-.lang-btn {
-  @apply bg-transparent border rounded p-[5px_10px] mx-[5px] cursor-pointer transition-colors duration-300;
-}
+<style lang="postcss">
+  @reference "../assets/css/main.css";
+  .lang-btn {
+    @apply bg-transparent border rounded p-[5px_10px] mx-[5px] cursor-pointer transition-colors duration-300;
+  }
 </style>

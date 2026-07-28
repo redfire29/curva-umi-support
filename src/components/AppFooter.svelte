@@ -23,7 +23,7 @@
       role="button"
       tabindex="0"
     >
-      <p class="text-[10px] text-white tracking-widest">TOP</p>
+      <p class="text-[10px] text-deep-sea group-hover:text-white tracking-widest transition-colors">TOP</p>
     </div>
     <div class="flex items-center justify-between max-md:flex-col-reverse">
       <a

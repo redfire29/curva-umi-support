@@ -4,9 +4,7 @@
   import { get, forEach, concat } from "lodash-es";
   import dayjs from "dayjs";
   import { gsap } from "gsap";
-  import songListArray from "../../data/songList.js";
-
-  let { locale = "ja", messages = {} } = $props();
+  let { locale = "ja", messages = {}, songListArray = [] } = $props();
   const t = (key) => messages[key] || key;
 
   // Direct helpers to replace lodash get/set where possible for reactivity,
@@ -757,10 +755,12 @@
           onkeydown={(e) => e.key === "Enter" && toggleFullPlayer()}
         >
           <div
-            class="flex items-center justify-center bg-[#002B49] border-t border-x border-mint-green/30 px-[20px] h-full shadow-[0_-5px_10px_rgba(0,0,0,0.3)] transition-all duration-300 {isExpanded
+            class="flex flex-col items-center justify-center gap-[4px] bg-[#002B49] border-t border-x border-mint-green/30 px-[20px] h-full shadow-[0_-5px_10px_rgba(0,0,0,0.3)] transition-all duration-300 {isExpanded
               ? 'rounded-full  px-0 bg-white/10 border-none'
               : 'rounded-t-xl w-[120px]'}"
           >
+            <!-- Drag Handle Pill -->
+            <div class="w-[30px] h-[4px] rounded-full bg-pearl-white/40 mt-[2px] transition-colors group-hover:bg-pearl-white/80 {isExpanded ? 'hidden' : ''}"></div>
             <svg
               class="size-[20px] text-pearl-white transition-transform duration-300 {isExpanded
                 ? 'rotate-180'
@@ -913,7 +913,8 @@
   </div>
 </div>
 
-<style>
+<style lang="postcss">
+  @reference "../../assets/css/main.css";
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl hover:bg-white/10 transition-colors duration-500;
   }

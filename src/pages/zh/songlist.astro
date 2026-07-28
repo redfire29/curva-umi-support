@@ -1,13 +1,19 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import SonglistContent from "../../components/pages/Songlist.svelte";
-import zh from "../../locales/zh.yml";
+import { getCollection } from 'astro:content';
+import { ui } from "../../i18n/ui";
 
 const locale = "zh";
-const messages = zh;
-const title = zh["song-list"] || "歌單";
+const messages = ui[locale];
+const title = messages["song-list"] || "歌單";
+
+const songListCollection = await getCollection('songs');
+// The collection 'songs' returns an array of entries. If there's only one entry, we use its data.
+// Since we have a single file `list.json` containing an array, the data property holds that array.
+const songListArray = songListCollection.length > 0 ? songListCollection[0].data : [];
 ---
 
 <Layout title={title}>
-  <SonglistContent client:load locale={locale} messages={messages} />
+  <SonglistContent client:load locale={locale} messages={messages} songListArray={songListArray} />
 </Layout>

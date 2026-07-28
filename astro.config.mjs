@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 import svelte from '@astrojs/svelte';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import yaml from '@rollup/plugin-yaml';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +9,6 @@ export default defineConfig({
   base: '/curva-umi-support',
   integrations: [
     svelte(),
-    tailwind(),
     sitemap()
   ],
   i18n: {
@@ -21,6 +19,8 @@ export default defineConfig({
     }
   },
   vite: {
-    plugins: [yaml()]
+    plugins: [
+      tailwindcss()
+    ]
   }
 });

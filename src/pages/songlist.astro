@@ -1,13 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SonglistContent from "../components/pages/Songlist.svelte";
-import ja from "../locales/ja.yml";
+import { getCollection } from 'astro:content';
+import { ui } from "../i18n/ui";
 
 const locale = "ja";
-const messages = ja;
-const title = ja["song-list"] || "Song List";
+const messages = ui[locale];
+const title = messages["song-list"] || "Song List";
+
+const songListCollection = await getCollection('songs');
+const songListArray = songListCollection.length > 0 ? songListCollection[0].data : [];
 ---
 
 <Layout title={title}>
-  <SonglistContent client:load locale={locale} messages={messages} />
+  <SonglistContent client:load locale={locale} messages={messages} songListArray={songListArray} />
 </Layout>

@@ -12,7 +12,8 @@
   </svg>
 </div>
 
-<style>
+<style lang="postcss">
+  @reference "../assets/css/main.css";
 .waves {
   @apply w-full h-[100px] -mb-[7px] min-h-[100px] max-h-[150px];
 }

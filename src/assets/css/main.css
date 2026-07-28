@@ -1,6 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-deep-sea: #002B49;
+  --color-curacao: #0077B6;
+  --color-mint-green: #98E2C6;
+  --color-pearl-white: #F8F9FA;
+  --color-coral-sun: #F3D99A;
+  
+  --animate-move-forever: move-forever 15s linear infinite;
+
+  @keyframes move-forever {
+    0% { transform: translate3d(-90px, 0, 0); }
+    100% { transform: translate3d(85px, 0, 0); }
+  }
+}
+
+/* Custom Variants for js/nojs (from old plugin) */
+@custom-variant js (.js &);
+@custom-variant nojs (.no-js &);
 
 html,
 body,
@@ -15,6 +32,6 @@ body {
   font-family: 'Outfit', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
 }
 
-.glass-card {
+@utility glass-card {
   @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl transition-colors duration-500;
 }

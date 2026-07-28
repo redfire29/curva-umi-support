@@ -3,8 +3,7 @@ import "../assets/css/main.css";
 import { getAbsoluteLocaleUrl } from "astro:i18n";
 import AppHeader from "../components/AppHeader.svelte";
 import AppFooter from "../components/AppFooter.svelte";
-import ja from "../locales/ja.yml";
-import zh from "../locales/zh.yml";
+import { ui } from "../i18n/ui";
 
 interface Props {
     title?: string;
@@ -14,7 +13,7 @@ interface Props {
 
 const { currentLocale } = Astro;
 const locale = currentLocale || "ja";
-const messages = locale === "ja" ? ja : zh;
+const messages = ui[locale as keyof typeof ui] || ui["ja"];
 
 const { title, description } = Astro.props;
 const displayTitle = title || Astro.props.frontmatter?.title || "Home";
