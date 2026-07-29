@@ -51,6 +51,41 @@ const ogImage = new URL(
     "/curva-umi-support/og-image.jpeg",
     Astro.site,
 ).toString();
+
+const siteURL = new URL(base, Astro.site).toString();
+const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": `${siteURL}#website`,
+            "url": siteURL,
+            "name": "來羽うみSupport",
+            "description": displayDescription,
+            "inLanguage": locale === "ja" ? "ja-JP" : "zh-TW"
+        },
+        {
+            "@type": "ProfilePage",
+            "@id": `${canonicalURL}#profile`,
+            "url": canonicalURL.toString(),
+            "name": `${displayTitle} - 來羽うみSupport`,
+            "isPartOf": {
+                "@id": `${siteURL}#website`
+            },
+            "about": {
+                "@type": "Person",
+                "name": "來羽うみ",
+                "alternateName": "Curva Umi",
+                "image": ogImage,
+                "url": "https://x.com/curva_umi",
+                "sameAs": [
+                    "https://www.youtube.com/@curvaumi",
+                    "https://x.com/curva_umi"
+                ]
+            }
+        }
+    ]
+};
 ---
 
 <!doctype html>
@@ -112,6 +147,7 @@ const ogImage = new URL(
         <meta name="twitter:image" content={ogImage} />
 
         <title>{displayTitle} - 來羽うみSupport</title>
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaData)} />
         <slot name="head" />
     </head>
     <body class="flex flex-col h-full text-pearl-white min-h-screen">

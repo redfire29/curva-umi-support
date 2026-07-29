@@ -432,6 +432,7 @@
         src="/curva-umi-support/img/logo.jpeg"
         class="h-[100px] md:h-[150px] transition-all duration-300"
         alt="Curva Umi Logo"
+        fetchpriority="high"
       />
     </div>
     {#if !isHeaderDark}
@@ -535,6 +536,8 @@
                     src="/curva-umi-support/img/discord.svg"
                     class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                     alt="Discord"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <p>うみサポ Discord</p>
@@ -564,6 +567,8 @@
                 <img
                   src="/curva-umi-support/img/picture.jpeg"
                   alt="來羽うみ (Curva Umi) Artist Photo"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="flex-1 mt-[10px] md:mt-0 md:ml-[10px] lg:ml-[30px]">
@@ -637,6 +642,8 @@
                           src="/curva-umi-support/img/twitter-x.svg"
                           class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                           alt="Twitter"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </a>
                     </li>
@@ -650,6 +657,8 @@
                           src="/curva-umi-support/img/youtube.svg"
                           class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                           alt="YouTube"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </a>
                     </li>
@@ -681,6 +690,8 @@
                         src={img.src}
                         alt={img.alt}
                         class="max-h-[500px] object-contain mx-auto"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </li>
                   {/each}
@@ -714,6 +725,8 @@
                                   src="/curva-umi-support/img/twitter-x.svg"
                                   class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                                   alt="Twitter"
+                                  loading="lazy"
+                                  decoding="async"
                                 />
                               </a>
                             </li>
@@ -729,6 +742,8 @@
                                   src="/curva-umi-support/img/youtube.svg"
                                   class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                                   alt="YouTube"
+                                  loading="lazy"
+                                  decoding="async"
                                 />
                               </a>
                             </li>

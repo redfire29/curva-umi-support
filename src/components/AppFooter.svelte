@@ -38,6 +38,8 @@
             src="/curva-umi-support/img/discord.svg"
             class="invert opacity-80 md:group-hover:invert-0 md:group-hover:opacity-100 w-[16px]"
             alt="Discord"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <p>うみサポ Discord</p>
