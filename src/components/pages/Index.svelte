@@ -75,13 +75,23 @@
   ];
 
   const videosList = [
-    { id: "9hfvOYmCBT4", title: "【歌ってみた】深海のリトルクライ- sasakure.UK / covered by 來羽うみ" },
-    { id: "kUi7oJlsDyw", title: "【歌ってみた】愛言葉III- DECO*27/ covered by 來羽うみ" },
-    { id: "PPLqef10u-w", title: "【歌ってみた】深海少女 - ゆうゆ / covered by 來羽うみ" }
+    {
+      id: "9hfvOYmCBT4",
+      title:
+        "【歌ってみた】深海のリトルクライ- sasakure.UK / covered by 來羽うみ",
+    },
+    {
+      id: "kUi7oJlsDyw",
+      title: "【歌ってみた】愛言葉III- DECO*27/ covered by 來羽うみ",
+    },
+    {
+      id: "PPLqef10u-w",
+      title: "【歌ってみた】深海少女 - ゆうゆ / covered by 來羽うみ",
+    },
   ];
 
   const shortsList = [
-    { id: "lJ1WHlZIqUg", title: "#心予報 #Eve #來羽うみ #vtuber #歌ってみた" }
+    { id: "lJ1WHlZIqUg", title: "#心予報 #Eve #來羽うみ #vtuber #歌ってみた" },
   ];
 
   const designList = [
@@ -153,7 +163,6 @@
       link: "https://www.youtube.com/watch?v=yB2zE5HMbfE",
     },
     {
-
       time: "2026-05-03",
       content: t("history-20260503-1"),
       link: "https://www.youtube.com/watch?v=VVeAe0ewpek",
@@ -446,8 +455,12 @@
       />
     </div>
     {#if !isHeaderDark}
-      <div class="absolute bottom-[20px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[3px] animate-bounce text-deep-sea opacity-60 pointer-events-none transition-opacity duration-300">
-        <span class="text-[9px] font-bold tracking-[0.2em] font-mono">SCROLL</span>
+      <div
+        class="absolute bottom-[20px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[3px] animate-bounce text-deep-sea opacity-60 pointer-events-none transition-opacity duration-300"
+      >
+        <span class="text-[9px] font-bold tracking-[0.2em] font-mono"
+          >SCROLL</span
+        >
         <span class="text-[10px]">▼</span>
       </div>
     {/if}
@@ -685,52 +698,38 @@
             data-aos="fade-up"
             class="text-[32px] mb-[20px] text-coral-sun font-bold tracking-[2px]"
           >
-            {t("covered") || "Covered"}
+            Covered
           </h2>
-          
+
           <div class="flex flex-col gap-[20px]">
             <!-- Top Main Video (16:9) -->
             {#if videosList.length > 0}
-            <div data-aos="fade-up" class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-mint-green/30 bg-black">
-              <iframe
-                src={`https://www.youtube.com/embed/${videosList[0].id}`}
-                title={videosList[0].title}
-                class="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
+              <div
+                data-aos="fade-up"
+                class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-mint-green/30 bg-black"
+              >
+                <iframe
+                  src={`https://www.youtube.com/embed/${videosList[0].id}`}
+                  title={videosList[0].title}
+                  class="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
             {/if}
 
             <!-- Other Videos (16:9) -->
             {#if videosList.length > 1}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-[15px]">
-              {#each videosList.slice(1) as video, i}
-                <div data-aos="fade-up" data-aos-delay={i * 100} class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
-                    class="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              {/each}
-            </div>
-            {/if}
-
-            <!-- Shorts List (9:16) -->
-            {#if shortsList.length > 0}
-            <div class="mt-[10px]">
-              <h3 data-aos="fade-up" class="text-[20px] mb-[15px] text-coral-sun font-bold tracking-[1px]">
-                Shorts
-              </h3>
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-[15px]">
-                {#each shortsList as short, i}
-                  <div data-aos="fade-up" data-aos-delay={i * 100} class="w-full aspect-[9/16] rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-[15px]">
+                {#each videosList.slice(1) as video, i}
+                  <div
+                    data-aos="fade-up"
+                    data-aos-delay={i * 100}
+                    class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black"
+                  >
                     <iframe
-                      src={`https://www.youtube.com/embed/${short.id}`}
-                      title={short.title}
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
                       class="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
@@ -738,7 +737,35 @@
                   </div>
                 {/each}
               </div>
-            </div>
+            {/if}
+
+            <!-- Shorts List (9:16) -->
+            {#if shortsList.length > 0}
+              <div class="mt-[10px]">
+                <h3
+                  data-aos="fade-up"
+                  class="text-[20px] mb-[15px] text-coral-sun font-bold tracking-[1px]"
+                >
+                  Shorts
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-[15px]">
+                  {#each shortsList as short, i}
+                    <div
+                      data-aos="fade-up"
+                      data-aos-delay={i * 100}
+                      class="w-full aspect-[9/16] rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black"
+                    >
+                      <iframe
+                        src={`https://www.youtube.com/embed/${short.id}`}
+                        title={short.title}
+                        class="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  {/each}
+                </div>
+              </div>
             {/if}
           </div>
         </section>
@@ -865,9 +892,21 @@
                       href={history.link}
                       target="_blank"
                       class="hover:text-mint-green transition-colors inline-flex items-center gap-1"
-                      >
+                    >
                       {history?.content}
-                      <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                      <svg
+                        class="w-3 h-3 opacity-70"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        ><path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        ></path></svg
+                      >
                     </a>
                   {:else}
                     <p>{history?.content}</p>
