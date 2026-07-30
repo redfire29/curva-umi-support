@@ -74,6 +74,16 @@
     },
   ];
 
+  const videosList = [
+    { id: "9hfvOYmCBT4", title: "【歌ってみた】深海のリトルクライ- sasakure.UK / covered by 來羽うみ" },
+    { id: "kUi7oJlsDyw", title: "【歌ってみた】愛言葉III- DECO*27/ covered by 來羽うみ" },
+    { id: "PPLqef10u-w", title: "【歌ってみた】深海少女 - ゆうゆ / covered by 來羽うみ" }
+  ];
+
+  const shortsList = [
+    { id: "lJ1WHlZIqUg", title: "#心予報 #Eve #來羽うみ #vtuber #歌ってみた" }
+  ];
+
   const designList = [
     {
       title: t("design01"),
@@ -666,6 +676,70 @@
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Featured Videos Section -->
+        <section class="glass-card p-[20px] md:p-[40px] mt-[40px]">
+          <h2
+            data-aos="fade-up"
+            class="text-[32px] mb-[20px] text-coral-sun font-bold tracking-[2px]"
+          >
+            {t("covered") || "Covered"}
+          </h2>
+          
+          <div class="flex flex-col gap-[20px]">
+            <!-- Top Main Video (16:9) -->
+            {#if videosList.length > 0}
+            <div data-aos="fade-up" class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-mint-green/30 bg-black">
+              <iframe
+                src={`https://www.youtube.com/embed/${videosList[0].id}`}
+                title={videosList[0].title}
+                class="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            {/if}
+
+            <!-- Other Videos (16:9) -->
+            {#if videosList.length > 1}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[15px]">
+              {#each videosList.slice(1) as video, i}
+                <div data-aos="fade-up" data-aos-delay={i * 100} class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    class="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              {/each}
+            </div>
+            {/if}
+
+            <!-- Shorts List (9:16) -->
+            {#if shortsList.length > 0}
+            <div class="mt-[10px]">
+              <h3 data-aos="fade-up" class="text-[20px] mb-[15px] text-coral-sun font-bold tracking-[1px]">
+                Shorts
+              </h3>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-[15px]">
+                {#each shortsList as short, i}
+                  <div data-aos="fade-up" data-aos-delay={i * 100} class="w-full aspect-[9/16] rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${short.id}`}
+                      title={short.title}
+                      class="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                {/each}
+              </div>
+            </div>
+            {/if}
           </div>
         </section>
 
