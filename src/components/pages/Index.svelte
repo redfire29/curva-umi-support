@@ -7,6 +7,7 @@
   const t = (key) => messages[key] || key;
 
   let contentRef;
+  let sentinelRef;
   let wave1, wave2, wave3, wave4;
 
   const information = [
@@ -311,16 +312,7 @@
 
   let isHeaderDark = $state(false);
 
-  const handleScroll = () => {
-    if (!contentRef) return;
-    const rect = contentRef.getBoundingClientRect();
-    const triggerPoint = 80;
-    const isDark = rect.top <= triggerPoint;
-    isHeaderDark = isDark;
-    window.dispatchEvent(
-      new CustomEvent("update-header-style", { detail: { isDark } }),
-    );
-  };
+
 
   onMount(() => {
     // Wave Animation
@@ -433,11 +425,23 @@
       }
     });
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    let observer;
+    if (sentinelRef) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          const isDark = entry.boundingClientRect.top <= 80;
+          isHeaderDark = isDark;
+          window.dispatchEvent(
+            new CustomEvent("update-header-style", { detail: { isDark } }),
+          );
+        },
+        { rootMargin: "-80px 0px 0px 0px" }
+      );
+      observer.observe(sentinelRef);
+    }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (observer) observer.disconnect();
     };
   });
 </script>
@@ -469,6 +473,7 @@
     bind:this={contentRef}
     class="relative z-10 bg-[linear-gradient(to_bottom,#002B49,#0077B6)] min-h-screen mt-[280px] md:mt-[450px]"
   >
+    <div bind:this={sentinelRef} class="absolute top-0 w-full h-[1px] pointer-events-none invisible"></div>
     <div
       class="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-full"
     >
