@@ -91,6 +91,21 @@
     },
   ];
 
+  const memberVideosList = [
+    {
+      id: "1eppMHthx6Y",
+      title: "【メンバー限定】一発録りでJANE DOE 歌ってみた🎤",
+    },
+    {
+      id: "sdVuBa8-U68",
+      title: "【メンバー限定】たくさん重ねて絶頂讃歌歌ってみた🎤",
+    },
+    {
+      id: "fUs549OeHeY",
+      title: "【メンバー限定】一発録りで星降る海歌ってみた",
+    },
+  ];
+
   const shortsList = [
     { id: "lJ1WHlZIqUg", title: "#心予報 #Eve #來羽うみ #vtuber #歌ってみた" },
   ];
@@ -312,8 +327,6 @@
 
   let isHeaderDark = $state(false);
 
-
-
   onMount(() => {
     // Wave Animation
     if (wave1)
@@ -435,7 +448,7 @@
             new CustomEvent("update-header-style", { detail: { isDark } }),
           );
         },
-        { rootMargin: "-80px 0px 0px 0px" }
+        { rootMargin: "-80px 0px 0px 0px" },
       );
       observer.observe(sentinelRef);
     }
@@ -473,7 +486,10 @@
     bind:this={contentRef}
     class="relative z-10 bg-[linear-gradient(to_bottom,#002B49,#0077B6)] min-h-screen mt-[280px] md:mt-[450px]"
   >
-    <div bind:this={sentinelRef} class="absolute top-0 w-full h-[1px] pointer-events-none invisible"></div>
+    <div
+      bind:this={sentinelRef}
+      class="absolute top-0 w-full h-[1px] pointer-events-none invisible"
+    ></div>
     <div
       class="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-full"
     >
@@ -770,6 +786,61 @@
                     </div>
                   {/each}
                 </div>
+              </div>
+            {/if}
+          </div>
+        </section>
+
+        <!-- Member Exclusive Videos Section -->
+        <section class="glass-card p-[20px] md:p-[40px] mt-[40px]">
+          <div class="flex items-center gap-[10px] mb-[15px]">
+            <h2
+              data-aos="fade-up"
+              class="text-[32px] text-coral-sun font-bold tracking-[2px]"
+            >
+              Members Only
+            </h2>
+          </div>
+          <p data-aos="fade-up" class="text-pearl-white mb-[20px]">
+            {t("member-exclusive-desc")}
+          </p>
+
+          <div class="flex flex-col gap-[20px]">
+            {#if memberVideosList.length > 0}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-[15px]">
+                {#each memberVideosList as video, i}
+                  <a
+                    href={`https://www.youtube.com/watch?v=${video.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-aos="fade-up"
+                    data-aos-delay={i * 100}
+                    class="relative block w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-all duration-300 bg-black group"
+                  >
+                    <!-- 縮圖 -->
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                      alt={video.title}
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <!-- YouTube 播放按鈕 -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                    >
+                      <svg
+                        viewBox="0 0 68 48"
+                        class="w-[60px] h-[42px] transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
+                      >
+                        <path
+                          d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                          fill="#FF0000"
+                        ></path>
+                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                      </svg>
+                    </div>
+                  </a>
+                {/each}
               </div>
             {/if}
           </div>

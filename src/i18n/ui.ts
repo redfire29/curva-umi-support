@@ -88,7 +88,8 @@ export const ui = {
     "emptyFavDesc": "點選歌單中歌曲旁的愛心圖示，就可以把喜歡的歌存到這裡，方便隨時點播喔！",
     "emptySearchTitle": "找不到符合條件的歌曲",
     "emptySearchDesc": "換個關鍵字搜尋，或是清除搜尋條件再試一次吧！",
-    "resetSearch": "重置搜尋條件"
+    "resetSearch": "重置搜尋條件",
+    "member-exclusive-desc": "加入うみサポ會員，即可解鎖專屬會限直播與影片！"
   },
   "ja": {
     "name": "來羽うみ",
@@ -177,6 +178,7 @@ export const ui = {
     "emptyFavDesc": "歌リストの曲の横にあるハートマークをクリックして、お気に入りの曲を登録しましょう！",
     "emptySearchTitle": "該当する曲が見つかりませんでした",
     "emptySearchDesc": "別のキーワードで検索するか、検索条件をクリアして再試行してください！",
-    "resetSearch": "検索条件をクリア"
+    "resetSearch": "検索条件をクリア",
+    "member-exclusive-desc": "うみサポメンバーシップに参加して、限定の配信や動画をアンロックしよう！"
   }
 };
