@@ -76,7 +76,19 @@ export const ui = {
     "history-20260507-1": "【#歌枠】懐かしのボカロ、アニソン歌枠🎤來羽うみ🐧⚽️",
     "history-20260604-1": "【#歌枠】神曲だらけのボカロ歌枠🐧🎤來羽うみ",
     "history-20260621-1": "【#歌枠】雨の日しっとり歌枠☂️🎤來羽うみ🐧⚽️",
-    "history-20260720-1": "【#歌枠】海の日🐧🩵まもなく來羽うみ1.5年記念な歌枠✨🎤🩵"
+    "history-20260720-1": "【#歌枠】海の日🐧🩵まもなく來羽うみ1.5年記念な歌枠✨🎤🩵",
+    "viewModeStream": "依直播",
+    "viewModeSong": "依歌曲",
+    "sortByCount": "依演唱次數",
+    "sortByName": "依歌名",
+    "reverseSort": "反轉排序",
+    "sungCountPrefix": "唱過 ",
+    "sungCountSuffix": " 次",
+    "emptyFavTitle": "目前還沒有收藏任何歌曲喔！",
+    "emptyFavDesc": "點選歌單中歌曲旁的愛心圖示，就可以把喜歡的歌存到這裡，方便隨時點播喔！",
+    "emptySearchTitle": "找不到符合條件的歌曲",
+    "emptySearchDesc": "換個關鍵字搜尋，或是清除搜尋條件再試一次吧！",
+    "resetSearch": "重置搜尋條件"
   },
   "ja": {
     "name": "來羽うみ",
@@ -153,6 +165,18 @@ export const ui = {
     "history-20260507-1": "【#歌枠】懐かしのボカロ、アニソン歌枠🎤來羽うみ🐧⚽️",
     "history-20260604-1": "【#歌枠】神曲だらけのボカロ歌枠🐧🎤來羽うみ",
     "history-20260621-1": "【#歌枠】雨の日しっとり歌枠☂️🎤來羽うみ🐧⚽️",
-    "history-20260720-1": "【#歌枠】海の日🐧🩵まもなく來羽うみ1.5年記念な歌枠✨🎤🩵"
+    "history-20260720-1": "【#歌枠】海の日🐧🩵まもなく來羽うみ1.5年記念な歌枠✨🎤🩵",
+    "viewModeStream": "配信別",
+    "viewModeSong": "曲別",
+    "sortByCount": "歌唱回数順",
+    "sortByName": "曲名順",
+    "reverseSort": "順序を反転",
+    "sungCountPrefix": "",
+    "sungCountSuffix": " 回歌唱",
+    "emptyFavTitle": "お気に入りの曲はまだありません！",
+    "emptyFavDesc": "歌リストの曲の横にあるハートマークをクリックして、お気に入りの曲を登録しましょう！",
+    "emptySearchTitle": "該当する曲が見つかりませんでした",
+    "emptySearchDesc": "別のキーワードで検索するか、検索条件をクリアして再試行してください！",
+    "resetSearch": "検索条件をクリア"
   }
 };

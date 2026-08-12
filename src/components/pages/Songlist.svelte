@@ -6,7 +6,7 @@
   import { useSonglist } from "../../composables/useSonglist.svelte.js";
 
   let { locale = "ja", messages = {}, songListArray = [] } = $props();
-  const t = (key) => messages[key] || key;
+  const t = (key) => messages[key] ?? key;
 
   let contentRef;
   let wave1, wave2;
@@ -18,6 +18,7 @@
   let currentSong = $state(null);
   let isMobile = $state(false);
   let iframeShow = $state(false);
+  let filterExpanded = $state(true);
 
   const changeYoutube = (url, song, listContext) => {
     currentPlayingUrl = url;
@@ -35,11 +36,16 @@
   };
 
   const checkMobile = () => {
-    isMobile = window.innerWidth < 1024;
+    const mobileCheck = window.innerWidth < 1024;
+    if (isMobile !== mobileCheck) {
+      isMobile = mobileCheck;
+      filterExpanded = !isMobile;
+    }
   };
 
   onMount(() => {
-    checkMobile();
+    isMobile = window.innerWidth < 1024;
+    filterExpanded = !isMobile;
     window.addEventListener("resize", checkMobile);
 
     if (wave1) gsap.fromTo(wave1, { attr: { x: -40 } }, { attr: { x: 136 }, duration: 20, repeat: -1, ease: "linear" });
@@ -76,10 +82,42 @@
         <div class="space-y-[20px]">
           <!-- Search -->
           <div bind:clientHeight={filterPanelHeight} class="glass-card p-[20px] sticky top-[77px] z-30">
-            <div class="flex items-center justify-between mb-[15px]">
-              <h2 class="text-[24px] font-bold text-mint-green">
-                {t("searchSong")}
-              </h2>
+            <div class="flex items-center justify-between {filterExpanded ? 'mb-[15px]' : ''} transition-all">
+              <div class="flex items-center gap-[10px] md:gap-[15px] flex-wrap">
+                <button
+                  onclick={() => filterExpanded = !filterExpanded}
+                  class="flex items-center gap-[8px] text-[20px] md:text-[24px] font-bold text-mint-green hover:opacity-80 transition-opacity"
+                >
+                  {t("searchSong")}
+                  <svg
+                    class="w-[20px] h-[20px] transition-transform duration-300 {filterExpanded ? 'rotate-180' : ''}"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <!-- View Mode Toggle -->
+                <div class="flex bg-white/5 rounded-lg p-[4px] border border-white/10">
+                  <button
+                    onclick={() => songlistState.viewMode = 'stream'}
+                    class="px-[12px] py-[4px] rounded-md text-sm font-medium transition-colors {songlistState.viewMode === 'stream' ? 'bg-mint-green text-deep-sea' : 'text-pearl-white/60 hover:text-pearl-white'}"
+                  >
+                    {t("viewModeStream")}
+                  </button>
+                  <button
+                    onclick={() => songlistState.viewMode = 'song'}
+                    class="px-[12px] py-[4px] rounded-md text-sm font-medium transition-colors {songlistState.viewMode === 'song' ? 'bg-mint-green text-deep-sea' : 'text-pearl-white/60 hover:text-pearl-white'}"
+                  >
+                    {t("viewModeSong")}
+                  </button>
+                </div>
+              </div>
               <button
                 onclick={() => songlistState.toggleShowFavorites()}
                 class="flex items-center gap-[8px] px-[12px] py-[6px] rounded-lg border transition-colors {songlistState.showOnlyFavorites
@@ -109,12 +147,14 @@
                     /></svg
                   >
                 {/if}
-                <span class="text-sm font-medium"
-                  >{t("myFavorites") || "My Favorites"} ({songlistState.favorites.length})</span
-                >
+                <span class="text-sm font-medium">
+                  <span class="hidden md:inline">{t("myFavorites") || "My Favorites"} </span>
+                  <span>({songlistState.favorites.length})</span>
+                </span>
               </button>
             </div>
-            <div class="flex flex-col gap-[15px]">
+            {#if filterExpanded}
+            <div class="flex flex-col gap-[15px]" transition:slide={{ duration: 300 }}>
               <!-- Search Inputs -->
               <div class="flex flex-col md:flex-row gap-[10px]">
                 <div
@@ -185,7 +225,7 @@
                         ? 'bg-mint-green border-transparent text-deep-sea shadow-md shadow-mint-green/20'
                         : 'bg-white/5 border-white/10 text-pearl-white/80 hover:bg-white/10 hover:text-pearl-white'}"
                     >
-                      {year === "" ? (locale === 'zh' ? '全部' : 'すべて') : `${year}年`}
+                      {year === "" ? t("selectAll") : `${year}年`}
                     </button>
                   {/each}
                 </div>
@@ -201,169 +241,292 @@
                           ? 'bg-curacao border-transparent text-deep-sea shadow-md shadow-curacao/20'
                           : 'bg-white/5 border-white/10 text-pearl-white/80 hover:bg-white/10 hover:text-pearl-white'}"
                       >
-                        {month === "" ? (locale === 'zh' ? '全部' : 'すべて') : `${parseInt(month)}月`}
+                        {month === "" ? t("selectAll") : `${parseInt(month)}月`}
                       </button>
                     {/each}
                   </div>
                 {/if}
               </div>
+              
+              <!-- Sort Toggle (Only for Song View) -->
+              {#if songlistState.viewMode === 'song'}
+                <div class="flex flex-col gap-[10px] p-[12px] bg-white/5 backdrop-blur-md border border-white/10 rounded-xl shadow-lg" transition:slide={{ duration: 200 }}>
+                  <div class="flex flex-wrap gap-[8px]">
+                    <button
+                      onclick={() => songlistState.songSortBy = 'count'}
+                      class="px-[12px] py-[6px] rounded-lg text-xs font-medium border transition-all active:scale-95 {songlistState.songSortBy === 'count'
+                        ? 'bg-curacao border-transparent text-deep-sea shadow-md shadow-curacao/20'
+                        : 'bg-white/5 border-white/10 text-pearl-white/80 hover:bg-white/10 hover:text-pearl-white'}"
+                    >
+                      {t("sortByCount")}
+                    </button>
+                    <button
+                      onclick={() => songlistState.songSortBy = 'name'}
+                      class="px-[12px] py-[6px] rounded-lg text-xs font-medium border transition-all active:scale-95 {songlistState.songSortBy === 'name'
+                        ? 'bg-curacao border-transparent text-deep-sea shadow-md shadow-curacao/20'
+                        : 'bg-white/5 border-white/10 text-pearl-white/80 hover:bg-white/10 hover:text-pearl-white'}"
+                    >
+                      {t("sortByName")}
+                    </button>
+                    
+                    <div class="w-[1px] h-[24px] bg-white/10 my-auto mx-[4px]"></div>
+                    
+                    <button
+                      onclick={() => songlistState.songSortReverse = !songlistState.songSortReverse}
+                      class="px-[8px] py-[6px] rounded-lg text-xs font-medium border transition-all active:scale-95 bg-white/5 border-white/10 text-pearl-white/80 hover:bg-white/10 hover:text-pearl-white flex items-center justify-center"
+                      title={t("reverseSort")}
+                    >
+                      {#if songlistState.songSortReverse}
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+                          <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
+                        </svg>
+                      {:else}
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+                          <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
+                        </svg>
+                      {/if}
+                    </button>
+                  </div>
+                </div>
+              {/if}
             </div>
+            {/if}
           </div>
 
           <!-- Song List -->
           <div class="space-y-[15px]">
-            {#each songlistState.showSongArray as list}
-              {#if list.showDate}
+            {#if songlistState.viewMode === 'stream'}
+              {#each songlistState.showSongArray as list}
+                {#if list.showDate}
+                  <div class="glass-card">
+                    <!-- Header -->
+                    <div
+                      class="p-[15px] md:p-[20px] flex items-center justify-between cursor-pointer bg-deep-sea hover:brightness-125 transition sticky z-20 border-b border-white/10 rounded-2xl"
+                      style="top: {77 + filterPanelHeight}px;"
+                      onclick={() => (list.showList = !list.showList)}
+                      onkeydown={(e) =>
+                        e.key === "Enter" && (list.showList = !list.showList)}
+                      role="button"
+                      tabindex="0"
+                    >
+                      <div>
+                        <div class="flex items-center gap-[10px] mb-[5px]">
+                          <span
+                            class="px-[8px] py-[2px] rounded text-[12px] bg-curacao/50 border border-curacao text-pearl-white"
+                            >{list.date}</span
+                          >
+                          <span class="text-[12px] opacity-70"
+                            >{list.songList ? list.songList.length : 0} Songs</span
+                          >
+                        </div>
+                        <h3
+                          class="text-[16px] md:text-[18px] font-bold text-pearl-white line-clamp-1"
+                        >
+                          {list.streamName}
+                        </h3>
+                      </div>
+                      <div
+                        class="w-[30px] h-[30px] flex items-center justify-center transition-transform duration-300 {list.showList
+                          ? '-rotate-180'
+                          : ''}"
+                      >
+                        <span class="text-[20px]">▼</span>
+                      </div>
+                    </div>
+
+                    <!-- Body -->
+                    {#if list.showList}
+                      <div
+                        transition:slide={{ duration: 300 }}
+                        class="overflow-hidden"
+                      >
+                      <ul class="border-t border-white/10">
+                        {#each list.songList as song, i}
+                          {#if song.showDate}
+                            <li
+                              class="p-[12px_20px] border-b border-white/5 last:border-0 hover:bg-mint-green/10 transition-colors cursor-pointer group flex items-center justify-between gap-[10px] {currentPlayingUrl ===
+                              song.songLink
+                                ? 'bg-mint-green/20'
+                                : ''}"
+                              onclick={() =>
+                                changeYoutube(song.songLink, song, list)}
+                              onkeydown={(e) =>
+                                e.key === "Enter" &&
+                                changeYoutube(song.songLink, song, list)}
+                              role="button"
+                              tabindex="0"
+                            >
+                              <span
+                                class="text-pearl-white/40 font-mono text-sm w-[30px] text-center shrink-0"
+                                >{i + 1}</span
+                              >
+                              <div class="flex-1">
+                                <p
+                                  class="text-[15px] font-medium text-pearl-white group-hover:text-mint-green transition-colors"
+                                >
+                                  {song.songName}
+                                </p>
+                                {#if song.singer}
+                                  <p class="text-[13px] text-pearl-white/60">
+                                    {song.singer}
+                                  </p>
+                                {/if}
+                              </div>
+                              <div class="flex items-center gap-[10px]">
+                                <!-- Favorite Button -->
+                                <button
+                                  onclick={(e) => {
+                                    e.stopPropagation();
+                                    songlistState.toggleFavorite(song.songLink);
+                                  }}
+                                  class="p-[8px] rounded-full hover:bg-white/10 transition-colors text-mint-green"
+                                  title="Toggle Favorite"
+                                >
+                                  {#if songlistState.favorites.includes(song.songLink)}
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      height="20"
+                                      viewBox="0 96 960 960"
+                                      width="20"
+                                      fill="currentColor"
+                                      ><path
+                                        d="m480 935-41-37q-106-97-175-167.5t-110-126Q113 549 96.5 504T80 413q0-90 60.5-150.5T290 202q57 0 105.5 27t84.5 78q42-54 89-79.5T670 202q89 0 149.5 60.5T880 413q0 46-16.5 91T806 604.5q-41 55.5-110 126T521 898l-41 37Z"
+                                      /></svg
+                                    >
+                                  {:else}
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      height="20"
+                                      viewBox="0 96 960 960"
+                                      width="20"
+                                      fill="currentColor"
+                                      ><path
+                                        d="m480 935-41-37q-106-97-175-167.5t-110-126Q113 549 96.5 504T80 413q0-90 60.5-150.5T290 202q57 0 105.5 27t84.5 78q42-54 89-79.5T670 202q89 0 149.5 60.5T880 413q0 46-16.5 91T806 604.5q-41 55.5-110 126T521 898l-41 37Zm0-79q101-91 165.5-157T710 615q25-37 42.5-77t17.5-85q0-61-41-102t-102-41q-39 0-74 19t-59 56q-24-37-59-56t-74-19q-61 0-102 41t-41 102q0 45 17.5 85t42.5 77q35.5 63 100 129T480 856Zm0-252Z"
+                                      /></svg
+                                    >
+                                  {/if}
+                                </button>
+
+                                <span
+                                  class="text-mint-green opacity-0 group-hover:opacity-100 transition-opacity"
+                                  >▶</span
+                              >
+                            </div>
+                          </li>
+                          {/if}
+                        {/each}
+                      </ul>
+                    </div>
+                  {/if}
+                </div>
+                {/if}
+              {/each}
+            {:else}
+              {#each songlistState.groupedSongArray as group, i}
                 <div class="glass-card">
                   <!-- Header -->
                   <div
-                    class="p-[15px] md:p-[20px] flex items-center justify-between cursor-pointer bg-deep-sea hover:brightness-125 transition sticky z-20 border-b border-white/10 rounded-2xl"
+                    class="p-[12px_20px] flex items-center justify-between cursor-pointer group gap-[10px] transition sticky z-20 border-b border-transparent hover:bg-mint-green/10 rounded-2xl {currentPlayingUrl === group.mostRecent.songLink ? 'bg-mint-green/20' : ''}"
                     style="top: {77 + filterPanelHeight}px;"
-                    onclick={() => (list.showList = !list.showList)}
-                    onkeydown={(e) =>
-                      e.key === "Enter" && (list.showList = !list.showList)}
+                    onclick={() => changeYoutube(group.mostRecent.songLink, group.mostRecent.song, { date: group.mostRecent.date })}
+                    onkeydown={(e) => e.key === "Enter" && changeYoutube(group.mostRecent.songLink, group.mostRecent.song, { date: group.mostRecent.date })}
                     role="button"
                     tabindex="0"
                   >
-                    <div>
-                      <div class="flex items-center gap-[10px] mb-[5px]">
-                        <span
-                          class="px-[8px] py-[2px] rounded text-[12px] bg-curacao/50 border border-curacao text-pearl-white"
-                          >{list.date}</span
-                        >
-                        <span class="text-[12px] opacity-70"
-                          >{list.songList ? list.songList.length : 0} Songs</span
-                        >
+                    <div class="flex-1">
+                      <div class="flex items-center gap-[10px] mb-[2px]">
+                        <p class="text-[16px] font-medium text-pearl-white group-hover:text-mint-green transition-colors">
+                          {group.songName}
+                        </p>
+                        <span class="px-[8px] py-[2px] rounded text-[11px] bg-mint-green/20 border border-mint-green/50 text-mint-green font-medium">
+                          {t("sungCountPrefix")}{group.count}{t("sungCountSuffix")}
+                        </span>
                       </div>
-                      <h3
-                        class="text-[16px] md:text-[18px] font-bold text-pearl-white line-clamp-1"
-                      >
-                        {list.streamName}
-                      </h3>
+                      {#if group.singer}
+                        <p class="text-[13px] text-pearl-white/60">
+                          {group.singer}
+                        </p>
+                      {/if}
                     </div>
-                    <div
-                      class="w-[30px] h-[30px] flex items-center justify-center transition-transform duration-300 {list.showList
-                        ? '-rotate-180'
-                        : ''}"
-                    >
-                      <span class="text-[20px]">▼</span>
+                    
+                    <div class="flex items-center gap-[10px]">
+                      <button
+                        onclick={(e) => {
+                          e.stopPropagation();
+                          songlistState.toggleFavorite(group.mostRecent.songLink);
+                        }}
+                        class="p-[8px] rounded-full hover:bg-white/10 transition-colors text-mint-green"
+                        title="Toggle Favorite"
+                      >
+                        {#if songlistState.favorites.includes(group.mostRecent.songLink)}
+                          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor"><path d="m480 935-41-37q-106-97-175-167.5t-110-126Q113 549 96.5 504T80 413q0-90 60.5-150.5T290 202q57 0 105.5 27t84.5 78q42-54 89-79.5T670 202q89 0 149.5 60.5T880 413q0 46-16.5 91T806 604.5q-41 55.5-110 126T521 898l-41 37Z"/></svg>
+                        {:else}
+                          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor"><path d="m480 935-41-37q-106-97-175-167.5t-110-126Q113 549 96.5 504T80 413q0-90 60.5-150.5T290 202q57 0 105.5 27t84.5 78q42-54 89-79.5T670 202q89 0 149.5 60.5T880 413q0 46-16.5 91T806 604.5q-41 55.5-110 126T521 898l-41 37Zm0-79q101-91 165.5-157T710 615q25-37 42.5-77t17.5-85q0-61-41-102t-102-41q-39 0-74 19t-59 56q-24-37-59-56t-74-19q-61 0-102 41t-41 102q0 45 17.5 85t42.5 77q35.5 63 100 129T480 856Zm0-252Z"/></svg>
+                        {/if}
+                      </button>
+
+                      <button
+                        onclick={(e) => {
+                          e.stopPropagation();
+                          songlistState.toggleSongExpanded(group.songName);
+                        }}
+                        class="w-[30px] h-[30px] flex items-center justify-center transition-transform duration-300 {songlistState.expandedSongs.includes(group.songName) ? '-rotate-180' : ''} hover:bg-white/10 rounded-full text-pearl-white"
+                        title="Expand"
+                      >
+                        <span class="text-[16px]">▼</span>
+                      </button>
                     </div>
                   </div>
 
-                  <!-- Body -->
-                  {#if list.showList}
-                    <div
-                      transition:slide={{ duration: 300 }}
-                      class="overflow-hidden"
-                    >
-                    <ul class="border-t border-white/10">
-                      {#each list.songList as song, i}
-                        {#if song.showDate}
+                  <!-- Body (Expanded Streams) -->
+                  {#if songlistState.expandedSongs.includes(group.songName)}
+                    <div transition:slide={{ duration: 300 }} class="overflow-hidden">
+                      <ul class="border-t border-white/10 bg-black/20 rounded-b-2xl pb-[10px]">
+                        {#each group.sungIn as sung, j}
                           <li
-                            class="p-[12px_20px] border-b border-white/5 last:border-0 hover:bg-mint-green/10 transition-colors cursor-pointer group flex items-center justify-between gap-[10px] {currentPlayingUrl ===
-                            song.songLink
-                              ? 'bg-mint-green/20'
-                              : ''}"
-                            onclick={() =>
-                              changeYoutube(song.songLink, song, list)}
-                            onkeydown={(e) =>
-                              e.key === "Enter" &&
-                              changeYoutube(song.songLink, song, list)}
+                            class="p-[10px_20px] pl-[40px] border-b border-white/5 last:border-0 hover:bg-mint-green/10 transition-colors cursor-pointer flex items-center gap-[10px] {currentPlayingUrl === sung.songLink ? 'bg-mint-green/20' : ''}"
+                            onclick={(e) => {
+                              e.stopPropagation();
+                              changeYoutube(sung.songLink, sung.song, { date: sung.date });
+                            }}
+                            onkeydown={(e) => e.key === "Enter" && changeYoutube(sung.songLink, sung.song, { date: sung.date })}
                             role="button"
                             tabindex="0"
                           >
-                            <span
-                              class="text-pearl-white/40 font-mono text-sm w-[30px] text-center shrink-0"
-                              >{i + 1}</span
-                            >
-                            <div class="flex-1">
-                              <p
-                                class="text-[15px] font-medium text-pearl-white group-hover:text-mint-green transition-colors"
-                              >
-                                {song.songName}
-                              </p>
-                              {#if song.singer}
-                                <p class="text-[13px] text-pearl-white/60">
-                                  {song.singer}
-                                </p>
-                              {/if}
-                            </div>
-                            <div class="flex items-center gap-[10px]">
-                              <!-- Favorite Button -->
-                              <button
-                                onclick={(e) => {
-                                  e.stopPropagation();
-                                  songlistState.toggleFavorite(song.songLink);
-                                }}
-                                class="p-[8px] rounded-full hover:bg-white/10 transition-colors text-mint-green"
-                                title="Toggle Favorite"
-                              >
-                                {#if songlistState.favorites.includes(song.songLink)}
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    height="20"
-                                    viewBox="0 96 960 960"
-                                    width="20"
-                                    fill="currentColor"
-                                    ><path
-                                      d="m480 935-41-37q-106-97-175-167.5t-110-126Q113 549 96.5 504T80 413q0-90 60.5-150.5T290 202q57 0 105.5 27t84.5 78q42-54 89-79.5T670 202q89 0 149.5 60.5T880 413q0 46-16.5 91T806 604.5q-41 55.5-110 126T521 898l-41 37Z"
-                                    /></svg
-                                  >
-                                {:else}
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    height="20"
-                                    viewBox="0 96 960 960"
-                                    width="20"
-                                    fill="currentColor"
-                                    ><path
-                                      d="m480 935-41-37q-106-97-175-167.5t-110-126Q113 549 96.5 504T80 413q0-90 60.5-150.5T290 202q57 0 105.5 27t84.5 78q42-54 89-79.5T670 202q89 0 149.5 60.5T880 413q0 46-16.5 91T806 604.5q-41 55.5-110 126T521 898l-41 37Zm0-79q101-91 165.5-157T710 615q25-37 42.5-77t17.5-85q0-61-41-102t-102-41q-39 0-74 19t-59 56q-24-37-59-56t-74-19q-61 0-102 41t-41 102q0 45 17.5 85t42.5 77q35.5 63 100 129T480 856Zm0-252Z"
-                                    /></svg
-                                  >
-                                {/if}
-                              </button>
+                            <span class="text-[12px] {currentPlayingUrl === sung.songLink ? 'text-mint-green font-bold' : 'text-pearl-white/60'} w-[80px] shrink-0 font-mono">{sung.date}</span>
+                            <span class="text-[14px] line-clamp-1 flex-1 {currentPlayingUrl === sung.songLink ? 'text-mint-green font-bold' : 'text-pearl-white/80'}">{sung.streamName}</span>
+                            <span class="text-mint-green opacity-0 {currentPlayingUrl === sung.songLink ? 'opacity-100' : 'group-hover:opacity-100'} transition-opacity">▶</span>
+                          </li>
+                        {/each}
+                      </ul>
+                    </div>
+                  {/if}
+                </div>
+              {/each}
+            {/if}
 
-                              <span
-                                class="text-mint-green opacity-0 group-hover:opacity-100 transition-opacity"
-                                >▶</span
-                            >
-                          </div>
-                        </li>
-                        {/if}
-                      {/each}
-                    </ul>
-                  </div>
-                {/if}
-              </div>
-              {/if}
-            {/each}
-
-            {#if songlistState.visibleGroupsCount === 0}
+            {#if (songlistState.viewMode === 'stream' && songlistState.visibleGroupsCount === 0) || (songlistState.viewMode === 'song' && songlistState.groupedSongArray.length === 0)}
               <div class="glass-card p-[40px] text-center flex flex-col items-center justify-center space-y-[15px] animate-fadeIn">
                 <span class="text-[50px] opacity-70">🐧❓</span>
                 {#if songlistState.showOnlyFavorites}
                   <h3 class="text-[18px] font-bold text-mint-green">
-                    {locale === 'zh' ? '目前還沒有收藏任何歌曲喔！' : 'お気に入りの曲はまだありません！'}
+                    {t("emptyFavTitle")}
                   </h3>
                   <p class="text-[14px] text-pearl-white/60 max-w-[400px]">
-                    {locale === 'zh' 
-                      ? '點選歌單中歌曲旁的愛心圖示，就可以把喜歡的歌存到這裡，方便隨時點播喔！' 
-                      : '歌リストの曲の横にあるハートマークをクリックして、お気に入りの曲を登録しましょう！'}
+                    {t("emptyFavDesc")}
                   </p>
                 {:else}
                   <h3 class="text-[18px] font-bold text-mint-green">
-                    {locale === 'zh' ? '找不到符合條件的歌曲' : '該当する曲が見つかりませんでした'}
+                    {t("emptySearchTitle")}
                   </h3>
                   <p class="text-[14px] text-pearl-white/60">
-                    {locale === 'zh' 
-                      ? '換個關鍵字搜尋，或是清除搜尋條件再試一次吧！' 
-                      : '別のキーワードで検索するか、検索条件をクリアして再試行してください！'}
+                    {t("emptySearchDesc")}
                   </p>
                   <button
                     onclick={() => { songlistState.clearAllFilters(); }}
                     class="px-[15px] py-[8px] bg-white/10 hover:bg-mint-green hover:text-deep-sea rounded-lg border border-mint-green/30 hover:border-transparent text-sm font-medium transition-colors"
                   >
-                    {locale === 'zh' ? '重置搜尋條件' : '検索条件をクリア'}
+                    {t("resetSearch")}
                   </button>
                 {/if}
               </div>

@@ -6,8 +6,12 @@ export function useSonglist(songListArray) {
   let searchSingerInput = $state("");
   let selectedYear = $state("");
   let selectedMonth = $state("");
+  let viewMode = $state("stream"); // 'stream' or 'song'
+  let songSortBy = $state("count"); // 'count' or 'name'
+  let songSortReverse = $state(false);
   let showOnlyFavorites = $state(false);
   let favorites = $state([]);
+  let expandedSongs = $state([]);
 
   let debouncedSearchWord = $state("");
   let debouncedSearchSingerInput = $state("");
@@ -135,6 +139,65 @@ export function useSonglist(songListArray) {
 
   const visibleGroupsCount = $derived(showSongArray.filter(g => g.showDate).length);
 
+  const groupedSongArray = $derived.by(() => {
+    const map = new Map();
+
+    showSongArray.forEach(group => {
+      if (!group.showDate) return;
+      group.songList.forEach(song => {
+        if (!song.showDate) return;
+
+        const songName = song.songName;
+        if (!map.has(songName)) {
+          map.set(songName, {
+            songName: songName,
+            singer: song.singer,
+            count: 0,
+            mostRecent: {
+              songLink: song.songLink,
+              date: group.date,
+              streamName: group.streamName,
+              song: song
+            },
+            sungIn: []
+          });
+        }
+        
+        const entry = map.get(songName);
+        entry.count += 1;
+        entry.sungIn.push({
+          streamName: group.streamName,
+          date: group.date,
+          songLink: song.songLink,
+          song: song
+        });
+
+        // Update most recent if the current group's date is newer
+        const currentGroupDate = dayjs(group.date);
+        const mostRecentDate = dayjs(entry.mostRecent.date);
+        if (currentGroupDate.isAfter(mostRecentDate)) {
+          entry.mostRecent = {
+            songLink: song.songLink,
+            date: group.date,
+            streamName: group.streamName,
+            song: song
+          };
+          entry.singer = song.singer;
+        }
+      });
+    });
+
+    let result = Array.from(map.values());
+
+    if (songSortBy === "count") {
+      result.sort((a, b) => songSortReverse ? a.count - b.count : b.count - a.count);
+    } else if (songSortBy === "name") {
+      result.sort((a, b) => songSortReverse ? b.songName.localeCompare(a.songName, 'ja-JP') : a.songName.localeCompare(b.songName, 'ja-JP'));
+    }
+
+    return result;
+  });
+
   const toggleFavorite = (songLink) => {
     if (favorites.includes(songLink)) {
       favorites = favorites.filter((link) => link !== songLink);
@@ -143,6 +206,14 @@ export function useSonglist(songListArray) {
     }
     if (typeof window !== "undefined") {
       localStorage.setItem("curva_fav_songs", JSON.stringify(favorites));
+    }
+  };
+
+  const toggleSongExpanded = (songName) => {
+    if (expandedSongs.includes(songName)) {
+      expandedSongs = expandedSongs.filter(name => name !== songName);
+    } else {
+      expandedSongs = [...expandedSongs, songName];
     }
   };
 
@@ -198,8 +269,18 @@ export function useSonglist(songListArray) {
     get availableMonths() { return availableMonths; },
     get showSongArray() { return showSongArray; },
     get visibleGroupsCount() { return visibleGroupsCount; },
+    
+    get viewMode() { return viewMode; },
+    set viewMode(val) { viewMode = val; },
+    get songSortBy() { return songSortBy; },
+    set songSortBy(val) { songSortBy = val; },
+    get songSortReverse() { return songSortReverse; },
+    set songSortReverse(val) { songSortReverse = val; },
+    get groupedSongArray() { return groupedSongArray; },
+    get expandedSongs() { return expandedSongs; },
 
     toggleFavorite,
+    toggleSongExpanded,
     toggleShowFavorites,
     clearAllFilters
   };
