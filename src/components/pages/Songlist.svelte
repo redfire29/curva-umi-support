@@ -303,9 +303,9 @@
                     <div
                       class="p-[15px] md:p-[20px] flex items-center justify-between cursor-pointer bg-deep-sea hover:brightness-125 transition sticky z-20 border-b border-white/10 rounded-2xl"
                       style="top: {77 + filterPanelHeight}px;"
-                      onclick={() => (list.showList = !list.showList)}
+                      onclick={() => songlistState.toggleStreamCollapse(list)}
                       onkeydown={(e) =>
-                        e.key === "Enter" && (list.showList = !list.showList)}
+                        e.key === "Enter" && songlistState.toggleStreamCollapse(list)}
                       role="button"
                       tabindex="0"
                     >
@@ -326,7 +326,7 @@
                         </h3>
                       </div>
                       <div
-                        class="w-[30px] h-[30px] flex items-center justify-center transition-transform duration-300 {list.showList
+                        class="w-[30px] h-[30px] flex items-center justify-center transition-transform duration-300 {songlistState.isStreamExpanded(list)
                           ? '-rotate-180'
                           : ''}"
                       >
@@ -335,7 +335,7 @@
                     </div>
 
                     <!-- Body -->
-                    {#if list.showList}
+                    {#if songlistState.isStreamExpanded(list)}
                       <div
                         transition:slide={{ duration: 300 }}
                         class="overflow-hidden"

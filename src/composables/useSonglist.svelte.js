@@ -12,6 +12,7 @@ export function useSonglist(songListArray) {
   let showOnlyFavorites = $state(false);
   let favorites = $state([]);
   let expandedSongs = $state([]);
+  let collapsedStreams = $state([]);
 
   let debouncedSearchWord = $state("");
   let debouncedSearchSingerInput = $state("");
@@ -24,6 +25,16 @@ export function useSonglist(songListArray) {
       debouncedSearchSingerInput = singer;
     }, 300);
     return () => clearTimeout(handler);
+  });
+
+  // Reset collapsed streams whenever search keywords, date filter, or favorite filter changes
+  $effect(() => {
+    void debouncedSearchWord;
+    void debouncedSearchSingerInput;
+    void selectedYear;
+    void selectedMonth;
+    void showOnlyFavorites;
+    collapsedStreams = [];
   });
 
   // Load Favorites from localStorage
@@ -198,6 +209,27 @@ export function useSonglist(songListArray) {
     return result;
   });
 
+  const getStreamKey = (item) => {
+    if (!item) return "";
+    if (typeof item === "string") return item;
+    return `${item.date}_${item.streamName}`;
+  };
+
+  const isStreamExpanded = (item) => {
+    const key = getStreamKey(item);
+    return !collapsedStreams.includes(key);
+  };
+
+  const toggleStreamCollapse = (item) => {
+    const key = getStreamKey(item);
+    if (!key) return;
+    if (collapsedStreams.includes(key)) {
+      collapsedStreams = collapsedStreams.filter(k => k !== key);
+    } else {
+      collapsedStreams = [...collapsedStreams, key];
+    }
+  };
+
   const toggleFavorite = (songLink) => {
     if (favorites.includes(songLink)) {
       favorites = favorites.filter((link) => link !== songLink);
@@ -237,6 +269,7 @@ export function useSonglist(songListArray) {
     selectedYear = "";
     selectedMonth = "";
     showOnlyFavorites = false;
+    collapsedStreams = [];
   };
 
   return {
@@ -278,7 +311,10 @@ export function useSonglist(songListArray) {
     set songSortReverse(val) { songSortReverse = val; },
     get groupedSongArray() { return groupedSongArray; },
     get expandedSongs() { return expandedSongs; },
+    get collapsedStreams() { return collapsedStreams; },
 
+    isStreamExpanded,
+    toggleStreamCollapse,
     toggleFavorite,
     toggleSongExpanded,
     toggleShowFavorites,
