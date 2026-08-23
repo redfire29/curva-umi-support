@@ -1,5 +1,90 @@
 [
     {
+        "date": "2026/08/23",
+        "streamName": "【#歌枠】祝✨2000人！愛と感謝を込めて歌う歌枠🎤🩵來羽うみ Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "涙色ハートビート",
+                "singer": "來羽うみ",
+                "songTime": "00:00:37",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=37s"
+            },
+            {
+                "showDate": true,
+                "songName": "ミュージック・アワー",
+                "singer": "ポルノグラフィティ",
+                "songTime": "00:09:03",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=543s"
+            },
+            {
+                "showDate": true,
+                "songName": "八月の夜",
+                "singer": "SILENT SIREN",
+                "songTime": "00:15:16",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=916s"
+            },
+            {
+                "showDate": true,
+                "songName": "好きすぎて滅!",
+                "singer": "M!LK",
+                "songTime": "00:22:20",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=1340s"
+            },
+            {
+                "showDate": true,
+                "songName": "爆裂愛してる",
+                "singer": "M!LK",
+                "songTime": "00:25:56",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=1556s"
+            },
+            {
+                "showDate": true,
+                "songName": "少女レイ",
+                "singer": "みきとP feat. 初音ミク",
+                "songTime": "00:32:09",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=1929s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛♡スクリ～ム！",
+                "singer": "AiScReam",
+                "songTime": "00:38:45",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=2325s"
+            },
+            {
+                "showDate": true,
+                "songName": "世界は恋に落ちている",
+                "singer": "CHiCO with HoneyWorks",
+                "songTime": "00:44:29",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=2669s"
+            },
+            {
+                "showDate": true,
+                "songName": "創聖のアクエリオン",
+                "singer": "AKINO",
+                "songTime": "00:51:54",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=3114s"
+            },
+            {
+                "showDate": true,
+                "songName": "愛言葉III",
+                "singer": "DECO*27",
+                "songTime": "01:01:23",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=3683s"
+            },
+            {
+                "showDate": true,
+                "songName": "深海のリトルクライ",
+                "singer": "sasakure.UK",
+                "songTime": "01:05:37",
+                "songLink": "https://www.youtube.com/watch?v=euHCpx74Fmk&t=3937s"
+            }
+        ]
+    },
+    {
         "date": "2026/07/20",
         "streamName": "【#歌枠】海の日🐧🩵まもなく來羽うみ1.5年記念な歌枠✨🎤🩵Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,
