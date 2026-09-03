@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/08/23 - song list update
+- 祝✨2000人！愛と感謝を込めて歌う歌枠🎤🩵Curva Umi Singing Stream
+
 2026/07/20 - song list update
 - 海の日🐧🩵まもなく來羽うみ1.5年記念な歌枠✨🎤🩵Curva Umi Singing Stream
 
