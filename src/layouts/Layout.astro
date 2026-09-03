@@ -95,7 +95,31 @@ const schemaData = {
         <meta name="viewport" content="width=device-width" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;500;700&display=swap"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;500;700&display=swap"
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+        />
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;500;700&display=swap"
+                rel="stylesheet"
+            />
+        </noscript>
+        {slug === "" && (
+            <link
+                rel="preload"
+                as="image"
+                href="/curva-umi-support/img/logo.jpeg"
+                fetchpriority="high"
+            />
+        )}
         <link
             rel="icon"
             type="image/svg+xml"
@@ -151,7 +175,7 @@ const schemaData = {
         <slot name="head" />
     </head>
     <body class="flex flex-col h-full text-pearl-white min-h-screen">
-        <AppHeader client:load locale={locale} messages={messages} isDark={isDarkHeader} />
+        <AppHeader client:idle locale={locale} messages={messages} isDark={isDarkHeader} />
         <div class="flex-1 flex flex-col">
             <div class="w-full mx-auto flex-1 h-full">
                 <slot />

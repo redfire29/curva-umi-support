@@ -1,7 +1,6 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import { gsap } from "gsap";
-  import { forEach, random } from "lodash-es";
 
   let { locale = "ja", messages = {} } = $props();
   const t = (key) => messages[key] || key;
@@ -9,6 +8,32 @@
   let contentRef;
   let sentinelRef;
   let wave1, wave2, wave3, wave4;
+
+  let playingVideos = $state({});
+  const playVideo = (id) => {
+    playingVideos[id] = true;
+  };
+
+  const bubbles = Array.from({ length: 30 }, (_, i) => {
+    const depth = ((i * 37) % 100) / 100;
+    const size = Math.round(10 + depth * 40);
+    const blur = ((1 - depth) * 2).toFixed(1);
+    const duration = (15 + (1 - depth) * 20).toFixed(1);
+    const left = ((i * 73) % 100).toFixed(0);
+    const delay = (-((i * 19) % 35)).toFixed(1);
+    const maxOpacity = (0.2 + depth * 0.5).toFixed(2);
+    const drift = (((i * 43) % 80) - 40).toFixed(0);
+    return { size, blur, duration, left, delay, maxOpacity, drift };
+  });
+
+  const glows = Array.from({ length: 5 }, (_, i) => {
+    const size = Math.round(200 + ((i * 67) % 300));
+    const left = (((i * 47) % 110) - 10).toFixed(0);
+    const top = (((i * 59) % 110) - 10).toFixed(0);
+    const duration = (12 + ((i * 23) % 8)).toFixed(1);
+    const delay = (-((i * 17) % 10)).toFixed(1);
+    return { size, left, top, duration, delay };
+  });
 
   const information = [
     {
@@ -117,23 +142,22 @@
         {
           imgList: [
             {
-              src: "/curva-umi-support/img/picture.jpeg", // Adjusted path or verify if exists? Original used picture.jpeg in loop but source showed design/01/picture.jpeg. Wait, original index.vue lines 502-512 has specific paths.
-              // Re-check original lines 502: /curva-umi-support/design/01/picture.jpeg
-              // But list structure in original was:
-              // src: '/curva-umi-support/design/01/picture.jpeg',
-              // src: '/curva-umi-support/design/01/picture2.jpeg',
-              // src: '/curva-umi-support/design/01/picture3.jpeg',
-              // I should use those exactly.
               src: "/curva-umi-support/design/01/picture.jpeg",
               alt: "初期衣裝1",
+              width: 814,
+              height: 1200,
             },
             {
               src: "/curva-umi-support/design/01/picture2.jpeg",
               alt: "初期衣裝2",
+              width: 1209,
+              height: 1480,
             },
             {
               src: "/curva-umi-support/design/01/picture3.jpeg",
               alt: "初期衣裝3",
+              width: 1461,
+              height: 1487,
             },
           ],
         },
@@ -354,89 +378,6 @@
         { attr: { x: 136 }, duration: 6, repeat: -1, ease: "linear" },
       );
 
-    // Bubbles
-    // Bubbles
-    forEach(document.querySelectorAll(".bubble"), (bubble) => {
-      if (bubble) {
-        const depth = Math.random();
-        const size = 10 + depth * 40;
-        const blur = (1 - depth) * 2;
-        const duration = 15 + (1 - depth) * 20;
-
-        gsap.set(bubble, {
-          width: `${size}px`,
-          left: `${random(0, 100)}vw`,
-          top: "105vh",
-          opacity: 0,
-          filter: `blur(${blur}px)`,
-          x: 0,
-        });
-
-        const tl = gsap.timeline({ repeat: -1 });
-
-        // 向上移動
-        tl.to(
-          bubble,
-          {
-            duration: duration,
-            top: "-10vh",
-            x: `+=${random(-50, 50)}`,
-            ease: "none",
-            modifiers: {
-              x: (x) =>
-                parseFloat(x) + Math.sin(parseFloat(x) / 15) * 40 + "px",
-            },
-          },
-          0,
-        );
-
-        // 淡入
-        tl.to(
-          bubble,
-          {
-            opacity: 0.2 + depth * 0.5,
-            duration: duration * 0.15,
-            ease: "sine.inOut",
-          },
-          0,
-        );
-
-        // 淡出
-        tl.to(
-          bubble,
-          {
-            opacity: 0,
-            duration: duration * 0.15,
-            ease: "sine.inOut",
-          },
-          duration * 0.85,
-        );
-
-        // 隨機起始進度
-        tl.progress(Math.random());
-      }
-    });
-
-    // Ambient Glow
-    forEach(document.querySelectorAll(".bubble-glow"), (glow) => {
-      if (glow) {
-        gsap.set(glow, {
-          width: `${random(200, 500)}px`,
-          left: `${random(-20, 100)}vw`,
-          top: `${random(-20, 100)}vh`,
-          opacity: random(0.3, 0.6),
-        });
-        gsap.to(glow, {
-          duration: random(10, 20),
-          x: random(-100, 100),
-          y: random(-100, 100),
-          opacity: random(0.2, 0.5),
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      }
-    });
 
     let observer;
     if (sentinelRef) {
@@ -466,8 +407,10 @@
     <div class="flex items-center justify-center">
       <img
         src="/curva-umi-support/img/logo.jpeg"
-        class="h-[100px] md:h-[150px] transition-all duration-300"
+        class="h-[100px] md:h-[150px] w-auto max-w-full object-contain transition-all duration-300"
         alt="Curva Umi Logo"
+        width="1500"
+        height="500"
         fetchpriority="high"
       />
     </div>
@@ -540,19 +483,21 @@
     </div>
 
     <div class="py-[40px] px-[10px] pb-[40px] max-w-[1200px] mx-auto">
-      <ul class="fixed left-0 right-0 top-0 bottom-0 pointer-events-none z-0">
-        {#each { length: 30 } as _}
+      <ul class="fixed left-0 right-0 top-0 bottom-0 pointer-events-none z-0 overflow-hidden">
+        {#each bubbles as b}
           <li
-            class="bubble bg-white/5 border border-white/20 rounded-full aspect-square absolute top-full shadow-[0_0_10px_rgba(255,255,255,0.1)]"
+            class="bubble bg-white/5 border border-white/20 rounded-full aspect-square absolute shadow-[0_0_10px_rgba(255,255,255,0.1)]"
+            style="--size: {b.size}px; --blur: {b.blur}px; --duration: {b.duration}s; --left: {b.left}vw; --delay: {b.delay}s; --max-opacity: {b.maxOpacity}; --drift: {b.drift}px;"
           >
             <div
               class="bg-white/30 left-[15%] top-[20%] w-[20%] aspect-square absolute rounded-full filter blur-[1px]"
             ></div>
           </li>
         {/each}
-        {#each { length: 5 } as _}
+        {#each glows as g}
           <li
             class="bubble-glow bg-mint-green/20 blur-[50px] rounded-full aspect-square absolute pointer-events-none"
+            style="--size: {g.size}px; --left: {g.left}vw; --top: {g.top}vh; --duration: {g.duration}s; --delay: {g.delay}s;"
           ></li>
         {/each}
       </ul>
@@ -578,8 +523,10 @@
                 >
                   <img
                     src="/curva-umi-support/img/discord.svg"
-                    class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
+                    class="w-[16px] h-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                     alt="Discord"
+                    width="16"
+                    height="16"
                     loading="lazy"
                     decoding="async"
                   />
@@ -611,6 +558,9 @@
                 <img
                   src="/curva-umi-support/img/picture.jpeg"
                   alt="來羽うみ (Curva Umi) Artist Photo"
+                  class="w-full h-auto object-cover rounded-lg"
+                  width="814"
+                  height="1200"
                   loading="lazy"
                   decoding="async"
                 />
@@ -684,8 +634,10 @@
                       >
                         <img
                           src="/curva-umi-support/img/twitter-x.svg"
-                          class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
+                          class="w-[16px] h-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                           alt="Twitter"
+                          width="16"
+                          height="16"
                           loading="lazy"
                           decoding="async"
                         />
@@ -699,8 +651,10 @@
                       >
                         <img
                           src="/curva-umi-support/img/youtube.svg"
-                          class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
+                          class="w-[16px] h-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                           alt="YouTube"
+                          width="16"
+                          height="16"
                           loading="lazy"
                           decoding="async"
                         />
@@ -727,15 +681,48 @@
             {#if videosList.length > 0}
               <div
                 data-aos="fade-up"
-                class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-mint-green/30 bg-black"
+                class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-mint-green/30 bg-black relative"
               >
-                <iframe
-                  src={`https://www.youtube.com/embed/${videosList[0].id}`}
-                  title={videosList[0].title}
-                  class="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+                {#if playingVideos[videosList[0].id]}
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videosList[0].id}?autoplay=1`}
+                    title={videosList[0].title}
+                    class="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                {:else}
+                  <button
+                    type="button"
+                    class="w-full h-full relative block cursor-pointer group focus:outline-none"
+                    onclick={() => playVideo(videosList[0].id)}
+                    aria-label={`Play ${videosList[0].title}`}
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${videosList[0].id}/hqdefault.jpg`}
+                      alt={videosList[0].title}
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                      width="480"
+                      height="360"
+                    />
+                    <div
+                      class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                    >
+                      <svg
+                        viewBox="0 0 68 48"
+                        class="w-[68px] h-[48px] transition-transform duration-300 group-hover:scale-110 drop-shadow-lg"
+                      >
+                        <path
+                          d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                          fill="#FF0000"
+                        ></path>
+                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                      </svg>
+                    </div>
+                  </button>
+                {/if}
               </div>
             {/if}
 
@@ -746,15 +733,48 @@
                   <div
                     data-aos="fade-up"
                     data-aos-delay={i * 100}
-                    class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black"
+                    class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black relative"
                   >
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.id}`}
-                      title={video.title}
-                      class="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
+                    {#if playingVideos[video.id]}
+                      <iframe
+                        src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
+                        title={video.title}
+                        class="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    {:else}
+                      <button
+                        type="button"
+                        class="w-full h-full relative block cursor-pointer group focus:outline-none"
+                        onclick={() => playVideo(video.id)}
+                        aria-label={`Play ${video.title}`}
+                      >
+                        <img
+                          src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                          alt={video.title}
+                          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
+                          width="480"
+                          height="360"
+                        />
+                        <div
+                          class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                        >
+                          <svg
+                            viewBox="0 0 68 48"
+                            class="w-[60px] h-[42px] transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
+                          >
+                            <path
+                              d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                              fill="#FF0000"
+                            ></path>
+                            <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                          </svg>
+                        </div>
+                      </button>
+                    {/if}
                   </div>
                 {/each}
               </div>
@@ -774,15 +794,48 @@
                     <div
                       data-aos="fade-up"
                       data-aos-delay={i * 100}
-                      class="w-full aspect-[9/16] rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black"
+                      class="w-full aspect-[9/16] rounded-xl overflow-hidden shadow-lg border border-white/20 hover:border-mint-green transition-colors bg-black relative"
                     >
-                      <iframe
-                        src={`https://www.youtube.com/embed/${short.id}`}
-                        title={short.title}
-                        class="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      ></iframe>
+                      {#if playingVideos[short.id]}
+                        <iframe
+                          src={`https://www.youtube.com/embed/${short.id}?autoplay=1`}
+                          title={short.title}
+                          class="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                      {:else}
+                        <button
+                          type="button"
+                          class="w-full h-full relative block cursor-pointer group focus:outline-none"
+                          onclick={() => playVideo(short.id)}
+                          aria-label={`Play ${short.title}`}
+                        >
+                          <img
+                            src={`https://img.youtube.com/vi/${short.id}/hqdefault.jpg`}
+                            alt={short.title}
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                            decoding="async"
+                            width="480"
+                            height="360"
+                          />
+                          <div
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                          >
+                            <svg
+                              viewBox="0 0 68 48"
+                              class="w-[48px] h-[34px] transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
+                            >
+                              <path
+                                d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                                fill="#FF0000"
+                              ></path>
+                              <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                            </svg>
+                          </div>
+                        </button>
+                      {/if}
                     </div>
                   {/each}
                 </div>
@@ -823,6 +876,9 @@
                       alt={video.title}
                       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
+                      width="480"
+                      height="360"
                     />
                     <!-- YouTube 播放按鈕 -->
                     <div
@@ -866,7 +922,9 @@
                       <img
                         src={img.src}
                         alt={img.alt}
-                        class="max-h-[500px] object-contain mx-auto"
+                        width={img.width}
+                        height={img.height}
+                        class="max-h-[500px] w-auto object-contain mx-auto"
                         loading="lazy"
                         decoding="async"
                       />
@@ -900,8 +958,10 @@
                               >
                                 <img
                                   src="/curva-umi-support/img/twitter-x.svg"
-                                  class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
+                                  class="w-[16px] h-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                                   alt="Twitter"
+                                  width="16"
+                                  height="16"
                                   loading="lazy"
                                   decoding="async"
                                 />
@@ -917,8 +977,10 @@
                               >
                                 <img
                                   src="/curva-umi-support/img/youtube.svg"
-                                  class="w-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
+                                  class="w-[16px] h-[16px] brightness-0 invert md:group-hover:brightness-100 md:group-hover:invert-0 transition-all duration-300"
                                   alt="YouTube"
+                                  width="16"
+                                  height="16"
                                   loading="lazy"
                                   decoding="async"
                                 />
@@ -1001,5 +1063,49 @@
   @reference "../../assets/css/main.css";
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl hover:bg-white/10 transition-colors duration-500;
+  }
+
+  .bubble {
+    width: var(--size);
+    left: var(--left);
+    filter: blur(var(--blur));
+    animation: bubbleRise var(--duration) linear infinite;
+    animation-delay: var(--delay);
+    will-change: transform, opacity;
+  }
+  @keyframes bubbleRise {
+    0% {
+      transform: translate3d(0, 110vh, 0);
+      opacity: 0;
+    }
+    15% {
+      opacity: var(--max-opacity, 0.4);
+    }
+    85% {
+      opacity: var(--max-opacity, 0.4);
+    }
+    100% {
+      transform: translate3d(var(--drift, 0px), -15vh, 0);
+      opacity: 0;
+    }
+  }
+
+  .bubble-glow {
+    width: var(--size);
+    left: var(--left);
+    top: var(--top);
+    animation: glowPulse var(--duration) ease-in-out infinite alternate;
+    animation-delay: var(--delay);
+    will-change: transform, opacity;
+  }
+  @keyframes glowPulse {
+    0% {
+      transform: translate3d(0, 0, 0);
+      opacity: 0.25;
+    }
+    100% {
+      transform: translate3d(50px, 40px, 0);
+      opacity: 0.5;
+    }
   }
 </style>

@@ -80,11 +80,11 @@
             <span class="text-[40px] mb-[10px]">🎵</span>
           </div>
         {:else}
-          <!-- svelte-ignore a11y-missing-attribute -->
           <iframe
             src={`https://www.youtube.com/embed/${iframeID}?autoplay=1&start=${iframeStart}`}
             allow="autoplay; encrypted-media; picture-in-picture"
             allowfullscreen
+            title="YouTube video player"
             class="w-full aspect-video bg-black"
           ></iframe>
         {/if}
@@ -143,10 +143,10 @@
       <div class="flex-1 flex gap-[15px] p-[10px] transition-all duration-300 overflow-hidden {isExpanded ? 'flex-col items-center justify-start pt-[60px]' : 'flex-row items-center h-full'} w-full">
         <div class="bg-black rounded-lg overflow-hidden flex-shrink-0 relative transition-all duration-300 shadow-xl {isExpanded ? 'w-full aspect-video max-h-[60vh]' : 'h-full aspect-video'}">
           {#if iframeID}
-            <!-- svelte-ignore a11y-missing-attribute -->
             <iframe
               src={`https://www.youtube.com/embed/${iframeID}?autoplay=1&start=${iframeStart}`}
               allow="autoplay"
+              title="YouTube video player"
               class="w-full h-full"
             ></iframe>
           {/if}
