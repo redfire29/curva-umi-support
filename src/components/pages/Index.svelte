@@ -129,6 +129,10 @@
       id: "fUs549OeHeY",
       title: "【メンバー限定】一発録りで星降る海歌ってみた",
     },
+    {
+      id: "ogt1cBAmRlE",
+      title: "【メンバー限定】secret base〜君がくれたもの〜一発録りで歌ってみた",
+    },
   ];
 
   const shortsList = [

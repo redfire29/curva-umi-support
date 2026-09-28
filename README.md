@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/09/28 - member video update
+- 【メンバー限定】secret base〜君がくれたもの〜一発録りで歌ってみた
+
 2026/09/28 - song list update
 - 元気なるアイドルソング縛り🐧🎤來羽うみ/Curva Umi Singing Stream
 
