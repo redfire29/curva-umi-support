@@ -1,5 +1,90 @@
 [
     {
+        "date": "2026/09/28",
+        "streamName": "【#歌枠】元気なるアイドルソング縛り🐧🎤來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "海色バスルーム",
+                "singer": "來羽うみ",
+                "songTime": "00:00:59",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=59s"
+            },
+            {
+                "showDate": true,
+                "songName": "僕らは今のなかで",
+                "singer": "μ's",
+                "songTime": "00:13:55",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=835s"
+            },
+            {
+                "showDate": true,
+                "songName": "超最強",
+                "singer": "超ときめき♡宣伝部",
+                "songTime": "00:21:55",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=1315s"
+            },
+            {
+                "showDate": true,
+                "songName": "アイドル",
+                "singer": "YOASOBI",
+                "songTime": "00:28:11",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=1691s"
+            },
+            {
+                "showDate": true,
+                "songName": "サインはB",
+                "singer": "B小町",
+                "songTime": "00:31:54",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=1914s"
+            },
+            {
+                "showDate": true,
+                "songName": "バラライカ",
+                "singer": "月島きらり starring 久住小春",
+                "songTime": "00:37:46",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=2266s"
+            },
+            {
+                "showDate": true,
+                "songName": "ハッピー☆彡",
+                "singer": "月島きらり starring 久住小春",
+                "songTime": "00:41:29",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=2489s"
+            },
+            {
+                "showDate": true,
+                "songName": "ヘビーローテーション",
+                "singer": "AKB48",
+                "songTime": "00:48:46",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=2926s"
+            },
+            {
+                "showDate": true,
+                "songName": "「ひとりで生きられそう」って それってねえ、褒めているの？",
+                "singer": "Juice=Juice",
+                "songTime": "00:56:28",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=3388s"
+            },
+            {
+                "showDate": true,
+                "songName": "盛れ！ミ・アモーレ",
+                "singer": "Juice=Juice",
+                "songTime": "01:04:00",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=3840s"
+            },
+            {
+                "showDate": true,
+                "songName": "初恋サイダー",
+                "singer": "Buono!",
+                "songTime": "01:12:02",
+                "songLink": "https://www.youtube.com/watch?v=Bs9ZaZqtgpY&t=4322s"
+            }
+        ]
+    },
+    {
         "date": "2026/08/23",
         "streamName": "【#歌枠】祝✨2000人！愛と感謝を込めて歌う歌枠🎤🩵來羽うみ Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

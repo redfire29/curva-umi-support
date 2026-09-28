@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/09/28 - song list update
+- 元気なるアイドルソング縛り🐧🎤來羽うみ/Curva Umi Singing Stream
+
 2026/08/23 - song list update
 - 祝✨2000人！愛と感謝を込めて歌う歌枠🎤🩵Curva Umi Singing Stream
 
