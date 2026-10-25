@@ -1,5 +1,76 @@
 [
     {
+        "date": "2026/10/25",
+        "streamName": "【#歌枠】ハロウィン先取り歌枠🎃🦇來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
+        "showList": true,
+        "showDate": true,
+        "songList": [
+            {
+                "showDate": true,
+                "songName": "EVIL PENGUIN",
+                "singer": "來羽うみ",
+                "songTime": "00:00:01",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=1s"
+            },
+            {
+                "showDate": true,
+                "songName": "革命道中",
+                "singer": "アイナ・ジ・エンド",
+                "songTime": "00:09:48",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=588s"
+            },
+            {
+                "showDate": true,
+                "songName": "IRIS OUT",
+                "singer": "米津玄師",
+                "songTime": "00:15:47",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=947s"
+            },
+            {
+                "showDate": true,
+                "songName": "ビビデバ",
+                "singer": "星街すいせい",
+                "songTime": "00:22:38",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=1358s"
+            },
+            {
+                "showDate": true,
+                "songName": "エンヴィーベイビー",
+                "singer": "Kanaria",
+                "songTime": "00:29:53",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=1793s"
+            },
+            {
+                "showDate": true,
+                "songName": "悪ノ娘",
+                "singer": "mothy (悪ノP)",
+                "songTime": "00:36:10",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=2170s"
+            },
+            {
+                "showDate": true,
+                "songName": "悪ノ召使",
+                "singer": "mothy (悪ノP)",
+                "songTime": "00:40:44",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=2444s"
+            },
+            {
+                "showDate": true,
+                "songName": "ヴァンパイア",
+                "singer": "DECO*27",
+                "songTime": "00:50:19",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=3019s"
+            },
+            {
+                "showDate": true,
+                "songName": "唱",
+                "singer": "Ado",
+                "songTime": "00:58:53",
+                "songLink": "https://www.youtube.com/watch?v=T0bBVmfl2ZM&t=3533s"
+            }
+        ]
+    },
+    {
         "date": "2026/09/28",
         "streamName": "【#歌枠】元気なるアイドルソング縛り🐧🎤來羽うみ/Curva Umi Singing Stream【#新人vtuber 】",
         "showList": true,

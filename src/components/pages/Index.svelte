@@ -187,6 +187,11 @@
 
   const historyList = [
     {
+      time: "2026-10-25",
+      content: t("history-20261025-1"),
+      link: "https://www.youtube.com/watch?v=T0bBVmfl2ZM",
+    },
+    {
       time: "2026-09-28",
       content: t("history-20260928-1"),
       link: "https://www.youtube.com/watch?v=Bs9ZaZqtgpY",

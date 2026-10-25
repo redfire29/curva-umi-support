@@ -12,6 +12,9 @@
 
 ### 更新list  
 ```
+2026/10/25 - song list update
+- ハロウィン先取り歌枠🎃🦇來羽うみ/Curva Umi Singing Stream
+
 2026/09/28 - member video update
 - 【メンバー限定】secret base〜君がくれたもの〜一発録りで歌ってみた
 
